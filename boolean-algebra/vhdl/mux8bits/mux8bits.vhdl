@@ -1,14 +1,8 @@
 -- VHDL multiplexador de 8 palavras com 8 bits cada
---
 
 -- O desenvolvimento desse programa, foi pensado utilizando a tabela verdade.
 -- Como eram 8 palavras e um enable, utilizei 3 selects para controlar o envio de cada palavra.
 -- Por tanto, cada palavra ficou referenciada como um numero (de 0 até 7), e isso foi utilizado tendo em vista que não há uma função booleana especifica para o multiplexador solicitado.
-
--- Aluno: Clauber Pereira Stipkovic Halic
--- TIA: 40625478
--- Algebra Booleana e Cirtuitos
-
 library IEEE, std;
 
 use IEEE.std_logic_1164.all;
@@ -51,10 +45,6 @@ begin
     end if;
   end process;
 end executa_mux;
-
-
--- Professor, como esse programa eu fiz depois de fazer o somador de 8 bits, todas a duvidas
--- que tive no decorrer do desenvolvimento, foram sanadas e as soluções aplicadas nesse programa.
 
 -- Alguns links que eu utilizei como referencia nesse programa foram:
 -- - http://www.seas.upenn.edu/~ese171/vhdl/vhdl_primer.html#_Toc526061362

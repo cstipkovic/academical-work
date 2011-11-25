@@ -1,9 +1,4 @@
 -- Decodificador de 7 segmentos utilizando um display BCD
--- Utilizando como referencia o tabela 5-20, capitulo 5 do livro texto
---
--- Aluno: Clauber Pereira Stipkovic Halic
--- TIA: 40625478
--- Algebra Booleana e Circuitos
 
 entity decoder7segmentos is
   port(display: IN BIT_VECTOR(3 DOWNTO 0);

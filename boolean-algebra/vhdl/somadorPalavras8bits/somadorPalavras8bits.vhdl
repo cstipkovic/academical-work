@@ -1,5 +1,4 @@
 -- VHDL somador de duas palabras de 8bits
---
 
 -- Para a resolução do problemas, utilizei o recurso da tabela verdade.
 -- Separando os bits de cada palavra e o bit de "vai um" para montar a tabela.
@@ -8,10 +7,6 @@
 -- 0   0      0       0      0
 -- 1   0      1       0      1
 -- 1   1      1       1      1
-
--- Aluno: Clauber Pereira Stipkovic Halic
--- TIA: 40625478
--- Algebra Booleana e Cirtuitos
 
 library IEEE, std;
 
@@ -65,9 +60,6 @@ begin
     end loop;
   end process;
 end executa_soma;
-
--- Professor, segue a lista de algumas dificuldades encontradas e as fontes onde
--- consultei para obter a solução:
 
 -- * Como declarar uma variabel que não seria nem de entrada e nem de saida.
 -- solução: Encontrei alguns artigos mostrando como e onde declarar as variaveis locais, são eles:
