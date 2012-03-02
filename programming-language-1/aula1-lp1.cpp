@@ -26,6 +26,7 @@ class Pessoa { // private implicito
 			if (Hoje % 10000 >= MDN){
 				return Anos + 1;
 			}
+			return 0;
 		}
 };
 

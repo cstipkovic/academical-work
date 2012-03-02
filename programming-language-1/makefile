@@ -1,3 +1,9 @@
+ifdef fileName
+	fileName = :
+else
+	fileName = \;
+endif
+
 # Compile the Main
 main: 
-	g++ -Wall aula1-lp1.cpp -o main
+	g++ -Wall $(fileName) -o main
