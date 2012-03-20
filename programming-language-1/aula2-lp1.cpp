@@ -13,8 +13,8 @@ short Idades[] = {13, 27, 38, 31, 45, 32, 18, 16};
 short Media(const vector<short> & v);
 
 short Total = 0;
-int main()
-{
+
+int main() {
 	short Conta = 0;
 	vector<short> Ids;
 
