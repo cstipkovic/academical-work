@@ -1,4 +1,4 @@
 CC=g++
 
-doolpiedex:
+doolpiedex: 
 	$(CC) -Wall doolpiedex_start.cpp -o doolpiedex_start -g
