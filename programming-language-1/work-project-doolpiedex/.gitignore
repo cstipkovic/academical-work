@@ -1,2 +1,4 @@
 doolpiedex_start
 *.*~
+*.gch
+*.o

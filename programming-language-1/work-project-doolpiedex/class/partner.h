@@ -4,7 +4,7 @@
 class partner
 {
 public:
-	partner(arguments);
+	partner();
 	~partner();
 
 	/* data */

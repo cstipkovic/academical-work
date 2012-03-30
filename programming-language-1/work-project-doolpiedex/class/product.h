@@ -1,12 +1,14 @@
 #ifndef PRODUCT_H
 #define PRODUCT_H
 
+#include "iostream"
+
 class product {
 public:
-	string name, description;
+	std::string name, description;
 	int weight;
 	
-	product(arguments);
+	product();
 	~product();
 
 	/* data */

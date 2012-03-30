@@ -4,7 +4,7 @@
 class client
 {
 public:
-	client(arguments);
+	client();
 	~client();
 
 	/* data */
