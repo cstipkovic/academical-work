@@ -3,7 +3,7 @@ CC=g++
 # 	rm -r *.gch
 
 doolpiedex: classes
-	$(CC) -Wall doolpiedex_start.cpp -o doolpiedex_startsn
+	$(CC) -Wall doolpiedex_start.cpp -o doolpiedex_start
 
 classes:
 	$(CC) -Wall class/client.cpp -c class/client.h
