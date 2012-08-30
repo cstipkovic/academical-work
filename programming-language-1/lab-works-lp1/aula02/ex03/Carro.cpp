@@ -1,6 +1,9 @@
+#include <iostream>
 #include "Carro.h"
 
-void Carro::abastecerCarro(qtCombustivel) {
+using namespace std;
+
+void Carro::AbastecerCarro(qtCombustivel) {
     if (qtCombustivel <= 50 || (qtCombustivel + qtGasolinaNoTanque) <= 50) {
         qtGasolinaNoTanque = qtCombustivel;
         cout << "Abastecido!";
@@ -9,14 +12,14 @@ void Carro::abastecerCarro(qtCombustivel) {
     }
 }
 
-void Carro::moverCarro(distancia) {
-    
+void Carro::MoverCarro(distancia) {
+
 }
 
-int Carro:LgetQtCombustivelNoTanque() {
+int Carro::GetQtCombustivelNoTanque() {
     return qtGasolinaNoTanque;
 }
 
-double Carro:getKilometragem() {
+double Carro::GetKilometragem() {
     return kilometragem;
 }

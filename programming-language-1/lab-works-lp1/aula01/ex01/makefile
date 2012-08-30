@@ -1,5 +1,4 @@
-ifdef cppFileName
 # Compile the main.cpp
 main:
-	g++ -Wall $(cppfileName) -o main
-endif
+	g++ -Wall main.cpp -o main
+	g++ -Wall mainChar.cpp -o mainChar
