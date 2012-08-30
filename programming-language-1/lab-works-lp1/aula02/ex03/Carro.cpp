@@ -3,23 +3,55 @@
 
 using namespace std;
 
-void Carro::AbastecerCarro(qtCombustivel) {
-    if (qtCombustivel <= 50 || (qtCombustivel + qtGasolinaNoTanque) <= 50) {
-        qtGasolinaNoTanque = qtCombustivel;
-        cout << "Abastecido!";
+Carro::Carro() {
+    qtCombustivelNoTanque = 0;
+    kilometragem = 0;
+}
+
+int Carro::GetAutonomiaTanque() {
+
+    int autonomiaTanqueKM;
+    autonomiaTanqueKM = GetCombustivelNoTanque() * 15;
+
+    return autonomiaTanqueKM;
+}
+
+float Carro::GetCombustivelNoTanque() {
+    return qtCombustivelNoTanque;
+}
+
+void Carro::SetCombustivelNoTanque(float novaQtCombustivelNoTanque) {
+    qtCombustivelNoTanque = novaQtCombustivelNoTanque;
+}
+
+int Carro::GetKilometragem() {
+    return kilometragem;
+}
+
+void Carro::SetKilometragem(int novaKilometragem) {
+    kilometragem = novaKilometragem;
+}
+
+bool Carro::AbastecerCarro(int qtCombustivel) {
+
+    if ((qtCombustivel + qtCombustivelNoTanque) <= 50) {
+        qtCombustivelNoTanque = qtCombustivelNoTanque + qtCombustivel;
+        return true;
     } else {
-        cout << "Quantidade de combustivel é maior que a que o tanque suporta.";
+        return false;
     }
 }
 
-void Carro::MoverCarro(distancia) {
+void Carro::MoverCarro(int percorrerDistancia) {
 
-}
-
-int Carro::GetQtCombustivelNoTanque() {
-    return qtGasolinaNoTanque;
-}
-
-double Carro::GetKilometragem() {
-    return kilometragem;
+    if (percorrerDistancia == GetAutonomiaTanque()) {
+        SetKilometragem(percorrerDistancia);
+        SetCombustivelNoTanque(0.0);
+    } else if (percorrerDistancia < GetAutonomiaTanque()) {
+        SetKilometragem(percorrerDistancia);
+        SetCombustivelNoTanque((GetAutonomiaTanque() - percorrerDistancia) / 15.0);
+    } else {
+        SetKilometragem(GetAutonomiaTanque());
+        SetCombustivelNoTanque(0.0);
+    }
 }

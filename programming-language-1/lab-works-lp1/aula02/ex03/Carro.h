@@ -1,11 +1,15 @@
 class Carro {
 	private:
-	    int qtGasolinaNoTanque;
-	    double kilometragem;
+	    int kilometragem;
+	    float qtCombustivelNoTanque;
 
 	public:
-	    void AbastecerCarro(int);
-	    void MoverCarro();
-	    int GetQtCombustivelNoTanque();
-	    double GetKilometragem();
+		Carro();
+		int GetAutonomiaTanque();
+		float GetCombustivelNoTanque();
+		void SetCombustivelNoTanque(float);
+		int GetKilometragem();
+		void SetKilometragem(int);
+		bool AbastecerCarro(int);
+		void MoverCarro(int);
 };

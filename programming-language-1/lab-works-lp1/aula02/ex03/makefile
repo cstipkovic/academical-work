@@ -1,7 +1,5 @@
-CPP = g++
-# Compila as classes e a main
-class:
-	$(CPP) -Wall Carro.cpp -c Carro.h
-
-main:
-	$(CPP) -Wall main.cpp -o main
+# Compile the Class and Main files
+compile:
+	g++ -Wall -g -c Carro.cpp
+	g++ -Wall -g -c main.cpp
+	g++ -g Carro.o main.o -lm -o main
