@@ -10,6 +10,6 @@
 using namespace std;
 
 int main() {
-	int cardapio 
+	int cardapio;
 	return 0;
 }
