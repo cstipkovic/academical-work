@@ -1,4 +1,6 @@
 #include <iostream>
+
+#include "Conta.h"
 #include "ContaCorrente.h"
 
 using namespace std;

@@ -1,5 +1,6 @@
 #include <iostream>
 
+#include "Conta.h"
 #include "ContaCorrente.h"
 #include "ContaPoupanca.h"
 

@@ -2,6 +2,7 @@
 class Conta {
     private:
         double saldo;
+
     public:
         Conta();
         double getSaldo();
