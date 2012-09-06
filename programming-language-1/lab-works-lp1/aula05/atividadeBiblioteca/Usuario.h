@@ -1,7 +1,11 @@
+#include <iostream>
+
+using namespace std;
+
 class Usuario {
 private:
 	string nome, endereco, bairro;
-	int numeroEndereco, idUsuario;
+	int numero, idUsuario;
 public:
-	Usuario();
+	Usuario(string, string, int, string, int);
 };
