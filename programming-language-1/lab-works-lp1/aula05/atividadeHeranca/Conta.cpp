@@ -1,7 +1,4 @@
-#include <iostream>
 #include "Conta.h"
-
-using namespace std;
 
 // Conta
 Conta::Conta() {
