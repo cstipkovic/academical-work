@@ -6,6 +6,7 @@ class Usuario {
 private:
 	string nome, endereco, bairro;
 	int numero, idUsuario;
-public:
-	Usuario(string, string, int, string, int);
+
+protected:
+	void cadastra(string, string, int, string, int);
 };

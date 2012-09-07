@@ -1,6 +1,9 @@
-#include "Usuario.h"
+#include <iostream>
 
-class Funcionario {
+class Funcionario : public Usuario {
+private:
+    int RF;
+
 public:
-    
+    Funcionario(string, string, int, string, int, int);
 };
