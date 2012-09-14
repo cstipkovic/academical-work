@@ -2,6 +2,8 @@
 
 using namespace std;
 
+#include "Obra.h"
+
 class Livro : public Obra {
 private:
     string ISBN;

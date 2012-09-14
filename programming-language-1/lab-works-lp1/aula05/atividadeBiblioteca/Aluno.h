@@ -8,4 +8,5 @@ private:
 
 public:
     Aluno(string, string, int, string, int, int);
+    //string getAluno(int);
 };
