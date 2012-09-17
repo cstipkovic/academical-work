@@ -8,4 +8,10 @@ private:
     int anoEdicao;
 protected:
     void cadastra(string, string, string, string, string, int);
+    string getTipo();
+    string getTitulo();
+    string getAutor();
+    string getLingua();
+    string getEditora();
+    int getAnoEdicao();
 };

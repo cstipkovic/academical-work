@@ -8,5 +8,11 @@ private:
 
 public:
     Aluno(string, string, int, string, int, int);
-    //string getAluno(int);
+
+    string getNome();
+    string getEndereco();
+    string getBairro();
+    int getNumero();
+    int getIdUsuario();
+    int getRA();
 };

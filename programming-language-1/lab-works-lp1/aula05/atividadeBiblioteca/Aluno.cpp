@@ -10,6 +10,26 @@ Aluno::Aluno(string nNome, string nEndereco, int nNumero, string nBairro, int nI
     RA = nRA;
 }
 
-// string Aluno::getAluno(int RA) {
-//     return ([Usuario::nNome]);
-// }
+string Aluno::getNome() {
+	return Usuario::getNome();
+}
+
+string Aluno::getEndereco() {
+	return Usuario::getEndereco();
+}
+
+string Aluno::getBairro() {
+	return Usuario::getBairro();
+}
+
+int Aluno::getNumero() {
+	return Usuario::getNumero();
+}
+
+int Aluno::getIdUsuario() {
+	return Usuario::getIdUsuario();
+}
+
+int Aluno::getRA() {
+	return RA;
+}

@@ -11,3 +11,23 @@ void Usuario::cadastra(string nNome, string nEndereco, int nNumero, string nBair
     bairro = nBairro;
     idUsuario = nIdUsuario;
 }
+
+string Usuario::getNome() {
+	return nome;
+}
+
+string Usuario::getEndereco() {
+	return endereco;
+}
+
+string Usuario::getBairro() {
+	return bairro;
+}
+
+int Usuario::getNumero() {
+	return numero;
+}
+
+int Usuario::getIdUsuario() {
+	return idUsuario;
+}

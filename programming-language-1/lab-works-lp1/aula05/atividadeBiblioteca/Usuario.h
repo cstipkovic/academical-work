@@ -9,4 +9,9 @@ private:
 
 protected:
 	void cadastra(string, string, int, string, int);
+	string getNome();
+	string getEndereco();
+	string getBairro();
+	int getNumero();
+	int getIdUsuario();
 };
