@@ -2,6 +2,7 @@
 
 using namespace std;
 
+#include "Obra.h"
 #include "Usuario.h"
 #include "Aluno.h"
 #include "Funcionario.h"

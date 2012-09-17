@@ -1,8 +1,8 @@
 #include <iostream>
 
-#include "Obra.h"
-
 using namespace std;
+
+#include "Obra.h"
 
 void Obra::cadastra(string nTipo, string nTitulo, string nAutor, string nLingua, string nEditora, int nAnoEdicao) {
     tipo = nTipo;

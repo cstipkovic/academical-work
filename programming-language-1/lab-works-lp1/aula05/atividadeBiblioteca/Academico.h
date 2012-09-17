@@ -10,4 +10,5 @@ private:
 
 public:
     Academico(string, string, string, string, string, int, string);
+    string dptPesquisa();
 };

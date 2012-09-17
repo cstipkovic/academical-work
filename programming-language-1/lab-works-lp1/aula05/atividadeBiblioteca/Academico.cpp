@@ -8,3 +8,7 @@ Academico::Academico(string nTipo, string nTitulo, string nAutor, string nLingua
     Obra::cadastra(nTipo, nTitulo, nAutor, nLingua, nEditora, nAnoEdicao);
     dptPesquisa = nDptPesquisa;
 }
+
+string Academico::dptPesquisa() {
+    return dptPesquisa;
+}

@@ -10,4 +10,4 @@ compile:
 	g++ -Wall -g -c Academico.cpp
 
 	g++ -Wall -g -c main.cpp
-	g++ -g Obra.o Usuario.o Aluno.o Funcionario.o Livro.o Periodico.o Academico.o main.o -lm -o main
+	g++ -g Usuario.o Aluno.o Funcionario.o Obra.o Livro.o Periodico.o Academico.o main.o -lm -o main
