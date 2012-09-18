@@ -33,3 +33,10 @@ int Aluno::getIdUsuario() {
 int Aluno::getRA() {
 	return RA;
 }
+
+bool buscaAluno(int registroAluno, Aluno *lista) {
+    if(registroAluno > 0) {
+        return true;
+    }
+    return false;
+}

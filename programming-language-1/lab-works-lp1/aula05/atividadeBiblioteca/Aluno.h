@@ -15,4 +15,5 @@ public:
     int getNumero();
     int getIdUsuario();
     int getRA();
+    bool buscaAluno(int, Aluno *);
 };
