@@ -1,13 +1,13 @@
 /*
- * test.cpp
+ * main.cpp
  */
 
 #include <iostream>
 
 using namespace std;
 
-#include "Correntista.h"
-#include "ContaCorrente.h"
+#include "ContaCorrente/ContaCorrente.h"
+#include "Correntista/Correntista.h"
 
 int main() {
 	Correntista cliente(1, "Fulano");
@@ -26,6 +26,3 @@ int main() {
 
 	return 0;
 }
-
-
-

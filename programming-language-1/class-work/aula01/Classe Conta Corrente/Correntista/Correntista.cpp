@@ -20,4 +20,3 @@ string Correntista::getNome() {
 int Correntista::getIdCorrentista() {
 	return this->idCorrentista;
 }
-
