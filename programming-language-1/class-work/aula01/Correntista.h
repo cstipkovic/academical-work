@@ -1,19 +1,22 @@
 /*
  * Correntista.h
- *
- *  Created on: Oct 14, 2012
- *      Author: cstipkovic
  */
 
 #ifndef CORRENTISTA_H_
 #define CORRENTISTA_H_
 
+#include <iostream>
+
+using namespace std;
+
 class Correntista {
 private:
 	string nome;
-	int idConta;
+	int idCorrentista;
 public:
 	Correntista(int, string);
+	string getNome();
+	int getIdCorrentista();
 };
 
 #endif /* CORRENTISTA_H_ */

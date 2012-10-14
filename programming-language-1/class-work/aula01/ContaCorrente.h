@@ -7,13 +7,12 @@
 
 class ContaCorrente {
 private:
-	int idConta;
+	int idConta, idCorrentista;;
 	float saldo;
-	string idCorrentista;
 public:
-	ContaCorrente(int, float);
-	void depositaValor(float);
-	void sacarValor(float);
+	ContaCorrente(int, float, int);
+	bool depositaValor(float);
+	bool sacaValor(float);
 	float getSaldo();
 };
 
