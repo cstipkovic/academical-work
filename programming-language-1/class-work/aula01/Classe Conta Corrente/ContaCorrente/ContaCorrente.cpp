@@ -2,7 +2,7 @@
  * ContaCorrente.cpp
  */
 
-#include <iostream>
+#include <cstdlib>
 
 using namespace std;
 

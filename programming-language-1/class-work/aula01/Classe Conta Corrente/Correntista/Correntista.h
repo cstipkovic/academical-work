@@ -1,13 +1,12 @@
 /*
  * Correntista.h
  */
+#include <string>
+
+using namespace std;
 
 #ifndef CORRENTISTA_H_
 #define CORRENTISTA_H_
-
-#include <iostream>
-
-using namespace std;
 
 class Correntista {
 private:
