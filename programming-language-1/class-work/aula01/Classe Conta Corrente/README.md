@@ -1,4 +1,4 @@
-# Aula 01 - Sugestão de Exercício: Classe Conta Corrente
+# Aula 03 - Classe Conta Corrente
 
 ## Descrição do Exercicio
 Desenvolva a classe ContaCorrente, que representa uma conta corrente bancária. A classe deve conter informações sobre o correntista (pode ser uma classe à parte) e o saldo (nunca negativo). Além disso, deve permitir ações de depósito, saque e verificação de saldo.
