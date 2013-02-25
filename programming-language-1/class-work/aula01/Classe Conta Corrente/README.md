@@ -10,6 +10,7 @@ Utilize a classe ContaCorrente  para desenvolver a classe Banco.
 A classe Banco deverá armazenar um conjunto de objetos ContaCorrente, e permitir que se acesse os métodos de qualquer uma das contas. Este conjunto deve ser implementado como um vetor de ponteiros para ContaCorrente (i.e. ContaCorrente **contas). Abaixo estão suas operações:
 
 Criar conta
+
     - Atualizar conta (mudar o cadastro do correntista)
     - Sacar
     - Depositar
@@ -26,5 +27,6 @@ Adapte a sua classe Banco / ContaCorrente para que ela implemente esta nova reso
 Inclua o qualificador const em todos os casos em que ele possa ser aplicado.
 
 ## Testando
+
     - Basta rodar um makefile
     - Executar o arquivo main
