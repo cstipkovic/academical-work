@@ -1,0 +1,50 @@
+Em um bairro projeto será construido 3 condominios
+
+Cada condominio terá:
+
+Instalações de esportes e salão de festa
+Casas
+Funcionários
+
+Condominio A
+Localizado Na rua um, numero 1
+
+
+Terá no máximo 100 casas
+
+Um salão de festa para 100 pessoas. no lado norte
+Um salão de festa para 40 pessoas, no lado sul
+
+3 quadras de esportes
+
+Terá 12 funcionários
+
+
+Condominio B
+Localizado Na rua um, numero 200
+
+
+Terá no máximo 40 casas
+
+Um salão de festa para 40 pessoas, no lado oeste
+
+2 quadras de esportes
+
+Terá 6 funcionários
+
+
+
+Condominio C
+Localizado Na rua um, numero 200
+
+
+Terá no máximo 120 casas
+
+Um salão de festa para 80 pessoas. no lado norte
+
+2 quadras de esportes
+
+Terá 12 funcionários
+
+
+Construa um programa usando classes que imprima um descrição de cada condominio
