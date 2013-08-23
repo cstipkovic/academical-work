@@ -8,6 +8,10 @@
 #ifndef TOWHOUSE_H
 #define	TOWHOUSE_H
 
+#include "iostream"
+
+using namespace std;
+
 class towhouse {
 public:
     towhouse();
@@ -15,8 +19,7 @@ public:
     virtual ~towhouse();
 private:
     string address;
-    int number;
-
+    int number, houses, employees;
 };
 
 #endif	/* TOWHOUSE_H */
