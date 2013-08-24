@@ -3,6 +3,4 @@
 *.o
 *.*.swp
 .DS_Store
-
-/programming-language-1/lab/work/Atividade Lab 2/AtividadeLab2/build/
-/programming-language-1/lab/work/Atividade Lab 2/AtividadeLab2/dist/
+*.zip
