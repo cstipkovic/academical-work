@@ -8,20 +8,20 @@ CND_BUILDDIR=build
 CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-MacOSX
-CND_ARTIFACT_DIR_Debug=build/Debug/GNU-MacOSX/tests/TestFiles
-CND_ARTIFACT_NAME_Debug=f1
-CND_ARTIFACT_PATH_Debug=build/Debug/GNU-MacOSX/tests/TestFiles/f1
+CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-MacOSX
+CND_ARTIFACT_NAME_Debug=contaespecial
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/contaespecial
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-MacOSX/package
-CND_PACKAGE_NAME_Debug=aula3-carro.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/aula3-carro.tar
+CND_PACKAGE_NAME_Debug=contaespecial.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/contaespecial.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-MacOSX
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-MacOSX
-CND_ARTIFACT_NAME_Release=aula_3_-_carro
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-MacOSX/aula_3_-_carro
+CND_ARTIFACT_NAME_Release=contaespecial
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-MacOSX/contaespecial
 CND_PACKAGE_DIR_Release=dist/Release/GNU-MacOSX/package
-CND_PACKAGE_NAME_Release=aula3-carro.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-MacOSX/package/aula3-carro.tar
+CND_PACKAGE_NAME_Release=contaespecial.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-MacOSX/package/contaespecial.tar
 #
 # include compiler specific variables
 #

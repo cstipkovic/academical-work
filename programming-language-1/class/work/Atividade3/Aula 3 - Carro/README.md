@@ -27,3 +27,5 @@ sabendo que seu tia tem o formato 12345678 digitos
 carro1 roda 2 * digito 1 do seu tia
 carro2 roda 3 * digito 2 do seu tia
 ...
+
+lab_01_pl1_tia
