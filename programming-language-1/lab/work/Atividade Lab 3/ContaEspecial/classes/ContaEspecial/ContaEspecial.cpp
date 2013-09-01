@@ -1,7 +1,23 @@
 #include "ContaEspecial.h"
 
-ContaEspecial::ContaEspecial(string n_nomeBanco, double n_limite, double n_taxaJuros) {
-    this->setBancoNome(n_nomeBanco);
-    this->limite = n_limite;
-    this->taxaJuros = n_taxaJuros;
+ContaEspecial::ContaEspecial (double n_limite, double n_taxaJuros) {
+    limite = n_limite;
+    taxaJuros = n_taxaJuros;
+}
+
+double ContaEspecial::getLimite () {
+	return limite;
+}
+
+double ContaEspecial::getSaldoDisponivel () {
+	return (getSaldo() + getLimite());
+}
+
+bool ContaEspecial::saca (double valorSacar) {
+	if(getSaldoDisponivel() >= valorSacar) {
+        setSaldo(getSaldo() - valorSacar);
+        return true;
+    } else {
+        return false;
+    }
 }

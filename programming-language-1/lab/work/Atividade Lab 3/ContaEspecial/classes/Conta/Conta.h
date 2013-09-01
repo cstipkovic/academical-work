@@ -1,5 +1,7 @@
 #include <iostream>
 
+#include "../Banco/Banco.h"
+
 using namespace std;
 
 #ifndef CONTA_H
@@ -7,8 +9,12 @@ using namespace std;
 
 class Conta : public Banco {
     public:
-        Conta(string);
+        Conta();
+
+        void setSaldo(double);
+        
         double getSaldo();
+
         void deposita(double);
         bool saca(double);
         

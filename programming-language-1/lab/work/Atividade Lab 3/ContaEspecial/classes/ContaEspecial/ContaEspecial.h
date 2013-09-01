@@ -1,6 +1,6 @@
-#include "../Conta/Conta.h"
+#include <iostream>
 
-#include "string"
+#include "../Conta/Conta.h"
 
 using namespace std;
 
@@ -9,7 +9,12 @@ using namespace std;
 
 class ContaEspecial : public Conta {
     public:
-		ContaEspecial(string, double, double);
+		ContaEspecial (double, double);
+
+		double getLimite ();
+		double getSaldoDisponivel ();
+
+		bool saca (double);
         
     private:
         double limite, taxaJuros;

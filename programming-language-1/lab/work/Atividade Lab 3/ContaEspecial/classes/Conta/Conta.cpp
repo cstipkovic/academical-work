@@ -1,22 +1,28 @@
 #include "Conta.h"
 
 // Conta
-Conta::Conta(string n_nomeBanco) {
-  this->setBancoNome(n_nomeBanco);
-  this->saldo = 0.00;
+Conta::Conta() {
+    saldo = 0.00;
+}
+
+void Conta::setSaldo(double n_saldo) {
+    saldo = n_saldo;
 }
 
 double Conta::getSaldo() {
-    return this->saldo;
+    return saldo;
 }
 
 void Conta::deposita(double valorDeposito) {
-    this->saldo = saldo + valorDeposito;
+    setSaldo(getSaldo() + valorDeposito);
 }
 
 bool Conta::saca(double valorSacar) {
+    double n_saldo;
+
     if(getSaldo() >= valorSacar) {
-        this->saldo = this->saldo - valorSacar;
+        n_saldo = getSaldo() - valorSacar;
+        setSaldo(n_saldo);
         return true;
     } else {
         return false;
