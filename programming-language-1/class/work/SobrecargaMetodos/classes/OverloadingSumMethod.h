@@ -5,7 +5,7 @@ class OverloadingSumMethod {
 		OverloadingSumMethod(double, double);
 		OverloadingSumMethod(double, double, double);
 		OverloadingSumMethod(double, double, double, double);
-		OverloadingSumMethod(double []);
+		OverloadingSumMethod(vector<double>);
 
 	private:
 		void infoMessage();

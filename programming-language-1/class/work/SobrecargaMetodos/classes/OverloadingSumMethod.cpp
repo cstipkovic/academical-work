@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -29,17 +30,16 @@ OverloadingSumMethod::OverloadingSumMethod (double number1, double number2, doub
 	cout << endl;
 }
 
-OverloadingSumMethod::OverloadingSumMethod (double number[]) {
-	int arraySize = sizeof(number) / sizeof(number[0]);
+OverloadingSumMethod::OverloadingSumMethod (vector<double> number) {
+	if (number.size() > 1) {
+		double result = 0.0;
 
-	cout << arraySize;
-
-	if (arraySize > 1) {
-		double result;
-
-		for (int i = 0; i < arraySize; i++) {
-
+		for (unsigned int i = 0; i < number.size(); i++) {
+			result = result + number[i];
 		}
+
+		cout << "Resultado da soma = " << result << endl;
+		cout << endl;
 	} else {
 		this->infoMessage();
 		cout << endl;

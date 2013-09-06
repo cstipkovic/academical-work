@@ -8,3 +8,4 @@ compile:
 
 	# Geral
 	g++ -g OverloadingSumMethod.o main.o -lm -o main
+	# g++ -g main.o -lm -o main
