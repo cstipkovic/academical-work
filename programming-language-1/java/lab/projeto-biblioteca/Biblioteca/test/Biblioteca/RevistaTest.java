@@ -1,32 +1,17 @@
 package Biblioteca;
 
 import org.junit.Test;
-import org.junit.Assert;
+import static org.junit.Assert.*;
 
 public class RevistaTest {
-    
+
     @Test
     public void construtorRevista() {
-        fail("");
-    }
-    
-    @Test
-    public void validateAno() {
-        fail("");
-    }
-    
-    @Test
-    public void validateTitulo() {
-        fail("");
-    }
-    
-    @Test
-    public void validateVolume() {
-        
-    }
-    
-    @Test
-    public void validateISSN() {
-        fail("");
+        Revista r = new Revista("Teste kit", 2014, 1, "ISSN 1018-4783");
+
+        assertEquals(r.getTitulo(), "Teste kit");
+        assertEquals(r.getAno(), 2014);
+        assertEquals(r.getVolume(), 1);
+        assertEquals(r.getISSN(), "ISSN 1018-4783");
     }
 }

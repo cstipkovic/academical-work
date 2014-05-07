@@ -1,12 +1,13 @@
 package Biblioteca;
 
 public class Revista extends Item {
+
     private String ISSN;
-    
-    public Revista (String titulo, int ano, int volume, String ISSN) {
-        this.titulo = titulo;
-        this.ano = ano;
-        this.volume = volume;
+
+    public Revista(String titulo, int ano, int volume, String ISSN) {
+        setTitulo(titulo);
+        setAno(ano);
+        setVolume(volume);
         this.ISSN = ISSN;
     }
 

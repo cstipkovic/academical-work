@@ -1,9 +1,11 @@
 package Biblioteca;
 
-public class Item {
-    int ano;
-    int volume;
-    String titulo;
+public abstract class Item {
+
+    private int ano;
+    private int volume;
+    private int id;
+    private String titulo;
 
     public int getAno() {
         return ano;

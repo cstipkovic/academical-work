@@ -3,9 +3,9 @@ package Biblioteca;
 import org.junit.Test;
 import org.junit.Assert;
 
-public class Livro {
+public class UsuarioTest {
 
     @Test
-    public void Livro() {
+    public void Usuario() {
     }
 }

@@ -3,9 +3,9 @@ package Biblioteca;
 import org.junit.Test;
 import org.junit.Assert;
 
-public class Emprestimo {
-    
+public class ReservaTest {
+
     @Test
-    public void Emprestimo() {
+    public void Reserva() {
     }
 }

@@ -1,10 +1,11 @@
 package Biblioteca;
 
 public class Livro extends Item {
-    int ISBN;
-    String editora;
-    String autor;
-    String edicao;
+
+    private int ISBN;
+    private String editora;
+    private String autor;
+    private String edicao;
 
     public int getISBN() {
         return ISBN;
