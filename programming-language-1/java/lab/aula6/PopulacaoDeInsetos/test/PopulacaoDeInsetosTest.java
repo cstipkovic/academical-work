@@ -25,7 +25,7 @@ public class PopulacaoDeInsetosTest {
     
     @Test
     public void pulverizarTest() {
-        PopulacaoDeInsetos p = new PopulacaoDeInsetos();
+        PopulacaoDeInsetos p = new PopulacaoDeInsetos(500);
         p.pulverizar();
         assertEquals(250, p.getInsetos(500));
     }

@@ -7,10 +7,18 @@ public class PopulacaoDeInsetos {
     }
 
     public PopulacaoDeInsetos(int insetos) {
-        this.insetos = 1500 + insetos;
+        this.insetos = insetos;
     }
     
     public int getInsetos() {
         return this.insetos;
+    }
+    
+    public int procriar() {
+        return (this.insetos * 2);
+    }
+    
+    public int pulverizar() {
+        return (this.insetos / 2);
     }
 }
