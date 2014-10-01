@@ -1,18 +1,19 @@
-package Debitos;
+package ContaCorrentePrivadaDebitos;
 
+import ContaCorrentePrivadaDebitos.Debitos;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class TestaDebitos {
     
     @Test
-    public void DesbloqueiaTest() {
+    public void desbloqueiaTest() {
         Debitos d = new Debitos();
         assertFalse(d.desbloqueia());
     }
     
     @Test
-    public void SacarMenorSaldoTest() {
+    public void sacarMenorSaldoTest() {
         Debitos d = new Debitos();
         d.desbloqueia();
         d.sacar(50.0);
@@ -20,7 +21,7 @@ public class TestaDebitos {
     }
     
     @Test
-    public void SacarTotalSaldoTest() {
+    public void sacarTotalSaldoTest() {
         Debitos d = new Debitos();
         d.desbloqueia();
         d.sacar(100.0);
@@ -28,7 +29,7 @@ public class TestaDebitos {
     }
     
     @Test
-    public void SacarMaiorSaldoComLimiteTest() {
+    public void sacarMaiorSaldoComLimiteTest() {
         Debitos d = new Debitos();
         d.desbloqueia();
         d.sacar(200.0);
@@ -37,7 +38,7 @@ public class TestaDebitos {
     }
     
     @Test
-    public void SacarMaiorSaldoMaiorLimiteTest() {
+    public void sacarMaiorSaldoMaiorLimiteTest() {
         Debitos d = new Debitos();
         d.desbloqueia();
         d.sacar(300.0);
@@ -46,7 +47,7 @@ public class TestaDebitos {
     }
     
     @Test
-    public void DepositarTest() {
+    public void depositarTest() {
         Debitos d = new Debitos();
         d.desbloqueia();
         d.depositar(100.0);

@@ -1,4 +1,4 @@
-package Debitos;
+package ContaCorrentePrivadaDebitos;
 
 import java.util.Scanner;
 

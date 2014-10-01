@@ -1,4 +1,4 @@
-package Debitos;
+package ContaCorrentePrivadaDebitos;
 
 public class Debitos {
     
