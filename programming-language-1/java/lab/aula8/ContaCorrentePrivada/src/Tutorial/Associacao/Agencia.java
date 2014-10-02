@@ -1,4 +1,4 @@
-package Tutorial;
+package Tutorial.Associacao;
 
 public class Agencia {
     
