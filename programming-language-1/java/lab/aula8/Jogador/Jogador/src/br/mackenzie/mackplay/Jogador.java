@@ -7,6 +7,7 @@ public class Jogador {
     String nome;
     double score;
     Participacao participacao[];
+    int countParticipacao = 0;
     
     public Jogador() {
         this.nome = "Macke Junior";
@@ -70,10 +71,7 @@ public class Jogador {
     }
     
     public void addParticipacoes(Participacao participacao) {
-        for (int i = 0; i < this.participacao.length; i++) {
-            if (this.participacao[i] == null) {
-                this.participacao[i] = participacao;
-            }
-        }
+        this.participacao[countParticipacao] = participacao;
+        countParticipacao++;
     }
 }

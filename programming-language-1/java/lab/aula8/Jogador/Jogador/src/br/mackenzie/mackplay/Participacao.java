@@ -42,4 +42,8 @@ public class Participacao {
     public Jogo getPartida() {
         return this.jogo;
     }
+    
+    public Jogador getParticipante() {
+        return this.jogador;
+    }
 }
