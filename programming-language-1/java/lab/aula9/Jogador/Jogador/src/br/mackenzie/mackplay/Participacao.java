@@ -27,7 +27,7 @@ public class Participacao {
         this.inicio = inicio;
     }
     
-    public Date getinicio() {
+    public Date getInicio() {
         return this.inicio;
     }
     

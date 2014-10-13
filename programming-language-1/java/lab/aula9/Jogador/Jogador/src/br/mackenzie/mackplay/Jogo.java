@@ -6,18 +6,21 @@ public class Jogo {
     String nome;
     String regras;
     Participacao participacao[];
+    
     int countParticipacao = 0;
     
     public Jogo() {
         this.descricao = "nao definida";
         this.nome = "nao definido";
         this.regras = "a definir";
+        this.participacao = new Participacao[200];
     }
     
     public Jogo(String descricao, String nome, String regras) {
         this.descricao = descricao;
         this.nome = nome;
         this.regras = regras;
+        this.participacao = new Participacao[200];
     }
     
     public void setDescricao(String descricao) {
@@ -49,14 +52,7 @@ public class Jogo {
     }
     
     public int getNumParticipacoes() {
-        int numParticipacoes = 0;
-        for (int i = 0; i < this.participacao.length; i++) {
-            if (this.participacao[i] != null) {
-                numParticipacoes++;
-            }
-        }
-        
-        return numParticipacoes;
+        return this.countParticipacao;
     }
     
     public void addParticipacoes(Participacao participacao) {
