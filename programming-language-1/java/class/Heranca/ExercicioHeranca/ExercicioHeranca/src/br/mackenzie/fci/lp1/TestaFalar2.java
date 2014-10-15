@@ -10,7 +10,7 @@ public class TestaFalar2 {
         Scanner entrada = new Scanner(System.in);
         
         System.out.println("Escolha p ou a: ");
-        escolha = entrada.next().charAt(0);
+        escolha = entrada.next().toLowerCase().charAt(0);
         
         switch(escolha) {
             case 'p':
