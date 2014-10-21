@@ -1,15 +1,17 @@
 package Figuras;
 
+import static Figuras.Figura.corPreenchimento;
+
 public class Circulo extends Figura {
 	double raio;
 	
 	Circulo(String corPreenchimento, int espessuraLinha, String corLinha, double raio) {
-		super("verde", 1, "vermelho");
+		super(corPreenchimento, espessuraLinha, corLinha);
 		this.raio = raio;
 	}
 	
 	Circulo(double raio) {
-		super(corPreenchimento, espessuraLinha, corLinha);
+                super("verde", 1, "vermelho");
 		this.raio = raio;
 	}
 

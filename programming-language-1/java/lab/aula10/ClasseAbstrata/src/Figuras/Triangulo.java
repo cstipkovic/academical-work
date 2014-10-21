@@ -11,7 +11,7 @@ public class Triangulo extends Figura {
 	}
     
 	Triangulo(double base, double altura) {
-		super(corPreenchimento, espessuraLinha, corLinha);
+		super("verde", 1, "amarelo");
 		this.base = base;
 		this.altura = altura;
     }
