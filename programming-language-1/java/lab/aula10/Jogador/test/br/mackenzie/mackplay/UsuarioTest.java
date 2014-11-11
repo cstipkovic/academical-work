@@ -16,7 +16,9 @@ public class UsuarioTest {
         Assert.assertTrue(u.validaSenha(senha));        
     }
     
-    @Test
+    
+
+        @Test
     public void testaUsuarioLoginNOK(){
         String login = "mack@mackenzie.com.br";
         String senha = "mack123";
@@ -26,8 +28,8 @@ public class UsuarioTest {
         Assert.assertEquals(login, u.getLogin());
         Assert.assertFalse(u.validaSenha(senha+"a"));        
     }
-
-    @Test
+    
+        @Test
     public void testaUsuarioAlteraSenha(){
         String login = "mack@mackenzie.com.br";
         String senha = "mack123";
