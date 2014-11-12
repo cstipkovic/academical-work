@@ -1,5 +1,6 @@
 package br.mackenzie.mackplay;
 
+import br.mackenzie.mackplay.jogador.JogadorHumano;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -15,10 +16,8 @@ public class UsuarioTest {
         Assert.assertEquals(login, u.getLogin());
         Assert.assertTrue(u.validaSenha(senha));        
     }
-    
-    
 
-        @Test
+    @Test
     public void testaUsuarioLoginNOK(){
         String login = "mack@mackenzie.com.br";
         String senha = "mack123";
@@ -26,10 +25,10 @@ public class UsuarioTest {
         u.setLogin(login);
         u.setSenha(senha);
         Assert.assertEquals(login, u.getLogin());
-        Assert.assertFalse(u.validaSenha(senha+"a"));        
+        Assert.assertFalse(u.validaSenha(senha + "a"));        
     }
     
-        @Test
+    @Test
     public void testaUsuarioAlteraSenha(){
         String login = "mack@mackenzie.com.br";
         String senha = "mack123";

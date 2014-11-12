@@ -13,15 +13,23 @@ public abstract class Usuario {
         return login;
     }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
     public void setSenha(String senha) {
         this.senha = senha;
     }
-    
-    public boolean alteraSenha(String user, String senha) {
-        return true;
+
+    public String getSenha() {
+        return senha;
     }
     
-    public boolean validaSenha(String senha) {
-        return true;
-    }
+    public abstract boolean alteraSenha(String login, String senha);
+    
+    public abstract boolean validaSenha(String senha);
 }

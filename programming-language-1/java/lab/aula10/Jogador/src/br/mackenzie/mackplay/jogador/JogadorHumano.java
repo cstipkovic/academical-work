@@ -1,9 +1,22 @@
-package br.mackenzie.mackplay;
+package br.mackenzie.mackplay.jogador;
 
-public class JogadorMaquina extends Jogador {
+import br.mackenzie.mackplay.Jogador;
+import java.util.Date;
+
+public class JogadorHumano extends Jogador {
     
-    private String identificacao;
-    private int numeroProcessadore;
+    private Date dataNasciemnto;
+    private String sexo;
+
+    public JogadorHumano() {
+        super();
+    }
+
+    public JogadorHumano(String alias, String nome, String login) {
+        super.setAlias(alias);
+        super.setNome(nome);
+        super.setLogin(login);
+    }
 
     @Override
     public boolean alteraSenha(String login, String senha) {
@@ -24,6 +37,4 @@ public class JogadorMaquina extends Jogador {
         
         return false;
     }
-    
-    
 }

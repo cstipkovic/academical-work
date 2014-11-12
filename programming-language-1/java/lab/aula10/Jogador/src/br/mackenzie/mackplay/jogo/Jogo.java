@@ -1,4 +1,6 @@
-package br.mackenzie.mackplay;
+package br.mackenzie.mackplay.jogo;
+
+import br.mackenzie.mackplay.Participacao;
 
 public class Jogo {
     

@@ -1,6 +1,5 @@
-package br.mackenzie.mackplay;
+package br.mackenzie.mackplay.jogador;
 
-import br.mackenzie.mackplay.jogo.Jogo;
 import java.util.Date;
 
 public class Participacao {

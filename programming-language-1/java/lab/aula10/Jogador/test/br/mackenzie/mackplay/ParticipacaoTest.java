@@ -1,5 +1,7 @@
 package br.mackenzie.mackplay;
 
+import br.mackenzie.mackplay.jogador.JogadorHumano;
+import br.mackenzie.mackplay.jogo.Jogo;
 import java.util.Date;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -16,7 +18,7 @@ public class ParticipacaoTest {
         String descricao = "descricao do novo jogo.";
         String nomeJogo = "novo jogo";
         String regras = "regras do novo jogo";
-        Jogo jogo1 = new Jogo1(descricao, nomeJogo, regras);
+        Jogo jogo1 = new Jogo(descricao, nomeJogo, regras);
         
         Participacao participacao = new Participacao(jogador1,jogo1);
         
@@ -36,7 +38,7 @@ public class ParticipacaoTest {
         String descricao = "descricao do novo jogo.";
         String nomeJogo = "novo jogo";
         String regras = "regras do novo jogo";
-        Jogo jogo1 = new Jogo1(descricao, nomeJogo, regras);
+        Jogo jogo1 = new Jogo(descricao, nomeJogo, regras);
         
         Participacao participacao = new Participacao(jogador1,jogo1);
         
@@ -54,7 +56,7 @@ public class ParticipacaoTest {
         String descricao = "descricao do novo jogo.";
         String nomeJogo = "novo jogo";
         String regras = "regras do novo jogo";
-        Jogo jogo1 = new Jogo1(descricao, nomeJogo, regras);
+        Jogo jogo1 = new Jogo(descricao, nomeJogo, regras);
         
         Participacao participacao = new Participacao(jogador1,jogo1);
         
@@ -73,7 +75,7 @@ public class ParticipacaoTest {
         String descricao = "descricao do novo jogo.";
         String nomeJogo = "novo jogo";
         String regras = "regras do novo jogo";
-        Jogo jogo1 = new Jogo1(descricao, nomeJogo, regras);
+        Jogo jogo1 = new Jogo(descricao, nomeJogo, regras);
         
         Participacao participacao = new Participacao(jogador1,jogo1);
         
