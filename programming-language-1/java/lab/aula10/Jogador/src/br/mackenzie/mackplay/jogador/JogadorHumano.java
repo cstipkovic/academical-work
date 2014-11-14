@@ -20,9 +20,8 @@ public class JogadorHumano extends Jogador {
 
     @Override
     public boolean alteraSenha(String login, String senha) {
-        if (super.getLogin() != "") {
+        if (super.getSenha() != senha) {
             super.setSenha(senha);
-            super.setLogin(login);
             return true;
         }
         

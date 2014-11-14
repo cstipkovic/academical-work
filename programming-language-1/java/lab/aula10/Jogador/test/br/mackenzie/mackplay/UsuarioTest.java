@@ -16,7 +16,7 @@ public class UsuarioTest {
         Assert.assertEquals(login, u.getLogin());
         Assert.assertTrue(u.validaSenha(senha));        
     }
-
+    
     @Test
     public void testaUsuarioLoginNOK(){
         String login = "mack@mackenzie.com.br";
