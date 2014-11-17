@@ -13,14 +13,21 @@ public class PlanoDeSaude {
         this.operadora = operadora;
         this.mensalidade = mensalidade;
         this.plano = plano;
+        pacientes = new ArrayList<Paciente>();
     }
     
     public void adicionaPaciente(Paciente p) {
-        
+        this.pacientes.add(p);
     }
 
     public String getPacientes() {
-        return "";
+        String listaPacientes = "";
+        
+        for (int i = 0; i < this.pacientes.size(); i++) {
+            listaPacientes += this.pacientes.get(i) + "\n";
+        }
+        
+        return listaPacientes;
     }
     
     @Override
