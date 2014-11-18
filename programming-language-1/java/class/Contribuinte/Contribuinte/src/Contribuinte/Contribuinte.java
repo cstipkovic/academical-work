@@ -11,13 +11,17 @@ public abstract class Contribuinte {
     }
     
     public abstract double forneceRendaLiquida();
-
-    public double getRendaBruta() {
-        return rendaBruta;
-    }
+    
+    public abstract double calculaImposto();
     
     @Override
-    public String toString() {
-        return "";
+    public abstract String toString();
+
+    public double getRendaBruta() {
+        return this.rendaBruta;
+    }
+
+    public String getNome() {
+        return this.nome;
     }
 }
