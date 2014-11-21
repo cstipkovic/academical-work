@@ -1,6 +1,7 @@
 package br.mackenzie.mackplay.jogo1;
 
 import br.mackenzie.mackplay.main.Lance;
+import java.util.ArrayList;
 
 public class Lance1 implements Lance {
     

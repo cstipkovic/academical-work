@@ -60,7 +60,6 @@ public class JogadorTest {
        
        Assert.assertEquals(login, jogador1.getLogin());
    }
-    
    
    @Test
    public void testaAddParticipacao(){

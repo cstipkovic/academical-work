@@ -11,7 +11,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class JogoTest {
-    
+        
     @Test
     public void testaConstrutorNaoPadraoNovo(){
         String descricao = "descricao do jogo da velha.";
@@ -20,9 +20,9 @@ public class JogoTest {
         
         Jogo jogoVelha = new JogoVelha(descricao, nome, regras);
         
-        assertEquals(descricao,jogoVelha.getDescricao());
-        assertEquals(nome,jogoVelha.getNome());
-        assertEquals(regras,jogoVelha.getRegras());
+        assertEquals(descricao, jogoVelha.getDescricao());
+        assertEquals(nome, jogoVelha.getNome());
+        assertEquals(regras, jogoVelha.getRegras());
         assertEquals(0, jogoVelha.getNumParticipacoes());
         assertEquals(200, jogoVelha.getParticipacoes().length);
         assertFalse(jogoVelha.isFinalizado());
@@ -31,7 +31,7 @@ public class JogoTest {
     }
     
     @Test
-    public void testaRegistraParticipante(){
+    public void testaRegistraParticipante (){
         Jogador participante = new JogadorHumano();
         Jogador participante2 = new JogadorMaquina();
         

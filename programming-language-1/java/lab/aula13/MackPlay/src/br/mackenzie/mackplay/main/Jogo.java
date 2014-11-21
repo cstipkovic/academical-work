@@ -22,7 +22,7 @@ public abstract class Jogo {
         this.nome = "nao definido";
         this.regras = "a definir";
         this.participacao = new Participacao[200];
-        this.lancesDoJogo = new ArrayList<Lance>(9);
+        this.lancesDoJogo = new ArrayList<>();
         this.numeroMaxParticipantes = 2;
         this.jogador = new Jogador[numeroMaxParticipantes];
     }
@@ -32,7 +32,7 @@ public abstract class Jogo {
         this.nome = nome;
         this.regras = regras;
         this.participacao = new Participacao[200];
-        this.lancesDoJogo = new ArrayList<Lance>(9);
+        this.lancesDoJogo = new ArrayList<>();
         this.numeroMaxParticipantes = 2;
         this.jogador = new Jogador[numeroMaxParticipantes];
     }
@@ -58,7 +58,6 @@ public abstract class Jogo {
     }
 
     public List<Lance> getLancesDoJogo() {
-        System.out.println(this.lancesDoJogo);
         return this.lancesDoJogo;
     }
     

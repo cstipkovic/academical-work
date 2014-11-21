@@ -3,13 +3,17 @@ package br.mackenzie.mackplay.jogo1;
 import br.mackenzie.mackplay.main.Jogador;
 import br.mackenzie.mackplay.main.Jogo;
 import br.mackenzie.mackplay.main.Lance;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Jogo1 extends Jogo {
     
+    public static final int MAX_LANCES = 9;
+    
     private Jogador jogador;
     private Jogador vencedor;
     private boolean finalizado;
+    private ArrayList<Lance1> lances;
 
     public Jogo1() {
         super();
@@ -21,7 +25,9 @@ public class Jogo1 extends Jogo {
     
     @Override
     public void criaLancesDoJogo() {
-        
+        for (int i = 0; i < MAX_LANCES; i++) {
+            registraLance(new Lance1("Descricao", 1, "regra"));
+        }
     }
     
     @Override
@@ -55,7 +61,7 @@ public class Jogo1 extends Jogo {
     
     @Override
     public boolean registraLance(Lance lance) {
-        Lance lista = (Lance) super.getLancesDoJogo();
+        lances.add((Lance1) lance);
         return true;
     }
     
