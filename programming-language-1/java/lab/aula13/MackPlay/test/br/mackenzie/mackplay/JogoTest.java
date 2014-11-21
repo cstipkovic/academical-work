@@ -1,7 +1,12 @@
 package br.mackenzie.mackplay;
 
 import br.mackenzie.mackplay.jogador.JogadorHumano;
+import br.mackenzie.mackplay.jogador.JogadorMaquina;
 import br.mackenzie.mackplay.jogo1.Jogo1;
+import br.mackenzie.mackplay.jogoVelha.JogoVelha;
+import br.mackenzie.mackplay.main.Jogador;
+import br.mackenzie.mackplay.main.Jogo;
+import br.mackenzie.mackplay.main.Participacao;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -9,19 +14,20 @@ public class JogoTest {
     
     @Test
     public void testaConstrutorNaoPadraoNovo(){
-        String descricao="descricao do jogo da velha.";
+        String descricao = "descricao do jogo da velha.";
         String nome = "Jogo da Velha";
         String regras = "Descricao das regras do jogo da velha...";
         
         Jogo jogoVelha = new JogoVelha(descricao, nome, regras);
+        
         assertEquals(descricao,jogoVelha.getDescricao());
         assertEquals(nome,jogoVelha.getNome());
         assertEquals(regras,jogoVelha.getRegras());
         assertEquals(0, jogoVelha.getNumParticipacoes());
-       assertEquals(200,jogoVelha.getParticipacoes().length);
-       assertFalse(jogoVelha.isFinalizado());
-       assertEquals(2,jogoVelha.getNumeroMaxParticipantes());
-       assertEquals(9,jogoVelha.getLancesDoJogo().size());
+        assertEquals(200, jogoVelha.getParticipacoes().length);
+        assertFalse(jogoVelha.isFinalizado());
+        assertEquals(2, jogoVelha.getNumeroMaxParticipantes());
+        assertEquals(9, jogoVelha.getLancesDoJogo().size());
     }
     
     @Test
@@ -46,7 +52,7 @@ public class JogoTest {
         assertEquals(participante2, jogoVelha.getParticipacoes()[1].getParticipante());
     }
     
-     @Test
+    @Test
     public void testaPartida(){
         Jogador participante1 = new JogadorHumano();
         Jogador participante2 = new JogadorHumano();
@@ -57,8 +63,8 @@ public class JogoTest {
         
         Jogo jogoVelha = new JogoVelha(descricao, nome, regras);
         
-        assertEquals(1,jogoVelha.registraParticipante(participante1));
-        assertEquals(2,jogoVelha.registraParticipante(participante2));
+        assertEquals(1, jogoVelha.registraParticipante(participante1));
+        assertEquals(2, jogoVelha.registraParticipante(participante2));
         
         jogoVelha.setPrimeiroJogador(participante1);
         assertEquals(0, jogoVelha.listaLances(participante2).size());
@@ -97,23 +103,26 @@ public class JogoTest {
     @Test
     public void testaConstrutorPadrao(){
         Jogo jogo1 = new Jogo1();
+        
         assertEquals("a definir",jogo1.getRegras());
         assertEquals("nao definido",jogo1.getNome());
         assertEquals("nao definida",jogo1.getDescricao());
         assertEquals(0, jogo1.getNumParticipacoes());
-       assertEquals(200,jogo1.getParticipacoes().length);
+        assertEquals(200,jogo1.getParticipacoes().length);
     }
+    
     @Test
     public void testaConstrutorNaoPadrao(){
         String descricao="descricao do novo jogo.";
         String nome = "novo jogo";
         String regras = "regras do novo jogo";
         Jogo jogo1 = new Jogo1(descricao, nome, regras);
+        
         assertEquals(descricao,jogo1.getDescricao());
         assertEquals(nome,jogo1.getNome());
         assertEquals(regras,jogo1.getRegras());
         assertEquals(0, jogo1.getNumParticipacoes());
-       assertEquals(200,jogo1.getParticipacoes().length);
+        assertEquals(200,jogo1.getParticipacoes().length);
     }
     
     @Test
@@ -121,31 +130,36 @@ public class JogoTest {
         String descricao="descricao do novo jogo.";
         Jogo jogo1 = new Jogo1();
         jogo1.setDescricao(descricao);
+        
         assertEquals(descricao,jogo1.getDescricao());
         assertEquals("a definir",jogo1.getRegras());
         assertEquals("nao definido",jogo1.getNome());
-       }
-       @Test
+    }
+    
+    @Test
     public void testaModificadorNome(){
         String nome = "novo jogo";       
         Jogo jogo1 = new Jogo1();
         jogo1.setNome(nome);
+        
         assertEquals(nome,jogo1.getNome());
         assertEquals("a definir",jogo1.getRegras());
         assertEquals("nao definida",jogo1.getDescricao());
     }
-          @Test
+    
+    @Test
     public void testaModificadorRegras(){
         String regras = "regras do novo jogo";
         Jogo jogo1 = new Jogo1();
         jogo1.setRegras(regras);
+        
         assertEquals(regras,jogo1.getRegras());
         assertEquals("nao definido",jogo1.getNome());
         assertEquals("nao definida",jogo1.getDescricao());
     }
     
     @Test
-   public void testaAddParticipacao(){
+    public void testaAddParticipacao(){
         String nome = "Mack Junior";
         String alias = "The Junior";
         String login = "mack@mackenzie.com.br";

@@ -1,50 +1,34 @@
-package br.mackenzie.mackplay.jogador;
+package br.mackenzie.mackplay.main;
 
-public class Jogador {
+import br.mackenzie.mackplay.main.Usuario;
+
+public abstract class Jogador extends Usuario {
     
     String alias;
-    String login;
-    String nome;
     double score;
     Participacao participacao[];
     int countParticipacao = 0;
     
     public Jogador() {
-        this.nome = "Macke Junior";
         this.alias = "The Junior";
-        this.login = "mack@mackenzie.com.br";
         this.participacao = new Participacao[200];
+        super.setNome("Macke Junior");
+        super.setLogin("mack@mackenzie.com.br");
     }
     
     public Jogador(String alias, String nome, String login) {
         this.alias = alias;
-        this.nome = nome;
-        this.login = login;
         this.participacao = new Participacao[200];
+        super.setLogin(login);
+        super.setNome(nome);
     }
-    
+
     public void setAlias(String alias) {
         this.alias = alias;
     }
-    
+
     public String getAlias() {
-        return this.alias;
-    }
-    
-    public void setLogin(String login) {
-        this.login = login;
-    }
-    
-    public String getLogin() {
-        return this.login;
-    }
-    
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-    
-    public String getNome() {
-        return this.nome;
+        return alias;
     }
     
     public void setScore(double score) {
@@ -57,6 +41,7 @@ public class Jogador {
     
     public int getNumParticipacoes() {
         int numParticipacoes = 0;
+        
         for (int i = 0; i < this.participacao.length; i++) {
             if (this.participacao[i] != null) {
                 numParticipacoes++;

@@ -2,6 +2,10 @@ package br.mackenzie.mackplay;
 
 import br.mackenzie.mackplay.jogador.JogadorHumano;
 import br.mackenzie.mackplay.jogo1.Jogo1;
+import br.mackenzie.mackplay.main.Jogador;
+import br.mackenzie.mackplay.main.Jogo;
+import br.mackenzie.mackplay.main.Participacao;
+
 import java.util.Date;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -26,7 +30,6 @@ public class ParticipacaoTest {
         assertEquals(jogo1,participacao.getPartida());
         assertEquals(0.0, participacao.getPontuacao(),0.0001);
     }
-    
     
     @Test
     public void testaModificadorPontuacao() {

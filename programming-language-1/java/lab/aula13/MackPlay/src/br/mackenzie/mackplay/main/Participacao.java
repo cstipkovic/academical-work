@@ -1,4 +1,4 @@
-package br.mackenzie.mackplay.jogador;
+package br.mackenzie.mackplay.main;
 
 import java.util.Date;
 

@@ -1,4 +1,4 @@
-package br.mackenzie.mackplay.jogador;
+package br.mackenzie.mackplay.main;
 
 public abstract class Usuario {
     private String login;
@@ -12,12 +12,24 @@ public abstract class Usuario {
     public String getLogin() {
         return login;
     }
+    
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getNome() {
+        return this.nome;
+    }
 
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+    public String getSenha() {
+        return senha;
+    }
     
-    public boolean alteraSenha(String user, String senha) {
+    public boolean alteraSenha(String login, String senha) {
         return true;
     }
     
