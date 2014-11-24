@@ -1,8 +1,12 @@
+// Aluno: Clauber Pereira Stipkovic Halic
+// Tia: 3124304-5
+
 package br.mackenzie.mackplay.jogo1;
 
 import br.mackenzie.mackplay.main.Jogador;
 import br.mackenzie.mackplay.main.Jogo;
 import br.mackenzie.mackplay.main.Lance;
+import br.mackenzie.mackplay.main.Participacao;
 import java.util.ArrayList;
 import java.util.List;
 

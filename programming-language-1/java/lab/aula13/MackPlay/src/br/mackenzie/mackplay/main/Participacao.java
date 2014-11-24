@@ -1,5 +1,9 @@
+// Aluno: Clauber Pereira Stipkovic Halic
+// Tia: 3124304-5
+
 package br.mackenzie.mackplay.main;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Participacao {
@@ -9,6 +13,7 @@ public class Participacao {
     double pontuacao;
     Jogador jogador;
     Jogo jogo;
+    ArrayList<Lance> lances;
     
     public Participacao(Jogador jogador, Jogo jogo) {
         this.jogador = jogador;
@@ -45,5 +50,10 @@ public class Participacao {
     
     public Jogador getParticipante() {
         return this.jogador;
+    }
+    
+    public boolean adicionaLance(Lance lance) {
+        this.lances.add(lance);
+        return true;
     }
 }

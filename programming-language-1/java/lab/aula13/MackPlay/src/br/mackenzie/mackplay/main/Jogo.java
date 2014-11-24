@@ -1,3 +1,6 @@
+// Aluno: Clauber Pereira Stipkovic Halic
+// Tia: 3124304-5
+
 package br.mackenzie.mackplay.main;
 
 import java.util.ArrayList;
@@ -100,7 +103,7 @@ public abstract class Jogo {
     
     public abstract boolean isFinalizado();
     
-    public abstract List<Lance> listaLances(Jogador lista);
+    public abstract List<Lance> listaLances(Jogador jogador);
     
     public abstract boolean registraLance(Lance lance);
     

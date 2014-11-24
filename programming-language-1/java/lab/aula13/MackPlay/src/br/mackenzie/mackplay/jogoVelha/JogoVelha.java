@@ -1,3 +1,6 @@
+// Aluno: Clauber Pereira Stipkovic Halic
+// Tia: 3124304-5
+
 package br.mackenzie.mackplay.jogoVelha;
 
 import br.mackenzie.mackplay.jogo1.Jogo1;
