@@ -1,5 +1,7 @@
 package projetocinema;
 
+import java.util.List;
+
 public class Filme {
     
     private String titulo;
@@ -9,5 +11,5 @@ public class Filme {
     private String distribuidora;
     private String status;
     private String genero;
-    private String elenco;
+    private List<Ator> elenco;
 }

@@ -4,7 +4,8 @@ import java.math.BigDecimal;
 
 public class Ingresso {
     
-    private String sessao;
-    private boolean beneficiario;
+    private Sessao sessao;
+    private Cliente beneficiario;
     private BigDecimal valor;
+    private Atendente atendente;
 }
