@@ -1,7 +1,5 @@
 package br.mackenzie.fci.cc.lp2;
 
-import java.nio.CharBuffer;
-
 public class Main {
 
     public static void main(String[] args) {
