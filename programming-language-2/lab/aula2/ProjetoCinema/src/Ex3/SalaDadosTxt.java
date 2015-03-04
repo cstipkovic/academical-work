@@ -24,7 +24,7 @@ public class SalaDadosTxt {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }  
+        }
     }
     
     public void salvar(List<SalaProjecao> salas) {
