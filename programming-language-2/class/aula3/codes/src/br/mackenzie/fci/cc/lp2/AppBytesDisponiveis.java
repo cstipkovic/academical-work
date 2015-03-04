@@ -4,9 +4,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-/**
- * Created by cstipkovic on 2/25/15.
- */
 public class AppBytesDisponiveis {
 
     public static void main(String args[]) throws FileNotFoundException, IOException {
