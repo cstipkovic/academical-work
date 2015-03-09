@@ -1,0 +1,31 @@
+Mon Mar 09 04:32:59 BRT 2015 : Apache Derby Network Server - 10.10.2.0 - (1582446) started and ready to accept connections on port 1527
+----------------------------------------------------------------
+Mon Mar 09 04:32:59 BRT 2015:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-014b-fd73-0833-ffffad607197 
+on database directory /Users/cstipkovic/Documents/Projects/github/cstipkovic/Academic-Works/programming-language-2/lab/aula4/DB/sistema_bancario with class loader sun.misc.Launcher$AppClassLoader@5451c3a8 
+Loaded from file:/Applications/NetBeans/glassfish-4.1/javadb/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_31-b13
+user.dir=/Applications/NetBeans/glassfish-4.1/javadb
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.10.2
+derby.system.home=/Users/cstipkovic/Documents/Projects/github/cstipkovic/Academic-Works/programming-language-2/lab/aula4/DB
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Mon Mar 09 04:33:00 BRT 2015:
+Shutting down instance a816c00e-014b-fd73-0833-ffffad607197 on database directory /Users/cstipkovic/Documents/Projects/github/cstipkovic/Academic-Works/programming-language-2/lab/aula4/DB/sistema_bancario with class loader sun.misc.Launcher$AppClassLoader@5451c3a8 
+Mon Mar 09 04:33:01 BRT 2015 Thread[DRDAConnThread_3,5,main] (DATABASE = sistema_bancario), (DRDAID = {2}), Database 'sistema_bancario' shutdown.
+----------------------------------------------------------------
+Mon Mar 09 04:33:16 BRT 2015:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance ed8940a7-014b-fd73-0833-ffffad607197 
+on database directory /Users/cstipkovic/Documents/Projects/github/cstipkovic/Academic-Works/programming-language-2/lab/aula4/DB/sistema_bancario with class loader sun.misc.Launcher$AppClassLoader@5451c3a8 
+Loaded from file:/Applications/NetBeans/glassfish-4.1/javadb/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_31-b13
+user.dir=/Applications/NetBeans/glassfish-4.1/javadb
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.10.2
+derby.system.home=/Users/cstipkovic/Documents/Projects/github/cstipkovic/Academic-Works/programming-language-2/lab/aula4/DB
+Database Class Loader started - derby.database.classpath=''
