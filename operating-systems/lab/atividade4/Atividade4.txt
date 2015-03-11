@@ -1,0 +1,4 @@
+# Atividade 4
+
+- Executa o processo pai e o processo filho ao mesmo tempo, porem o processo filho entra em modo "sleep" por 5 segundos, enquanto isso, o processo pai monitora o processo filho, esperando para que ele termine (usando o waitpid para saber a mudança de status do processo filho).
+- Assim que o processo filho termina, o processo pai recebe a mudança de status do processo filho e também termina.
