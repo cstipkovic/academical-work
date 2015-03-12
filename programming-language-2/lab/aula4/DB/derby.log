@@ -12,3 +12,5 @@ os.arch=x86_64
 os.version=10.10.2
 derby.system.home=/Users/cstipkovic/Documents/Projects/github/cstipkovic/Academic-Works/programming-language-2/lab/aula4/DB
 Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Thu Mar 12 00:45:47 BRT 2015: Shutting down Derby engine
