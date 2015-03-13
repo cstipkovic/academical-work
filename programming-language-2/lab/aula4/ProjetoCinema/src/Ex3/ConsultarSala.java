@@ -65,5 +65,7 @@ public class ConsultarSala {
                     opcao = entrada.nextInt();
             }
         }
+        
+        conexao.close();
     }
 }
