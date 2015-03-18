@@ -38,4 +38,63 @@ public class ContaDaoRelacional implements ContaDaoInterface {
         
         return contas;
     }
+    
+    @Override
+    public void adicionar(Conta c) {
+        try {
+            Statement st;
+            st = conexao.getConnection().createStatement();
+            String sql = "insert into contas values (" + c.getNumero() + "," + c.getSaldo() + ")";
+            st.executeUpdate(sql);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    @Override
+    public void remover(Conta c) {
+        try {
+            Statement st;
+            st = conexao.getConnection().createStatement();
+            String sql = "delete from contas where nro_contas = " + c.getNumero();
+            st.executeUpdate(sql);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    @Override
+    public void atualizar(Conta c) {
+        Conta conta = null;
+        try {
+            Statement st;
+            st = conexao.getConnection().createStatement();
+            String sql = "update contas set saldo = " + c.getSaldo() + "where nro_contas = " + c.getNumero();
+            st.executeUpdate(sql);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    @Override
+    public Conta buscarPeloNumero(long nroConta) {
+        Conta conta = null;
+        try {
+            Statement st;
+            st = conexao.getConnection().createStatement();
+            String sql = "select nro_contas, saldo from contas where nro_contas = " + nroConta;
+            ResultSet resultados = st.executeQuery(sql);
+            
+            while (resultados.next()) {
+                long n = resultados.getLong("nro_contas");
+                BigDecimal b = resultados.getBigDecimal("saldo");
+                Conta c = new Conta(n, b);
+                conta = c;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        return conta;
+    }
 }
