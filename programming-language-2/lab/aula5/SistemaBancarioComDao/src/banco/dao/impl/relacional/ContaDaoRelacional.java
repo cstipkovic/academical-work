@@ -65,7 +65,6 @@ public class ContaDaoRelacional implements ContaDaoInterface {
     
     @Override
     public void atualizar(Conta c) {
-        Conta conta = null;
         try {
             Statement st;
             st = conexao.getConnection().createStatement();
@@ -86,10 +85,12 @@ public class ContaDaoRelacional implements ContaDaoInterface {
             ResultSet resultados = st.executeQuery(sql);
             
             while (resultados.next()) {
-                long n = resultados.getLong("nro_contas");
-                BigDecimal b = resultados.getBigDecimal("saldo");
-                Conta c = new Conta(n, b);
-                conta = c;
+                if (resultados.getLong("nro_conta") == nroConta) {
+                    long n = resultados.getLong("nro_contas");
+                    BigDecimal b = resultados.getBigDecimal("saldo");
+                    Conta c = new Conta(n, b);
+                    conta = c;
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();

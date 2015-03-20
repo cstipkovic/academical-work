@@ -65,7 +65,7 @@ public class GerenciarContas {
                     nroConta = entrada.nextInt();
                     
                     Conta cRemover;
-                    cRemover = new Conta(nroConta, null);
+                    cRemover = dao.buscarPeloNumero(nroConta);
                     dao.remover(cRemover);
                     
                     System.out.print("\nInforme sua opção: ");
@@ -79,7 +79,7 @@ public class GerenciarContas {
                     saldo = entrada.nextBigDecimal();
                     
                     Conta cAtualizar;
-                    cAtualizar = new Conta(nroConta, null);
+                    cAtualizar = dao.buscarPeloNumero(nroConta);
                     
                     cAtualizar.setSaldo(saldo);
                     dao.atualizar(cAtualizar);
