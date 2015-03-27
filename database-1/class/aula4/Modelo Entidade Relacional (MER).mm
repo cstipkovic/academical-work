@@ -1,0 +1,48 @@
+<map version="1.0.1">
+<!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
+<node CREATED="1427257065215" ID="ID_1359279296" MODIFIED="1427257085658" TEXT="Modelo Entidade Relacional (MER)">
+<node CREATED="1427398096246" ID="ID_815212193" MODIFIED="1427398147872" POSITION="right" TEXT="modelo de dados conceitual de alto n&#xed;vel"/>
+<node CREATED="1427398216935" ID="ID_170985227" MODIFIED="1427398236471" POSITION="right" TEXT="pr&#xf3;ximo da vis&#xe3;o do usu&#xe1;rio aos dados"/>
+<node CREATED="1427398259859" ID="ID_667628309" MODIFIED="1427398264870" POSITION="right" TEXT="feito durante o projeto do DB"/>
+<node CREATED="1427398361590" HGAP="67" ID="ID_1502346833" MODIFIED="1427398792050" POSITION="left" TEXT="entidade" VSHIFT="-83">
+<node CREATED="1427398391189" ID="ID_973193659" MODIFIED="1427398397552" TEXT="representa&#xe7;&#xe3;o abstrada de um objeto"/>
+<node CREATED="1427398453655" ID="ID_486253937" MODIFIED="1427398459671" TEXT="conjunto de objetos"/>
+<node CREATED="1427398468265" ID="ID_40903013" MODIFIED="1427398488844" TEXT="representado por um ret&#xe2;ngulo"/>
+<node CREATED="1427398666482" ID="ID_1081179522" MODIFIED="1427398714198" TEXT="objeto da entidade &#xe9; uma inst&#xe2;ncia/ocorriencia"/>
+</node>
+<node CREATED="1427398368206" HGAP="80" ID="ID_507932123" MODIFIED="1427398794813" POSITION="left" TEXT="atributo" VSHIFT="-44">
+<node CREATED="1427398718899" ID="ID_1379741334" MODIFIED="1427398736546" TEXT="propriedade descritivas da entidade"/>
+<node CREATED="1427398753582" ID="ID_536955675" MODIFIED="1427398815512" TEXT="caracteristicas da entidade"/>
+<node CREATED="1427398774562" ID="ID_200931058" MODIFIED="1427398787291" TEXT="representado por uma elipse ligada a entidade"/>
+<node CREATED="1427398880305" ID="ID_625951870" MODIFIED="1427398886760" TEXT="tipos simples ou compostos">
+<node CREATED="1427398917929" ID="ID_653289661" MODIFIED="1427398928041" TEXT="simples n&#xe3;o &#xe9; dividido em partes">
+<node CREATED="1427398996761" ID="ID_1644628489" MODIFIED="1427399008889" TEXT="exemplo: sexo"/>
+</node>
+<node CREATED="1427398968606" ID="ID_792375631" MODIFIED="1427398977097" TEXT="composto">
+<node CREATED="1427398978057" ID="ID_883294860" MODIFIED="1427398987944" TEXT="exemplo: nome"/>
+</node>
+</node>
+<node CREATED="1427398887305" ID="ID_1118027223" MODIFIED="1427398900283" TEXT="monovalorado ou multivalorado">
+<node CREATED="1427399223437" ID="ID_327999947" MODIFIED="1427399265876" TEXT="monovalorado: CPF"/>
+<node CREATED="1427399269788" ID="ID_774723117" MODIFIED="1427399328329" TEXT="multivalorado: telefones">
+<node CREATED="1427399376936" ID="ID_1748501714" MODIFIED="1427399390346" TEXT="representado em duas elipses"/>
+</node>
+</node>
+</node>
+<node CREATED="1427398372156" HGAP="113" ID="ID_1233665395" MODIFIED="1427400627618" POSITION="left" TEXT="relacionamento" VSHIFT="-72">
+<node CREATED="1427400018920" ID="ID_400588768" MODIFIED="1427400027198" TEXT="associa&#xe7;&#xe3;o das entidades"/>
+<node CREATED="1427400040693" ID="ID_1031237453" MODIFIED="1427400054815" TEXT="representado por um losango"/>
+<node CREATED="1427400463592" ID="ID_1646103704" MODIFIED="1427400469756" TEXT="bin&#xe1;rio: 2 entidades"/>
+<node CREATED="1427400470563" ID="ID_1449502664" MODIFIED="1427400479363" TEXT="tern&#xe1;rio: 3 entidades"/>
+<node CREATED="1427400562862" ID="ID_1231897715" MODIFIED="1427400578726" TEXT="bidirecional: n pra n"/>
+</node>
+<node CREATED="1427399705650" ID="ID_465182912" MODIFIED="1427399712688" POSITION="right" TEXT="Chave Prim&#xe1;ria">
+<node CREATED="1427399794128" ID="ID_1702817133" MODIFIED="1427399802167" TEXT="atributo/conjunto de atributos"/>
+<node CREATED="1427399802940" ID="ID_435181590" MODIFIED="1427399828255" TEXT="identifica um &#xfa;nico atributo"/>
+<node CREATED="1427399924701" ID="ID_1218419869" MODIFIED="1427399934181" TEXT="representada com sublinhado"/>
+</node>
+<node CREATED="1427400612776" ID="ID_287080071" MODIFIED="1427471439154" POSITION="left" TEXT="cardinalidade de relacionamentos">
+<icon BUILTIN="attach"/>
+</node>
+</node>
+</map>
