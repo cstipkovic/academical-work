@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 drop table filme;
 drop table ator;
 
@@ -37,3 +38,16 @@ create table atendente (
 	foreign key (gerente)
 		gerente (idgerente)
 );
+=======
+create table filme (
+    id_filme integer not not null,
+    titulo char(255) not null,
+    duracao char(255) not null,
+    classificacao integer not null,
+    diretor char(255) not null,
+    distribuidora char(255) not null,
+    status char(255) not null,
+    genero char(255) not null,
+    
+)
+>>>>>>> ab4b30ab06d563d8afe64f2ce699015667053bfe
