@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 drop table filme;
 drop table ator;
 

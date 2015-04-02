@@ -3,7 +3,8 @@ package cinema.dominio;
 import java.util.List;
 
 public class Filme {
-
+    
+    public int id;
     public String titulo;
     public String duracao;
     public int classificacao;
@@ -13,7 +14,8 @@ public class Filme {
     public String genero;
     public List<Ator> elenco;
 
-    public Filme(String titulo, String duracao, int classificacao, String diretor, String distribuidora, String status, String genero, List<Ator> elenco) {
+    public Filme(int id, String titulo, String duracao, int classificacao, String diretor, String distribuidora, String status, String genero, List<Ator> elenco) {
+        this.id = id;
         this.titulo = titulo;
         this.duracao = duracao;
         this.classificacao = classificacao;
@@ -22,6 +24,14 @@ public class Filme {
         this.status = status;
         this.genero = genero;
         this.elenco = elenco;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitulo() {
