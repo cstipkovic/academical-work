@@ -2,16 +2,26 @@ package cinema.dominio;
 
 public class Sala {
 
+    public int id;
     public int capacidade;
     public int poltronaEspecialDiferenciada;
     public boolean emManutencao;
     public int numeroSala;
 
-    public Sala(int capacidade, int poltronaEspecialDiferenciada, boolean emManutencao, int numeroSala) {
+    public Sala(int id, int capacidade, int poltronaEspecialDiferenciada, boolean emManutencao, int numeroSala) {
+        this.id = id;
         this.capacidade = capacidade;
         this.poltronaEspecialDiferenciada = poltronaEspecialDiferenciada;
         this.emManutencao = emManutencao;
         this.numeroSala = numeroSala;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getCapacidade() {

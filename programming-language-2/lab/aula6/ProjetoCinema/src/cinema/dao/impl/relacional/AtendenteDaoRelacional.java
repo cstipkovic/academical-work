@@ -30,7 +30,7 @@ public class AtendenteDaoRelacional implements AtendenteDaoInterface {
             while (resultados.next()) {                
                 int id = resultados.getInt("idatendente");
                 String nome = resultados.getString("nome");
-                Gerente gerente = new Gerente(resultados.getString("gerente"));
+                Gerente gerente = new Gerente(id, resultados.getString("gerente"));
                 Atendente a = new Atendente(id, nome, gerente);
                 atendentes.add(a);
             }

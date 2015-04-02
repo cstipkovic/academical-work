@@ -2,18 +2,28 @@ package cinema.dominio;
 
 public class Sessao {
 
+    public int id;
     public Sala sala;
     public Filme filme;
     public int capacidade;
     public String horario;
     public boolean isFull;
 
-    public Sessao(Sala sala, Filme filme, int capacidade, String horario, boolean isFull) {
+    public Sessao(int id, Sala sala, Filme filme, int capacidade, String horario, boolean isFull) {
+        this.id = id;
         this.sala = sala;
         this.filme = filme;
         this.capacidade = capacidade;
         this.horario = horario;
         this.isFull = isFull;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Sala getSala() {
