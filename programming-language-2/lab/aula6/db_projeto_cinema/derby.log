@@ -12,3 +12,9 @@ os.arch=x86_64
 os.version=10.10.2
 derby.system.home=/Users/cstipkovic/Documents/Projects/github/cstipkovic/academic-works/programming-language-2/lab/aula6/db_projeto_cinema
 Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Thu Apr 02 22:12:13 BRT 2015: Shutting down Derby engine
+----------------------------------------------------------------
+Thu Apr 02 22:12:13 BRT 2015:
+Shutting down instance a816c00e-014c-6e16-8561-00005f9e7cb7 on database directory /Users/cstipkovic/Documents/Projects/github/cstipkovic/academic-works/programming-language-2/lab/aula6/db_projeto_cinema/projeto_cinema with class loader sun.misc.Launcher$AppClassLoader@5451c3a8 
+----------------------------------------------------------------
