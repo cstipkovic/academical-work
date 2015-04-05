@@ -1,7 +1,7 @@
-Tue Mar 31 01:28:32 BRT 2015 : Apache Derby Network Server - 10.10.2.0 - (1582446) started and ready to accept connections on port 1527
+Sun Apr 05 02:45:02 BRT 2015 : Apache Derby Network Server - 10.10.2.0 - (1582446) started and ready to accept connections on port 1527
 ----------------------------------------------------------------
-Tue Mar 31 01:28:32 BRT 2015:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-014c-6e16-8561-00005f9e7cb7 
+Sun Apr 05 02:45:02 BRT 2015:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-014c-881b-e67a-00005f9e7cb7 
 on database directory /Users/cstipkovic/Documents/Projects/github/cstipkovic/academic-works/programming-language-2/lab/aula6/db_projeto_cinema/projeto_cinema with class loader sun.misc.Launcher$AppClassLoader@5451c3a8 
 Loaded from file:/Applications/NetBeans/glassfish-4.1/javadb/lib/derby.jar
 java.vendor=Oracle Corporation
@@ -12,9 +12,3 @@ os.arch=x86_64
 os.version=10.10.2
 derby.system.home=/Users/cstipkovic/Documents/Projects/github/cstipkovic/academic-works/programming-language-2/lab/aula6/db_projeto_cinema
 Database Class Loader started - derby.database.classpath=''
-----------------------------------------------------------------
-Thu Apr 02 22:12:13 BRT 2015: Shutting down Derby engine
-----------------------------------------------------------------
-Thu Apr 02 22:12:13 BRT 2015:
-Shutting down instance a816c00e-014c-6e16-8561-00005f9e7cb7 on database directory /Users/cstipkovic/Documents/Projects/github/cstipkovic/academic-works/programming-language-2/lab/aula6/db_projeto_cinema/projeto_cinema with class loader sun.misc.Launcher$AppClassLoader@5451c3a8 
-----------------------------------------------------------------

@@ -1,52 +1,53 @@
 package cinema.dao.impl.relacional;
 
-import cinema.dao.api.AtendenteDaoInterface;
-import cinema.dominio.Atendente;
-import cinema.dominio.Gerente;
-import java.math.BigDecimal;
+import cinema.dao.api.AtorDaoInterface;
+import cinema.dominio.Ator;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AtendenteDaoRelacional implements AtendenteDaoInterface {
-
+public class AtorDaoRelacional implements AtorDaoInterface {
+    
     private ConexaoInterface connection;
 
-    public AtendenteDaoRelacional(ConexaoInterface connection) {
+    public AtorDaoRelacional(ConexaoInterface connection) {
         this.connection = connection;
     }
     
     @Override
-    public List<Atendente> listarTudo() {
-        List<Atendente> atendentes;
-        atendentes = new ArrayList<>();
+    public List<Ator> listarTudo() {
+        List<Ator> atores;
+        atores = new ArrayList<>();
         try {
             Statement st;
             st = connection.getConnection().createStatement();
-            String sql = "select idatendente, nome, gerente from atendente";
+            String sql = "select idator, nome, nacionalidade, idade from ator";
             ResultSet resultados = st.executeQuery(sql);
             
             while (resultados.next()) {                
-                int id = resultados.getInt("idatendente");
+                int id  = resultados.getInt("idator");
                 String nome = resultados.getString("nome");
-                Gerente gerente = new Gerente(id, resultados.getString("gerente"));
-                Atendente a = new Atendente(id, nome, gerente);
-                atendentes.add(a);
+                String nacionalidade = resultados.getString("nacionalidade");
+                int idade = resultados.getInt("idade");
+                
+                Ator a = new Ator(id, nome, nacionalidade, idade);
+                atores.add(a);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
         
-        return atendentes;
+        return atores;
     }
     
     @Override
-    public void adicionar(Atendente a) {
+    public void adicionar(Ator a) {
         try {
             Statement st;
             st = connection.getConnection().createStatement();
-            String sql = "insert into atendente values (" + a.getId() + "," + a.getNome() + "," + a.getGerente().getNome() + ")";
+            
+            String sql = "insert into ator value (" + a.getId() + "," + a.getNome() + "," + a.getNacionalidade() + "," + a.getIdade() + ")";
             st.executeUpdate(sql);
         } catch (Exception e) {
             e.printStackTrace();
@@ -54,11 +55,12 @@ public class AtendenteDaoRelacional implements AtendenteDaoInterface {
     }
     
     @Override
-    public void remover(Atendente a) {
+    public void remover(Ator a) {
         try {
             Statement st;
             st = connection.getConnection().createStatement();
-            String sql = "delete from atendente where idatendente = " + a.getId();
+            
+            String sql = "delete from ator where idator = " + a.getId();
             st.executeUpdate(sql);
         } catch (Exception e) {
             e.printStackTrace();
@@ -66,11 +68,12 @@ public class AtendenteDaoRelacional implements AtendenteDaoInterface {
     }
     
     @Override
-    public void atualizar(Atendente a) {
+    public void atualizar(Ator a) {
         try {
             Statement st;
             st = connection.getConnection().createStatement();
-            String sql = "update atendente set nome = " + a.getNome() + ", gerente = " + a.getGerente().getNome() + "where idatendente = " + a.getId();
+            
+            String sql = "update ator set nome = " + a.getNome() + ", nacionalidade = " + a.getNacionalidade() + ", idade = " + a.getIdade() + " where idator = " + a.getId();
             st.executeUpdate(sql);
         } catch (Exception e) {
             e.printStackTrace();
