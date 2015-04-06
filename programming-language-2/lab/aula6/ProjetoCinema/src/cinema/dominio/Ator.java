@@ -14,6 +14,10 @@ public class Ator {
         this.idade = idade;
     }
 
+    public Ator(int id) {
+        this.id = id;
+    }
+
     public int getId() {
         return id;
     }

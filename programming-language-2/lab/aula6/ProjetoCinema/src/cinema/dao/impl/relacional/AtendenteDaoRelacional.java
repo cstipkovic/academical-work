@@ -70,7 +70,7 @@ public class AtendenteDaoRelacional implements AtendenteDaoInterface {
         try {
             Statement st;
             st = connection.getConnection().createStatement();
-            String sql = "update atendente set nome = " + a.getNome() + ", gerente = " + a.getGerente().getNome() + "where idatendente = " + a.getId();
+            String sql = "update atendente set nome = " + a.getNome() + ", gerente = " + a.getGerente().getId() + "where idatendente = " + a.getId();
             st.executeUpdate(sql);
         } catch (Exception e) {
             e.printStackTrace();

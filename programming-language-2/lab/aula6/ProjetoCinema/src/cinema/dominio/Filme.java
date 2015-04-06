@@ -12,9 +12,9 @@ public class Filme {
     public String distribuidora;
     public String status;
     public String genero;
-    public List<Ator> elenco;
+    public Ator elenco;
 
-    public Filme(int id, String titulo, String duracao, int classificacao, String diretor, String distribuidora, String status, String genero, List<Ator> elenco) {
+    public Filme(int id, String titulo, String duracao, int classificacao, String diretor, String distribuidora, String status, String genero, Ator elenco) {
         this.id = id;
         this.titulo = titulo;
         this.duracao = duracao;
@@ -24,6 +24,10 @@ public class Filme {
         this.status = status;
         this.genero = genero;
         this.elenco = elenco;
+    }
+    
+    public Filme(int id) {
+        this.id = id;
     }
 
     public int getId() {
@@ -90,11 +94,11 @@ public class Filme {
         this.genero = genero;
     }
 
-    public List<Ator> getElenco() {
+    public Ator getElenco() {
         return elenco;
     }
 
-    public void setElenco(List<Ator> elenco) {
+    public void setElenco(Ator elenco) {
         this.elenco = elenco;
     }
 }

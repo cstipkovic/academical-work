@@ -6,14 +6,16 @@ public class Sala {
     public int capacidade;
     public int poltronaEspecialDiferenciada;
     public boolean emManutencao;
-    public int numeroSala;
 
-    public Sala(int id, int capacidade, int poltronaEspecialDiferenciada, boolean emManutencao, int numeroSala) {
+    public Sala(int id, int capacidade, int poltronaEspecialDiferenciada, boolean emManutencao) {
         this.id = id;
         this.capacidade = capacidade;
         this.poltronaEspecialDiferenciada = poltronaEspecialDiferenciada;
         this.emManutencao = emManutencao;
-        this.numeroSala = numeroSala;
+    }
+    
+    public Sala(int id) {
+        this.id = id;
     }
 
     public int getId() {
@@ -46,13 +48,5 @@ public class Sala {
 
     public void setEmManutencao(boolean emManutencao) {
         this.emManutencao = emManutencao;
-    }
-
-    public int getNumeroSala() {
-        return numeroSala;
-    }
-
-    public void setNumeroSala(int numeroSala) {
-        this.numeroSala = numeroSala;
     }
 }

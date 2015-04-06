@@ -11,6 +11,10 @@ public class Atendente {
         this.nome = nome;
         this.gerente = gerente;
     }
+    
+    public Atendente(int id) {
+        this.id = id;
+    }
 
     public int getId() {
         return id;

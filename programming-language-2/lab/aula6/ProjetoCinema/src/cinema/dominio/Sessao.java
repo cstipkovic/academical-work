@@ -17,6 +17,10 @@ public class Sessao {
         this.horario = horario;
         this.isFull = isFull;
     }
+    
+    public Sessao(int id) {
+        this.id = id;
+    }
 
     public int getId() {
         return id;

@@ -11,6 +11,10 @@ public class Cliente {
         this.nome = nome;
         this.beneficiario = beneficiario;
     }
+    
+    public Cliente(int id) {
+        this.id = id;
+    }
 
     public int getId() {
         return id;
