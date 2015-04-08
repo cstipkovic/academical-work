@@ -25,8 +25,7 @@ create table filme (
 	genero char(45) not null,
 	elenco integer not null,
 	primary key (idfilme),
-	foreign key 
-            (elenco) references ator (idator)
+	foreign key (elenco) references ator (idator)
 );
 
 create table gerente (
@@ -40,8 +39,7 @@ create table atendente (
 	nome char(45) not null,
 	gerente integer not null,
 	primary key (idatendente),
-	foreign key 
-            (gerente) references gerente (idgerente)
+	foreign key (gerente) references gerente (idgerente)
 );
 
 create table cliente (
@@ -67,9 +65,8 @@ create table sessao (
         horario integer not null,
         isFull boolean not null,
         primary key (idsessao),
-        foreign key
-            (sala) references sala (idsala),
-            (filme) references filme (idfilme)
+        foreign key (sala) references sala (idsala),
+        foreign key (filme) references filme (idfilme)
 );
 
 create table ingresso (
@@ -79,8 +76,7 @@ create table ingresso (
         valor decimal not null,
         atendente integer not null,
         primary key (idingresso),
-        foreign key
-            (sessao) references sessao (idsessao),
-            (beneficiario) references cliente (idcliente),
-            (atendente) references atendente (idatendente)
+        foreign key (sessao) references sessao (idsessao),
+        foreign key (beneficiario) references cliente (idcliente),
+        foreign key (atendente) references atendente (idatendente)
 );
