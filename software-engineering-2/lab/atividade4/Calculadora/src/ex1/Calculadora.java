@@ -15,11 +15,6 @@ public class Calculadora {
     }
     
     public int dividir(int a, int b) {
-        if (b == 0) {
-            throw new IllegalArgumentException();
-            return null;
-        }
-        
         return (a / b);
     }
 }

@@ -66,7 +66,7 @@ public class CalculadoraTest {
         assertTrue(calculadora.dividir(3, 4) == 0);
     }
     
-    @Test
+    @Test(expected = ArithmeticException.class)
     public void testDivisao4() {
         assertNotNull(calculadora.dividir(3, 0));
     }
