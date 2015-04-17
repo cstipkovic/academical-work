@@ -26,15 +26,15 @@ public class SessaoDaoRelacional implements SessaoDaoInterface {
         sessoes = new ArrayList<>();
         
         try {
-            String sql = "select idsessao, sala, filme, capacidade, horario, isFull";
+            String sql = "select idsessao, sala, filme, capacidade, horario, isFull from sessao";
             ResultSet resultados = st.executeQuery(sql);
             
             while (resultados.next()) {                
                 int id = resultados.getInt("idsessao");
-                Sala sala = new Sala(resultados.getInt("sala"));
-                Filme filme = new Filme(resultados.getInt("filme"));
+                int sala = resultados.getInt("sala");
+                int filme = resultados.getInt("filme");
                 int capacidade = resultados.getInt("capacidade");
-                int horario = resultados.getInt("horario");
+                String horario = resultados.getString("horario");
                 boolean isFull = resultados.getBoolean("isFull");
                 
                 Sessao s = new Sessao(id, sala, filme, capacidade, sql, isFull);
@@ -50,7 +50,7 @@ public class SessaoDaoRelacional implements SessaoDaoInterface {
     @Override
     public void adicionar(Sessao s) {
         try {
-            String sql = "insert into sessao value (" + s.getId() + ", " + s.getSala() + ", " + s.getFilme() + ", " + s.getCapacidade() + ", " + s.getHorario() + ", " + s.isIsFull() + ")";
+            String sql = "insert into sessao values (" + s.getId() + ", " + s.getSala() + ", " + s.getFilme() + ", " + s.getCapacidade() + ", '" + s.getHorario() + "', " + s.isFull() + ")";
             st.executeUpdate(sql);
         } catch (Exception e) {
             e.printStackTrace();
@@ -69,7 +69,7 @@ public class SessaoDaoRelacional implements SessaoDaoInterface {
     @Override
     public void atualizar(Sessao s) {
         try {
-            String sql = "update sessao set sala = " + s.getSala() + ", filme = " + s.getFilme() + ", capacidade = " + s.getCapacidade() + ", horario = " + s.getHorario() + ", isFull = " + s.isIsFull() + " where idsessao = " + s.getId();
+            String sql = "update sessao set sala = " + s.getSala() + ", filme = " + s.getFilme() + ", capacidade = " + s.getCapacidade() + ", horario = '" + s.getHorario() + "', isFull = " + s.isFull() + " where idsessao = " + s.getId();
         } catch (Exception e) {
             e.printStackTrace();
         }

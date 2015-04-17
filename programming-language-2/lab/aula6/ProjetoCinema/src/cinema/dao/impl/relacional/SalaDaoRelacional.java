@@ -24,7 +24,7 @@ public class SalaDaoRelacional implements SalaDaoInterface {
         salas = new ArrayList<>();
         
         try {
-            String sql = "select idsala, capacidade, poltronaEspecialDiferenciada, emManutencao";
+            String sql = "select idsala, capacidade, poltronaEspecialDiferenciada, emManutencao from sala";
             ResultSet resultados = st.executeQuery(sql);
             
             while (resultados.next()) {                
@@ -46,7 +46,7 @@ public class SalaDaoRelacional implements SalaDaoInterface {
     @Override
     public void adicionar(Sala s) {
         try {
-            String sql = "insert into sala value (" + s.getId() + "," + s.getCapacidade() + ", " + s.getPoltronaEspecialDiferenciada() + ", " + s.isEmManutencao() + ")";
+            String sql = "insert into sala values (" + s.getId() + "," + s.getCapacidade() + ", " + s.getPoltronaEspecialDiferenciada() + ", " + s.isEmManutencao() + ")";
             st.executeUpdate(sql);
         } catch (Exception e) {
             e.printStackTrace();

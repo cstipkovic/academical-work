@@ -3,13 +3,13 @@ package cinema.dominio;
 public class Sessao {
 
     public int id;
-    public Sala sala;
-    public Filme filme;
+    public int sala;
+    public int filme;
     public int capacidade;
     public String horario;
     public boolean isFull;
 
-    public Sessao(int id, Sala sala, Filme filme, int capacidade, String horario, boolean isFull) {
+    public Sessao(int id, int sala, int filme, int capacidade, String horario, boolean isFull) {
         this.id = id;
         this.sala = sala;
         this.filme = filme;
@@ -30,19 +30,19 @@ public class Sessao {
         this.id = id;
     }
 
-    public Sala getSala() {
+    public int getSala() {
         return sala;
     }
 
-    public void setSala(Sala sala) {
+    public void setSala(int sala) {
         this.sala = sala;
     }
 
-    public Filme getFilme() {
+    public int getFilme() {
         return filme;
     }
 
-    public void setFilme(Filme filme) {
+    public void setFilme(int filme) {
         this.filme = filme;
     }
 
@@ -62,11 +62,11 @@ public class Sessao {
         this.horario = horario;
     }
 
-    public boolean isIsFull() {
+    public boolean isFull() {
         return isFull;
     }
 
-    public void setIsFull(boolean isFull) {
+    public void setFull(boolean isFull) {
         this.isFull = isFull;
     }
 }

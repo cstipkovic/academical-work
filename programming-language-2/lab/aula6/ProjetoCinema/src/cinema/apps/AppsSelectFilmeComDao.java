@@ -24,21 +24,29 @@ public class AppsSelectFilmeComDao {
         for (Filme f : filmes) {
             System.out.print("Nro: " + f.getId());
             System.out.print(" - ");
-            System.out.print("Nome: " + f.getNome());
+            System.out.print("Titulo: " + f.getTitulo());
             System.out.print(" - ");
-            System.out.print("Nacionalidade: " + f.getNacionalidade());
+            System.out.print("Duração: " + f.getDuracao());
             System.out.print(" - ");
-            System.out.print("Idade: " + f.getIdade());
+            System.out.print("Diretor: " + f.getDiretor());
+            System.out.print(" - ");
+            System.out.print("Distribuidora: " + f.getDistribuidora());
+            System.out.print(" - ");
+            System.out.print("Status: " + f.getStatus());
+            System.out.print(" - ");
+            System.out.print("Genero: " + f.getGenero());
+            System.out.print(" - ");
+            System.out.println("Elenco: " + f.getElenco());
         }
         
         Filme f;
 
         // Adicionar
-        f = new Filme();
+        f = new Filme(1, "Filme 1", "2 horas", 10, "Diretor 1", "Distribuicao 1", "Status 1", "Genero 1", 1);
         dao.adicionar(f);
         
         // Update
-        f.setIdade(31);
+        f.setClassificacao(12);
         dao.atualizar(f);
         
         // Delete
