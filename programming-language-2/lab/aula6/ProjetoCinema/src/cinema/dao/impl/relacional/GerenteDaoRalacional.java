@@ -44,7 +44,7 @@ public class GerenteDaoRalacional implements GerenteDaoInterface {
     @Override
     public void adicionar(Gerente g) {
         try {
-            String sql = "insert into gerente value (" + g.getId() + "," + g.getNome() + ")";
+            String sql = "insert into gerente values (" + g.getId() + ",'" + g.getNome() + "')";
             st.executeUpdate(sql);
         } catch (Exception e) {
             e.printStackTrace();
@@ -63,7 +63,7 @@ public class GerenteDaoRalacional implements GerenteDaoInterface {
     @Override
     public void atualizar(Gerente g) {
         try {
-            String sql = "update gerente set nome = " + g.getNome() + " where idgerente = " + g.getId();
+            String sql = "update gerente set nome = '" + g.getNome() + "' where idgerente = " + g.getId();
         } catch (Exception e) {
             e.printStackTrace();
         }

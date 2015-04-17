@@ -1,8 +1,6 @@
 package cinema.dao.impl.relacional;
 
 import cinema.dao.api.FilmeDaoInterface;
-import cinema.dominio.Ator;
-import cinema.dominio.Cliente;
 import cinema.dominio.Filme;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -38,7 +36,7 @@ public class FilmeDaoRelacional implements FilmeDaoInterface {
                 String distribuidora = resultados.getString("distribuidora");
                 String status = resultados.getString("status");
                 String genero = resultados.getString("genero");
-                Ator idator = new Ator(resultados.getInt("elenco"));
+                int idator = resultados.getInt("elenco");
                 
                 Filme f = new Filme(idfilme, titulo, duracao, classificacao, diretor, distribuidora, status, genero, idator);
             }
@@ -53,7 +51,7 @@ public class FilmeDaoRelacional implements FilmeDaoInterface {
     @Override
     public void adicionar(Filme f) {
         try {
-            String sql = "insert into filmes value (" + f.getId() + "," + f.getTitulo() + "," + f.getDuracao() + "," + f.getClassificacao() + "," + f.getDiretor() + "," + f.getDistribuidora() + "," + f.getStatus() + "," + f.getGenero() + "," + f.getElenco() + ")";
+            String sql = "insert into filmes values (" + f.getId() + ",'" + f.getTitulo() + "','" + f.getDuracao() + "'," + f.getClassificacao() + ",'" + f.getDiretor() + "','" + f.getDistribuidora() + "','" + f.getStatus() + "','" + f.getGenero() + "'," + f.getElenco() + ")";
             st.executeUpdate(sql);
         } catch (Exception e) {
             e.printStackTrace();
@@ -73,7 +71,7 @@ public class FilmeDaoRelacional implements FilmeDaoInterface {
     @Override
     public void atualizar(Filme f) {
         try {
-            String sql  = "update filme set titulo = " + f.getTitulo() + ", duracao = " + f.getDuracao() + ", classificacao = " + f.getClassificacao() + ", diretor = " + f.getDiretor() + ", distribuidora = " + f.getDistribuidora() + ", status = " + f.getStatus() + ", genero = " + f.getGenero() + ", elenco = " + f.getElenco().getId() + " where idfilme = " + f.getId();
+            String sql  = "update filme set titulo = '" + f.getTitulo() + "', duracao = '" + f.getDuracao() + "', classificacao = " + f.getClassificacao() + ", diretor = '" + f.getDiretor() + "', distribuidora = '" + f.getDistribuidora() + "', status = '" + f.getStatus() + "', genero = '" + f.getGenero() + "', elenco = " + f.getElenco() + " where idfilme = " + f.getId();
             st.executeUpdate(sql);
         } catch (Exception e) {
             e.printStackTrace();

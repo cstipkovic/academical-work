@@ -45,7 +45,7 @@ public class AtorDaoRelacional implements AtorDaoInterface {
     @Override
     public void adicionar(Ator a) {
         try {
-            String sql = "insert into ator value (" + a.getId() + "," + a.getNome() + "," + a.getNacionalidade() + "," + a.getIdade() + ")";
+            String sql = "insert into ator values (" + a.getId() + ",'" + a.getNome() + "','" + a.getNacionalidade() + "'," + a.getIdade() + ")";
             st.executeUpdate(sql);
         } catch (Exception e) {
             e.printStackTrace();
@@ -65,7 +65,7 @@ public class AtorDaoRelacional implements AtorDaoInterface {
     @Override
     public void atualizar(Ator a) {
         try {
-            String sql = "update ator set nome = " + a.getNome() + ", nacionalidade = " + a.getNacionalidade() + ", idade = " + a.getIdade() + " where idator = " + a.getId();
+            String sql = "update ator set nome = '" + a.getNome() + "', nacionalidade = '" + a.getNacionalidade() + "', idade = " + a.getIdade() + " where idator = " + a.getId();
             st.executeUpdate(sql);
         } catch (Exception e) {
             e.printStackTrace();

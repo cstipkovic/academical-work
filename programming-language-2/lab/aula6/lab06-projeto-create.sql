@@ -9,6 +9,7 @@ drop table sala;
 
 create table ator (
 	idator integer not null,
+	nome char(45) not null,
 	nacionalidade char(45) not null,
 	idade integer not null,
 	primary key (idator)
@@ -37,9 +38,9 @@ create table gerente (
 create table atendente (
 	idatendente integer not null,
 	nome char(45) not null,
-	gerente integer not null,
+	idgerente integer not null,
 	primary key (idatendente),
-	foreign key (gerente) references gerente (idgerente)
+	foreign key (idgerente) references gerente (idgerente)
 );
 
 create table cliente (

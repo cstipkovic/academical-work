@@ -4,16 +4,12 @@ public class Atendente {
 
     public int id;
     public String nome;
-    public Gerente gerente;
+    public int idgerente;
 
-    public Atendente(int id, String nome, Gerente gerente) {
+    public Atendente(int id, String nome, int idgerente) {
         this.id = id;
         this.nome = nome;
-        this.gerente = gerente;
-    }
-    
-    public Atendente(int id) {
-        this.id = id;
+        this.idgerente = idgerente;
     }
 
     public int getId() {
@@ -32,11 +28,11 @@ public class Atendente {
         this.nome = nome;
     }
 
-    public Gerente getGerente() {
-        return gerente;
+    public int getIdgerente() {
+        return idgerente;
     }
 
-    public void setGerente(Gerente gerente) {
-        this.gerente = gerente;
+    public void setIdgerente(int idgerente) {
+        this.idgerente = idgerente;
     }
 }

@@ -5,12 +5,12 @@ import java.math.BigDecimal;
 public class Ingresso {
 
     public int id;
-    public Sessao sessao;
-    public Cliente beneficiario;
+    public int sessao;
+    public int beneficiario;
     public BigDecimal valor;
-    public Atendente atendente;
+    public int atendente;
 
-    public Ingresso(int id, Sessao sessao, Cliente beneficiario, BigDecimal valor, Atendente atendente) {
+    public Ingresso(int id, int sessao, int beneficiario, BigDecimal valor, int atendente) {
         this.id = id;
         this.sessao = sessao;
         this.beneficiario = beneficiario;
@@ -26,19 +26,19 @@ public class Ingresso {
         this.id = id;
     }
 
-    public Sessao getSessao() {
+    public int getSessao() {
         return sessao;
     }
 
-    public void setSessao(Sessao sessao) {
+    public void setSessao(int sessao) {
         this.sessao = sessao;
     }
 
-    public Cliente getBeneficiario() {
+    public int getBeneficiario() {
         return beneficiario;
     }
 
-    public void setBeneficiario(Cliente beneficiario) {
+    public void setBeneficiario(int beneficiario) {
         this.beneficiario = beneficiario;
     }
 
@@ -50,11 +50,11 @@ public class Ingresso {
         this.valor = valor;
     }
 
-    public Atendente getAtendente() {
+    public int getAtendente() {
         return atendente;
     }
 
-    public void setAtendente(Atendente atendente) {
+    public void setAtendente(int atendente) {
         this.atendente = atendente;
     }
 }

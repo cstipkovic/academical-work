@@ -24,15 +24,17 @@ public class AtendenteDaoRelacional implements AtendenteDaoInterface {
     public List<Atendente> listarTudo() {
         List<Atendente> atendentes;
         atendentes = new ArrayList<>();
+        
         try {
-            String sql = "select idatendente, nome, gerente from atendente";
+            String sql = "select idatendente, nome, idgerente from atendente";
             ResultSet resultados = st.executeQuery(sql);
             
             while (resultados.next()) {                
                 int id = resultados.getInt("idatendente");
                 String nome = resultados.getString("nome");
-                Gerente gerente = new Gerente(id, resultados.getString("gerente"));
-                Atendente a = new Atendente(id, nome, gerente);
+                int idgerente = resultados.getInt("idgerente");
+                
+                Atendente a = new Atendente(id, nome, idgerente);
                 atendentes.add(a);
             }
         } catch (Exception e) {
@@ -45,7 +47,7 @@ public class AtendenteDaoRelacional implements AtendenteDaoInterface {
     @Override
     public void adicionar(Atendente a) {
         try {
-            String sql = "insert into atendente values (" + a.getId() + "," + a.getNome() + "," + a.getGerente().getNome() + ")";
+            String sql = "insert into atendente values (" + a.getId() + ",'" + a.getNome() + "'," + a.getIdgerente() + ")";
             st.executeUpdate(sql);
         } catch (Exception e) {
             e.printStackTrace();
@@ -65,7 +67,7 @@ public class AtendenteDaoRelacional implements AtendenteDaoInterface {
     @Override
     public void atualizar(Atendente a) {
         try {
-            String sql = "update atendente set nome = " + a.getNome() + ", gerente = " + a.getGerente().getId() + "where idatendente = " + a.getId();
+            String sql = "update atendente set nome = '" + a.getNome() + "', gerente = " + a.getIdgerente() + "where idatendente = " + a.getId();
             st.executeUpdate(sql);
         } catch (Exception e) {
             e.printStackTrace();

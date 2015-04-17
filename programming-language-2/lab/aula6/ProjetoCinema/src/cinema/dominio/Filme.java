@@ -12,9 +12,9 @@ public class Filme {
     public String distribuidora;
     public String status;
     public String genero;
-    public Ator elenco;
+    public int elenco;
 
-    public Filme(int id, String titulo, String duracao, int classificacao, String diretor, String distribuidora, String status, String genero, Ator elenco) {
+    public Filme(int id, String titulo, String duracao, int classificacao, String diretor, String distribuidora, String status, String genero, int elenco) {
         this.id = id;
         this.titulo = titulo;
         this.duracao = duracao;
@@ -94,11 +94,11 @@ public class Filme {
         this.genero = genero;
     }
 
-    public Ator getElenco() {
+    public int getElenco() {
         return elenco;
     }
 
-    public void setElenco(Ator elenco) {
+    public void setElenco(int elenco) {
         this.elenco = elenco;
     }
 }

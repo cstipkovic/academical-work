@@ -45,8 +45,8 @@ public class ClienteDaoRelacional implements ClienteDaoInterface {
     @Override
     public void adicionar(Cliente c) {
         try {
-            String sql = "insert into cliente value (" + c.getId() + "," + c.getNome() + "," + c.isBeneficiario() + ")";
-            st.executeQuery(sql);
+            String sql = "insert into cliente values (" + c.getId() + ",'" + c.getNome() + "'," + c.isBeneficiario() + ")";
+            st.executeUpdate(sql);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -55,7 +55,7 @@ public class ClienteDaoRelacional implements ClienteDaoInterface {
     @Override
     public void remover(Cliente c) {
         try {
-            String sql = "delele from cliente where idcliente = " + c.getId();
+            String sql = "delete from cliente where idcliente = " + c.getId();
             st.executeUpdate(sql);
         } catch (Exception e) {
             e.printStackTrace();
@@ -65,7 +65,7 @@ public class ClienteDaoRelacional implements ClienteDaoInterface {
     @Override
     public void atualizar(Cliente c) {
         try {
-            String sql = "update cliente set nome = " + c.getNome() + ", beneficiario = " + c.isBeneficiario() + " where idcliente = " + c.getId();
+            String sql = "update cliente set nome = '" + c.getNome() + "', beneficiario = " + c.isBeneficiario() + " where idcliente = " + c.getId();
             st.executeUpdate(sql);
         } catch (Exception e) {
             e.printStackTrace();
