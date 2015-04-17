@@ -3,15 +3,19 @@ package cinema.dao.impl.relacional;
 import cinema.dao.api.SalaDaoInterface;
 import cinema.dominio.Sala;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
 public class SalaDaoRelacional implements SalaDaoInterface {
+    
     private ConexaoInterface connection;
+    private Statement st;
 
-    public SalaDaoRelacional(ConexaoInterface connection) {
+    public SalaDaoRelacional(ConexaoInterface connection) throws SQLException {
         this.connection = connection;
+        this.st = connection.getConnection().createStatement();
     }
     
     @Override
@@ -20,9 +24,6 @@ public class SalaDaoRelacional implements SalaDaoInterface {
         salas = new ArrayList<>();
         
         try {
-            Statement st;
-            st = connection.getConnection().createStatement();
-            
             String sql = "select idsala, capacidade, poltronaEspecialDiferenciada, emManutencao";
             ResultSet resultados = st.executeQuery(sql);
             
@@ -45,9 +46,6 @@ public class SalaDaoRelacional implements SalaDaoInterface {
     @Override
     public void adicionar(Sala s) {
         try {
-            Statement st;
-            st = connection.getConnection().createStatement();
-            
             String sql = "insert into sala value (" + s.getId() + "," + s.getCapacidade() + ", " + s.getPoltronaEspecialDiferenciada() + ", " + s.isEmManutencao() + ")";
             st.executeUpdate(sql);
         } catch (Exception e) {
@@ -58,9 +56,6 @@ public class SalaDaoRelacional implements SalaDaoInterface {
     @Override
     public void remover(Sala s) {
         try {
-            Statement st;
-            st = connection.getConnection().createStatement();
-            
             String sql = "delele from sala where idsala = " + s.getId();
         } catch (Exception e) {
             e.printStackTrace();
@@ -70,9 +65,6 @@ public class SalaDaoRelacional implements SalaDaoInterface {
     @Override
     public void atualizar(Sala s) {
         try {
-            Statement st;
-            st = connection.getConnection().createStatement();
-            
             String sql = "update sala set capacidade = " + s.getCapacidade() + ", poltronaEspecialDiferenciada = " + s.getPoltronaEspecialDiferenciada() + ", emManutencao = " + s.isEmManutencao() + " where idsala = " + s.getId(); ;
         } catch (Exception e) {
             e.printStackTrace();

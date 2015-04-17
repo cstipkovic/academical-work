@@ -3,6 +3,7 @@ package cinema.dao.impl.relacional;
 import cinema.dao.api.AtorDaoInterface;
 import cinema.dominio.Ator;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,9 +11,11 @@ import java.util.List;
 public class AtorDaoRelacional implements AtorDaoInterface {
     
     private ConexaoInterface connection;
+    private Statement st;
 
-    public AtorDaoRelacional(ConexaoInterface connection) {
+    public AtorDaoRelacional(ConexaoInterface connection) throws SQLException {
         this.connection = connection;
+        this.st = connection.getConnection().createStatement();
     }
     
     @Override
@@ -20,8 +23,6 @@ public class AtorDaoRelacional implements AtorDaoInterface {
         List<Ator> atores;
         atores = new ArrayList<>();
         try {
-            Statement st;
-            st = connection.getConnection().createStatement();
             String sql = "select idator, nome, nacionalidade, idade from ator";
             ResultSet resultados = st.executeQuery(sql);
             
@@ -44,9 +45,6 @@ public class AtorDaoRelacional implements AtorDaoInterface {
     @Override
     public void adicionar(Ator a) {
         try {
-            Statement st;
-            st = connection.getConnection().createStatement();
-            
             String sql = "insert into ator value (" + a.getId() + "," + a.getNome() + "," + a.getNacionalidade() + "," + a.getIdade() + ")";
             st.executeUpdate(sql);
         } catch (Exception e) {
@@ -57,9 +55,6 @@ public class AtorDaoRelacional implements AtorDaoInterface {
     @Override
     public void remover(Ator a) {
         try {
-            Statement st;
-            st = connection.getConnection().createStatement();
-            
             String sql = "delete from ator where idator = " + a.getId();
             st.executeUpdate(sql);
         } catch (Exception e) {
@@ -70,9 +65,6 @@ public class AtorDaoRelacional implements AtorDaoInterface {
     @Override
     public void atualizar(Ator a) {
         try {
-            Statement st;
-            st = connection.getConnection().createStatement();
-            
             String sql = "update ator set nome = " + a.getNome() + ", nacionalidade = " + a.getNacionalidade() + ", idade = " + a.getIdade() + " where idator = " + a.getId();
             st.executeUpdate(sql);
         } catch (Exception e) {

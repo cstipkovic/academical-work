@@ -5,6 +5,7 @@ import cinema.dominio.Ator;
 import cinema.dominio.Cliente;
 import cinema.dominio.Filme;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,9 +13,11 @@ import java.util.List;
 public class FilmeDaoRelacional implements FilmeDaoInterface {
     
     private ConexaoInterface connection;
+    private Statement st;
 
-    public FilmeDaoRelacional(ConexaoInterface connection) {
+    public FilmeDaoRelacional(ConexaoInterface connection) throws SQLException {
         this.connection = connection;
+        this.st = connection.getConnection().createStatement();
     }
     
     @Override
@@ -23,9 +26,6 @@ public class FilmeDaoRelacional implements FilmeDaoInterface {
         filmes = new ArrayList<>();
        
         try {
-            Statement st;
-            st = connection.getConnection().createStatement();
-            
             String sql = "select idfilme, titulo, duracao, classificacao, diretor, distribuidora, status, genero, elenco from filme";
             ResultSet resultados = st.executeQuery(sql);
             
@@ -53,9 +53,6 @@ public class FilmeDaoRelacional implements FilmeDaoInterface {
     @Override
     public void adicionar(Filme f) {
         try {
-            Statement st;
-            st = connection.getConnection().createStatement();
-            
             String sql = "insert into filmes value (" + f.getId() + "," + f.getTitulo() + "," + f.getDuracao() + "," + f.getClassificacao() + "," + f.getDiretor() + "," + f.getDistribuidora() + "," + f.getStatus() + "," + f.getGenero() + "," + f.getElenco() + ")";
             st.executeUpdate(sql);
         } catch (Exception e) {
@@ -66,9 +63,6 @@ public class FilmeDaoRelacional implements FilmeDaoInterface {
     @Override
     public void remover(Filme f) {
         try {
-            Statement st;
-            st = connection.getConnection().createStatement();
-            
             String sql = "delete from filme where idfilme = " + f.getId();
             st.executeUpdate(sql);
         } catch (Exception e) {
@@ -79,14 +73,10 @@ public class FilmeDaoRelacional implements FilmeDaoInterface {
     @Override
     public void atualizar(Filme f) {
         try {
-            Statement st;
-            st = connection.getConnection().createStatement();
-            
             String sql  = "update filme set titulo = " + f.getTitulo() + ", duracao = " + f.getDuracao() + ", classificacao = " + f.getClassificacao() + ", diretor = " + f.getDiretor() + ", distribuidora = " + f.getDistribuidora() + ", status = " + f.getStatus() + ", genero = " + f.getGenero() + ", elenco = " + f.getElenco().getId() + " where idfilme = " + f.getId();
             st.executeUpdate(sql);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    
 }

@@ -3,6 +3,7 @@ package cinema.dao.impl.relacional;
 import cinema.dao.api.GerenteDaoInterface;
 import cinema.dominio.Gerente;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,9 +11,11 @@ import java.util.List;
 public class GerenteDaoRalacional implements GerenteDaoInterface {
 
     private ConexaoInterface connection;
+    private Statement st;
 
-    public GerenteDaoRalacional(ConexaoInterface connection) {
+    public GerenteDaoRalacional(ConexaoInterface connection) throws SQLException {
         this.connection = connection;
+        this.st = connection.getConnection().createStatement();
     }
     
     @Override
@@ -21,9 +24,6 @@ public class GerenteDaoRalacional implements GerenteDaoInterface {
         gerentes = new ArrayList<>();
         
         try {
-            Statement st;
-            st = connection.getConnection().createStatement();
-            
             String sql = "select idgerente, nome from gerente";
             ResultSet resultados = st.executeQuery(sql);
             
@@ -44,9 +44,6 @@ public class GerenteDaoRalacional implements GerenteDaoInterface {
     @Override
     public void adicionar(Gerente g) {
         try {
-            Statement st;
-            st = connection.getConnection().createStatement();
-            
             String sql = "insert into gerente value (" + g.getId() + "," + g.getNome() + ")";
             st.executeUpdate(sql);
         } catch (Exception e) {
@@ -57,9 +54,6 @@ public class GerenteDaoRalacional implements GerenteDaoInterface {
     @Override
     public void remover(Gerente g) {
         try {
-            Statement st;
-            st = connection.getConnection().createStatement();
-            
             String sql = "delele from gerente where idgerente = " + g.getId();
         } catch (Exception e) {
             e.printStackTrace();
@@ -69,9 +63,6 @@ public class GerenteDaoRalacional implements GerenteDaoInterface {
     @Override
     public void atualizar(Gerente g) {
         try {
-            Statement st;
-            st = connection.getConnection().createStatement();
-            
             String sql = "update gerente set nome = " + g.getNome() + " where idgerente = " + g.getId();
         } catch (Exception e) {
             e.printStackTrace();

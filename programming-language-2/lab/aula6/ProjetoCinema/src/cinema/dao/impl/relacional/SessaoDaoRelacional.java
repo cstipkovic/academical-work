@@ -5,6 +5,7 @@ import cinema.dominio.Filme;
 import cinema.dominio.Sala;
 import cinema.dominio.Sessao;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,9 +13,11 @@ import java.util.List;
 public class SessaoDaoRelacional implements SessaoDaoInterface {
     
     private ConexaoInterface connection;
+    private Statement st;
 
-    public SessaoDaoRelacional(ConexaoInterface connection) {
+    public SessaoDaoRelacional(ConexaoInterface connection) throws SQLException {
         this.connection = connection;
+        st = connection.getConnection().createStatement();
     }
     
     @Override
@@ -23,9 +26,6 @@ public class SessaoDaoRelacional implements SessaoDaoInterface {
         sessoes = new ArrayList<>();
         
         try {
-            Statement st;
-            st = connection.getConnection().createStatement();
-            
             String sql = "select idsessao, sala, filme, capacidade, horario, isFull";
             ResultSet resultados = st.executeQuery(sql);
             
@@ -50,9 +50,6 @@ public class SessaoDaoRelacional implements SessaoDaoInterface {
     @Override
     public void adicionar(Sessao s) {
         try {
-            Statement st;
-            st = connection.getConnection().createStatement();
-            
             String sql = "insert into sessao value (" + s.getId() + ", " + s.getSala() + ", " + s.getFilme() + ", " + s.getCapacidade() + ", " + s.getHorario() + ", " + s.isIsFull() + ")";
             st.executeUpdate(sql);
         } catch (Exception e) {
@@ -63,9 +60,6 @@ public class SessaoDaoRelacional implements SessaoDaoInterface {
     @Override
     public void remover(Sessao s) {
         try {
-            Statement st;
-            st = connection.getConnection().createStatement();
-            
             String sql = "delele from sessao where idsessao = " + s.getId();
         } catch (Exception e) {
             e.printStackTrace();
@@ -75,9 +69,6 @@ public class SessaoDaoRelacional implements SessaoDaoInterface {
     @Override
     public void atualizar(Sessao s) {
         try {
-            Statement st;
-            st = connection.getConnection().createStatement();
-            
             String sql = "update sessao set sala = " + s.getSala() + ", filme = " + s.getFilme() + ", capacidade = " + s.getCapacidade() + ", horario = " + s.getHorario() + ", isFull = " + s.isIsFull() + " where idsessao = " + s.getId();
         } catch (Exception e) {
             e.printStackTrace();

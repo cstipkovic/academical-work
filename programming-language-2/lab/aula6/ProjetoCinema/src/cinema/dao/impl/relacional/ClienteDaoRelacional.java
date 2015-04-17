@@ -3,6 +3,7 @@ package cinema.dao.impl.relacional;
 import cinema.dao.api.ClienteDaoInterface;
 import cinema.dominio.Cliente;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,9 +11,11 @@ import java.util.List;
 public class ClienteDaoRelacional implements ClienteDaoInterface {
     
     private ConexaoInterface connection;
+    private Statement st;
 
-    public ClienteDaoRelacional(ConexaoInterface connection) {
+    public ClienteDaoRelacional(ConexaoInterface connection) throws SQLException {
         this.connection = connection;
+        this.st = connection.getConnection().createStatement();
     }
     
     @Override
@@ -21,9 +24,6 @@ public class ClienteDaoRelacional implements ClienteDaoInterface {
         clientes = new ArrayList<>();
         
         try {
-            Statement st;
-            st = connection.getConnection().createStatement();
-            
             String sql = "select idcliente, nome, beneficiario from cliente";
             ResultSet resultados = st.executeQuery(sql);
             
@@ -45,9 +45,6 @@ public class ClienteDaoRelacional implements ClienteDaoInterface {
     @Override
     public void adicionar(Cliente c) {
         try {
-            Statement st;
-            st = connection.getConnection().createStatement();
-            
             String sql = "insert into cliente value (" + c.getId() + "," + c.getNome() + "," + c.isBeneficiario() + ")";
             st.executeQuery(sql);
         } catch (Exception e) {
@@ -58,9 +55,6 @@ public class ClienteDaoRelacional implements ClienteDaoInterface {
     @Override
     public void remover(Cliente c) {
         try {
-            Statement st;
-            st = connection.getConnection().createStatement();
-            
             String sql = "delele from cliente where idcliente = " + c.getId();
             st.executeUpdate(sql);
         } catch (Exception e) {
@@ -71,9 +65,6 @@ public class ClienteDaoRelacional implements ClienteDaoInterface {
     @Override
     public void atualizar(Cliente c) {
         try {
-            Statement st;
-            st = connection.getConnection().createStatement();
-            
             String sql = "update cliente set nome = " + c.getNome() + ", beneficiario = " + c.isBeneficiario() + " where idcliente = " + c.getId();
             st.executeUpdate(sql);
         } catch (Exception e) {
