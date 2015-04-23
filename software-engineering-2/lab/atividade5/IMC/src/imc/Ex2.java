@@ -146,6 +146,26 @@ public class Ex2 extends JFrame {
             }//Fim da classe interna anônima
         );//fim da chamada para addActionListerner
     }
+    
+    public double calculorIMC(double peso, double altura) {
+        return (peso / (altura * altura));
+    }
+    
+    public String gerarMensagem(double imc){
+        String mensagem = "";
+        
+        if (imc < 18.5 && imc > 0) {
+            mensagem = String.format("Você está abaixo do peso recomendado. IMC %.2f", imc);
+        } else if (imc >= 18.5 && imc < 25 ) {
+            mensagem = String.format("Você está muito bem! Continue assim! IMC %.2f", imc);
+        } else if (imc >= 25 && imc < 30) {
+            mensagem = String.format("Você está acima do peso recomendado.\nCuidado! IMC %.2f", imc);
+        } else if (imc >= 30) {
+            mensagem = String.format("Você está Obeso. Procure o acompanhamento de um nutricionista e\nrealize mais atividades físicas! IMC %.2f", imc);
+        }
+        
+        return mensagem;
+    }
 
     //método que realiza os calculos
     private void Calculos() {
@@ -160,8 +180,14 @@ public class Ex2 extends JFrame {
             
             //realiza calculos 
             imc = this.calculorIMC(peso, altura);
+            
+            if (tipo == 0) {
+                //configure a foto conforme a posição da variável foto
+                Lfoto.setIcon(imagemM[foto]);
+            } else {
+                Lfoto.setIcon(imagemH[foto]);
+            }
 
-            //REFATORADO
             result = this.gerarMensagem(imc);
             if (result.contains("Você está abaixo do peso")) {
                 foto = 0;
@@ -169,12 +195,6 @@ public class Ex2 extends JFrame {
                 foto = 1;
             } else {
                 foto = 2;
-            }
-            if(tipo == 0){
-                //configure a foto conforme a posição da variável foto
-                Lfoto.setIcon(imagemM[foto]);
-            }else{
-                Lfoto.setIcon(imagemH[foto]);
             }
 
             //reconfigure o tamanho da tela
@@ -199,25 +219,5 @@ public class Ex2 extends JFrame {
         //substitua a imagem atual por essa
         Lfoto.setIcon(limpar);
         setSize(300, 160);
-    }
-    
-    public double calculorIMC(double peso, double altura) {
-        return (peso / (altura * altura));
-    }
-    
-    public String gerarMensagem(double imc){
-        String mensagem = "";
-        
-        if (imc < 18.5 && imc > 0) {
-            mensagem = String.format("Você está abaixo do peso recomendado. IMC %.2f", imc);
-        } else if (imc >= 18.5 && imc < 25 ) {
-            mensagem = String.format("Você está muito bem! Continue assim! IMC %.2f", imc);
-        } else if (imc >= 25 && imc < 30) {
-            mensagem = String.format("Você está acima do peso recomendado.\nCuidado! IMC %.2f", imc);
-        } else if (imc >= 30) {
-            mensagem = String.format("Você está Obeso. Procure o acompanhamento de um nutricionista e\nrealizar mais atividades físicas! IMC %.2f", imc);
-        }
-        
-        return mensagem;
     }
 }//Fim da classe Ex2
