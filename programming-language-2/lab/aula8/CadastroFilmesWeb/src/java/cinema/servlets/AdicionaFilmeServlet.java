@@ -49,9 +49,8 @@ public class AdicionaFilmeServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body bgColor=" +  corFundo + ">");
             out.println("<h1>Filme " + titulo + " adicionar!</h1>");
-            out.println("<p>< ahref=\"index.html\">Retornar à página inicial</a></p>");
-            // terminar
-            out.println("<h1>Servlet AdicionaFilmeServlet at " + request.getContextPath() + "</h1>");
+            out.println("<p><a href=\"index.html\">Retornar à página inicial</a></p>");
+            out.println("<p><a href=\"FormularioCadastroFilmeServlet\">Cadastrar outro filme</a></p>");
             out.println("</body>");
             out.println("</html>");
         }

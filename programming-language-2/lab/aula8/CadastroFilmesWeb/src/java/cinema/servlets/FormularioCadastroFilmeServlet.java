@@ -30,9 +30,9 @@ public class FormularioCadastroFilmeServlet extends HttpServlet {
             out.println("<head>");
             out.println("<title>Servlet FormularioCadastroFilmeServlet</title>");            
             out.println("</head>");
-            out.println("<body>");
+            out.println("<body bgColor=" + corFundo + ">");
             out.println("<h1>Cadastro de filme:</h1>");
-            out.println("<form method=\"post\" action=\"AdicionarFilmeServlet\">");
+            out.println("<form method=\"post\" action=\"AdicionaFilmeServlet\">");
             out.println("<p>Titulo: <input type=\"text\" name=\"titulo_param\" /></p>");
             out.println("<p>Ano: <input type=\"text\" name=\"ano_param\" /></p>");
             out.println("<p><input type=\"submit\" /></p>");
