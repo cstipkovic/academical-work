@@ -1,3 +1,5 @@
+-- 2a Lista de ExercÌcios - INSERT e Teste de PK e FK
+
 -- eliminação das tabelas
 DROP TABLE Func_Proj CASCADE CONSTRAINT;
 DROP TABLE Projeto CASCADE CONSTRAINT;
@@ -64,4 +66,3 @@ INSERT INTO func_proj(cod_func, cod_proj, horas_trab) VALUES(103, 1003, 64);
 INSERT INTO func_proj(cod_func, cod_proj, horas_trab) VALUES(104, 1001, 46);
 INSERT INTO func_proj(cod_func, cod_proj, horas_trab) VALUES(105, 1001, 84);
 INSERT INTO func_proj(cod_func, cod_proj, horas_trab) VALUES(105, 1002, 86);
-
