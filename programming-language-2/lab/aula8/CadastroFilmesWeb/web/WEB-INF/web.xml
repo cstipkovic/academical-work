@@ -12,6 +12,10 @@
         <servlet-name>AdicionaFilmeServlet</servlet-name>
         <servlet-class>cinema.servlets.AdicionaFilmeServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListaFilmesServlet</servlet-name>
+        <servlet-class>cinema.servlets.ListaFilmesServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>DefinirCorFundoServlet</servlet-name>
         <url-pattern>/DefinirCorFundoServlet</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>AdicionaFilmeServlet</servlet-name>
         <url-pattern>/AdicionaFilmeServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListaFilmesServlet</servlet-name>
+        <url-pattern>/ListaFilmesServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
