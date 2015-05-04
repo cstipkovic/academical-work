@@ -68,4 +68,25 @@ public class GerenteDaoRalacional implements GerenteDaoInterface {
             e.printStackTrace();
         }
     }
+    
+    @Override
+    public List<String> listarAtendentesGerente(int id) {
+        List<String> atendentes;
+        atendentes = new ArrayList<>();
+        
+        try {
+            String sql = "select nome from atendente where (A.idgerente = " + id + ")";
+            ResultSet resultados = st.executeQuery(sql);
+            
+            while (resultados.next()) {                
+                String n = resultados.getString("nome");
+                
+                atendentes.add(n);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        return atendentes;
+    }
 }

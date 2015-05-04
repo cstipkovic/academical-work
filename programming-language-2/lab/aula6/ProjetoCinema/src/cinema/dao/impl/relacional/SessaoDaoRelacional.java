@@ -1,12 +1,11 @@
 package cinema.dao.impl.relacional;
 
 import cinema.dao.api.SessaoDaoInterface;
-import cinema.dominio.Filme;
-import cinema.dominio.Sala;
 import cinema.dominio.Sessao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,10 +33,10 @@ public class SessaoDaoRelacional implements SessaoDaoInterface {
                 int sala = resultados.getInt("sala");
                 int filme = resultados.getInt("filme");
                 int capacidade = resultados.getInt("capacidade");
-                String horario = resultados.getString("horario");
+                Time horario = resultados.getTime("horario");
                 boolean isFull = resultados.getBoolean("isFull");
                 
-                Sessao s = new Sessao(id, sala, filme, capacidade, sql, isFull);
+                Sessao s = new Sessao(id, sala, filme, capacidade, horario, isFull);
                 sessoes.add(s);
             }
         } catch (Exception e) {

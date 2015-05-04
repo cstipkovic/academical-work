@@ -12,4 +12,6 @@ public interface SalaDaoInterface {
     void remover(Sala s);
     
     void atualizar(Sala s);
+    
+    List<String> listarFilmesSala(int id);
 }

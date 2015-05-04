@@ -12,4 +12,6 @@ public interface GerenteDaoInterface {
     void remover(Gerente g);
     
     void atualizar(Gerente g);
+    
+    List<String> listarAtendentesGerente(int id);
 }

@@ -2,11 +2,14 @@ package cinema.dao.impl.relacional;
 
 import cinema.dao.api.FilmeDaoInterface;
 import cinema.dominio.Filme;
+import cinema.dominio.Sala;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class FilmeDaoRelacional implements FilmeDaoInterface {
     
@@ -39,6 +42,7 @@ public class FilmeDaoRelacional implements FilmeDaoInterface {
                 int idator = resultados.getInt("elenco");
                 
                 Filme f = new Filme(idfilme, titulo, duracao, classificacao, diretor, distribuidora, status, genero, idator);
+                filmes.add(f);
             }
             
         } catch (Exception e) {
@@ -76,5 +80,27 @@ public class FilmeDaoRelacional implements FilmeDaoInterface {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    
+    @Override
+    public List<String> listarSalasFilme(int id) {
+        List<String> salas;
+        salas = new ArrayList<>();
+        
+        String sql = "select sala from sessao where filme = " + id;
+        
+        try {
+            ResultSet resultados = st.executeQuery(sql);
+            
+            while (resultados.next()) {
+                String sala;
+                sala = Integer.toString(resultados.getInt("sala"));
+                salas.add(sala);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        return salas;
     }
 }

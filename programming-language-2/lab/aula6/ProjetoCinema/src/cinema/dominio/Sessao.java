@@ -1,15 +1,17 @@
 package cinema.dominio;
 
+import java.sql.Time;
+
 public class Sessao {
 
     public int id;
     public int sala;
     public int filme;
     public int capacidade;
-    public String horario;
+    public Time horario;
     public boolean isFull;
 
-    public Sessao(int id, int sala, int filme, int capacidade, String horario, boolean isFull) {
+    public Sessao(int id, int sala, int filme, int capacidade, Time horario, boolean isFull) {
         this.id = id;
         this.sala = sala;
         this.filme = filme;
@@ -54,11 +56,11 @@ public class Sessao {
         this.capacidade = capacidade;
     }
 
-    public String getHorario() {
+    public Time getHorario() {
         return horario;
     }
 
-    public void setHorario(String horario) {
+    public void setHorario(Time horario) {
         this.horario = horario;
     }
 

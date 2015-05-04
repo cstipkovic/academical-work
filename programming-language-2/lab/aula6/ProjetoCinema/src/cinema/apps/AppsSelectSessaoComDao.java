@@ -6,6 +6,7 @@ import cinema.dao.impl.relacional.SessaoDaoRelacional;
 import cinema.dao.impl.relacional.javadb.ConexaoJavaDB;
 import cinema.dominio.Sessao;
 import java.sql.SQLException;
+import java.sql.Time;
 import java.util.List;
 
 public class AppsSelectSessaoComDao {
@@ -38,8 +39,9 @@ public class AppsSelectSessaoComDao {
         
         Sessao s;
 
-        // Adicionar
-        s = new Sessao(1, 1, 1, 1, "20h30", true);
+        Time hora;
+        hora = new Time(10, 10, 00);
+        s = new Sessao(1, 1, 1, 1, hora, true);
         dao.adicionar(s);
         
         // Update

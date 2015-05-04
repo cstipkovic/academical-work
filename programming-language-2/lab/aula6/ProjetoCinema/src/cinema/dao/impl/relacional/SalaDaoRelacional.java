@@ -27,7 +27,7 @@ public class SalaDaoRelacional implements SalaDaoInterface {
             String sql = "select idsala, capacidade, poltronaEspecialDiferenciada, emManutencao from sala";
             ResultSet resultados = st.executeQuery(sql);
             
-            while (resultados.next()) {                
+            while (resultados.next()) {
                 int id = resultados.getInt("idsala");
                 int capacidade = resultados.getInt("capacidade");
                 int poltronaEspecialDiferenciada = resultados.getInt("poltronaEspecialDiferenciada");
@@ -70,4 +70,26 @@ public class SalaDaoRelacional implements SalaDaoInterface {
             e.printStackTrace();
         }
     }
+    
+    @Override
+    public List<String> listarFilmesSala(int id) {
+        List<String> filmes;
+        filmes = new ArrayList<>();
+        
+        try {
+            String sql = "select distinct F.titulo from filme F, sessao S where (S.sala = " + id + ") and (F.idfilme = S.filme)";
+            ResultSet resultados = st.executeQuery(sql);
+            
+            while (resultados.next()) {
+                String titulo = resultados.getString("titulo");
+                
+                filmes.add(titulo);
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        return filmes;
+    } 
 }

@@ -12,4 +12,6 @@ public interface FilmeDaoInterface {
     void remover(Filme f);
     
     void atualizar(Filme f);
+    
+    List<String> listarSalasFilme(int id);
 }
