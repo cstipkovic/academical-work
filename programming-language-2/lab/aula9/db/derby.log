@@ -369,3 +369,9 @@ java.sql.SQLException: Ocorreu uma falha de autenticação da conexão.  Motivo:
 ============= end nested exception, level (1) ===========
 Cleanup action completed
 Thu May 14 19:03:45 BRT 2015 Thread[DRDAConnThread_3,5,main] (DATABASE = Hotelaria), (DRDAID = {9}), Ocorreu uma falha de autenticação da conexão.  Motivo: Autenticação inválida..
+----------------------------------------------------------------
+Sun May 17 21:51:17 BRT 2015: Shutting down Derby engine
+----------------------------------------------------------------
+Sun May 17 21:51:17 BRT 2015:
+Shutting down instance a816c00e-014d-5405-2ac5-0000769cdf72 on database directory /Users/cstipkovic/Documents/Projects/github/cstipkovic/academic-works/programming-language-2/lab/aula9/db/Hotelaria with class loader sun.misc.Launcher$AppClassLoader@5451c3a8 
+----------------------------------------------------------------
