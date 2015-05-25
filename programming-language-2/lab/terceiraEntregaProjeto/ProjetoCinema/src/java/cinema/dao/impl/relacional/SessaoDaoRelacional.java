@@ -1,7 +1,7 @@
 package cinema.dao.impl.relacional;
 
 import cinema.dao.api.SessaoDaoInterface;
-import cinema.dominio.Sessao;
+import cinema.model.Sessao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -11,10 +11,10 @@ import java.util.List;
 
 public class SessaoDaoRelacional implements SessaoDaoInterface {
     
-    private ConexaoInterface connection;
+    private ConnectionInterface connection;
     private Statement st;
 
-    public SessaoDaoRelacional(ConexaoInterface connection) throws SQLException {
+    public SessaoDaoRelacional(ConnectionInterface connection) throws SQLException {
         this.connection = connection;
         st = connection.getConnection().createStatement();
     }
