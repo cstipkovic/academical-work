@@ -9,9 +9,31 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Projeto Cinema</title>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="col-sm-3">
+                    <ul>
+                        <li><b>Filmes</b></li>
+                        <li><a href="">Listar</a></li>
+                        <li>Criar</li>
+                        <li>Atualizar</li>
+                        <li>Deletar</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+Aplicação web MVC CRUD para a entidade que representa as sessões.
+•
+Aplicação web MVC com a funcionalidade 
+de venda de ingressos
+.
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     </body>
 </html>
