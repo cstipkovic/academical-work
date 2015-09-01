@@ -1,0 +1,108 @@
+obs: Como utilizo Mac OS X em casa, optei por instalar uma maquina virtual com
+ubuntu usando o vagrant, por isso o usuário que aparece é o vagrant.
+
+# Exercicio 1:
+
+- Liste todos os processos e encontre nesta listagem o Processo do usuário que executou o vi
+- Liste apenas o processo vi
+
+## Comando executado:
+ps aux |grep vim
+
+## Resultado do comando:
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+vagrant   1686  0.0  0.9  48228  4844 pts/0    S+   02:50   0:00 vim
+
+- Liste todos os processos apenas do usuário que iniciou o vi.
+
+## Comando executado:
+ps -U vagrant
+
+## Resultado do comando:
+PID TTY          TIME CMD
+1581 ?        00:00:00 sshd
+1582 pts/0    00:00:00 bash
+1671 ?        00:00:00 sshd
+1672 pts/1    00:00:00 bash
+1686 pts/0    00:00:00 vim
+1755 pts/1    00:00:00 ps
+
+- Liste apenas o PID de todos processos.
+
+## Comando executado:
+ps -o pid
+
+## Resultado do comando:
+PID
+1672
+1783
+
+# Execicio 2
+
+- Liste todos os processos no formato de árvore e redirecione o resultado para o arquivo /tmp/lista_processos_arvore
+
+## Comando executado:
+pstree > /tmp/lista_processos_arvore
+
+## Resultado do comando (escrito dentro do arquivo):
+init-+-VBoxService---7*[{VBoxService}]
+     |-acpid
+     |-apache2---5*[apache2]
+     |-atd
+     |-cron
+     |-dbus-daemon
+     |-dhclient
+     |-6*[getty]
+     |-php5-fpm---2*[php5-fpm]
+     |-puppet---{puppet}
+     |-rpc.idmapd
+     |-rpc.statd
+     |-rpcbind
+     |-rsyslogd---3*[{rsyslogd}]
+     |-ruby---{ruby}
+     |-sshd-+-sshd---sshd---bash---vim
+     |      `-sshd---sshd---bash---pstree
+     |-systemd-logind
+     |-systemd-udevd
+     |-upstart-file-br
+     |-upstart-socket-
+     `-upstart-udev-br
+
+- Com o top mostrar o status dos processos em um intervalo de 1s (um segundo) ordenado pelo uso do Processador.
+
+## Comando executado
+top -d 1 -o %CPU
+
+## Resultado do comando
+PID USER      PR  NI    VIRT    RES    SHR S %CPU %MEM     TIME+ COMMAND
+982 root      20   0  140260  13056   9724 S  1.0  2.6   0:00.13 php5-fpm
+1987 vagrant   20   0   23540   1580   1132 R  1.0  0.3   0:00.02 top
+1 root      20   0   33584   2964   1508 S  0.0  0.6   0:01.01 init
+
+- Iniciar o vi em outro Console (alt+f2) e verificar o PID deste, e matar (kill) este processo no primeiro console (alt+f1)
+
+## Comando executado:
+top -u vagrant
+
+## Resultado do comando:
+1989 vagrant   20   0   48228   4844   2492 S  0.0  1.0   0:00.02 vim
+
+## Comando executado:
+kill -9 1989
+
+- Monitorar apenas os processos do usuário root.
+
+## Comando executado:
+top -u root
+
+## Resultado do Comando:
+PID USER      PR  NI    VIRT    RES    SHR S %CPU %MEM     TIME+ COMMAND
+  1 root      20   0   33584   2964   1508 S  0.0  0.6   0:01.01 init
+  2 root      20   0       0      0      0 S  0.0  0.0   0:00.00 kthreadd
+  3 root      20   0       0      0      0 S  0.0  0.0   0:00.02 ksoftirqd/0
+  4 root      20   0       0      0      0 S  0.0  0.0   0:00.00 kworker/0:0
+  5 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 kworker/0:0H
+  7 root      20   0       0      0      0 S  0.0  0.0   0:00.17 rcu_sched
+  8 root      20   0       0      0      0 S  0.0  0.0   0:00.22 rcuos/0
+  9 root      20   0       0      0      0 S  0.0  0.0   0:00.00 rcu_bh
+ 10 root      20   0       0      0      0 S  0.0  0.0   0:00.00 rcuob/0
