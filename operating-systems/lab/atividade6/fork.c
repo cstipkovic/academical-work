@@ -7,7 +7,6 @@ void main() {
 	int pid;
 
 	pid = fork();
-	fork();
 
 	if (pid < 0) {
 		fprintf(stderr, "erro\n");
@@ -21,5 +20,4 @@ void main() {
 	}
 
 	system("date");
-
 }

@@ -18,6 +18,6 @@ void main() {
 			printf("PAI: \t id is %d, pid (filho) is %d\n", getpid(), pid[i]);
 		}
 
-		sleep(1);
+		sleep(10);
 	}
 }
