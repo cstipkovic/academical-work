@@ -1,0 +1,8 @@
+1) Após entender o exemplo, crie um outro programa que chame o método fork() várias vezes seguidas, após cada fork, imprima o PID do processo e de seu pai. Analise a saída!
+
+- O PID dos processos criados são sequenciais, ou seja, o processo filho incrementa o PID incrementado de 1 ao processo pai, e o PPID do começam com 0.
+
+2) Utilizando o comando Linux para apresentar os processos em árvore, identifique os processos criados por seu programa (elaborado no item anterior). Explique a partir da árvore de processos apresentada a relação entre os processos criados no seu programa.
+
+- Os processos são criados (e conseguentemente numerado) do primeiro para o ultimo fork, ou seja, o primeiro processo pai, vai ter mais processos filhos do que o ultimo processo filho criado, 
+- O cascateamente de processos filhos segue a ordem de criacao, que vai do primeiro (que possui mais processos filhos) para o ultimo (que possui menos processos filhos).
