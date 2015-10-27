@@ -6,14 +6,13 @@ import java.io.IOException;
 
 public class AppFileOutputStream {
     
-    public static void main(String args[]) throws FileNotFoundException, IOException {
-        
+    public static void main(String[] args) throws FileNotFoundException, IOException {
         FileOutputStream fos;
         fos = new FileOutputStream("saida.txt");
         fos.write(76);
         fos.write(80);
         fos.write(73);
         fos.write(73);
-        fos.close();        
+        fos.close();
     }
 }
