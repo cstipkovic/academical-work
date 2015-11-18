@@ -1,0 +1,33 @@
+Mon Sep 21 19:07:28 BRT 2015 : Apache Derby Servidor de Rede - 10.10.2.0 - (1582446) iniciado e pronto para aceitar conexões na porta 1527 em {3}
+----------------------------------------------------------------
+Mon Sep 21 19:07:28 BRT 2015:
+ Inicializando o Derby versão The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instância a816c00e-014f-f1f2-8942-ffffb20c55d1
+no diretório de banco de dados C:\Temp\aula5\db\sistema_bancario 
+
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_40-b26
+user.dir=C:\Program Files\GlassFish_Server\javadb
+os.name=Windows 7
+os.arch=amd64
+os.version=6.1
+derby.system.home=C:\Temp\aula5\db
+Carregador de classe do banco de dados iniciado - derby.database.classpath=''
+----------------------------------------------------------------
+Mon Sep 21 19:07:41 BRT 2015:
+Encerrando a instância a816c00e-014f-f1f2-8942-ffffb20c55d1
+Mon Sep 21 19:07:41 BRT 2015 Thread[DRDAConnThread_3,5,main] (DATABASE = sistema_bancario), (DRDAID = {2}), Banco de dados 'sistema_bancario' fechado.
+----------------------------------------------------------------
+Mon Sep 21 19:07:50 BRT 2015:
+ Inicializando o Derby versão The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instância ed8940a7-014f-f1f2-8942-ffffb20c55d1
+no diretório de banco de dados C:\Temp\aula5\db\sistema_bancario 
+
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_40-b26
+user.dir=C:\Program Files\GlassFish_Server\javadb
+os.name=Windows 7
+os.arch=amd64
+os.version=6.1
+derby.system.home=C:\Temp\aula5\db
+Carregador de classe do banco de dados iniciado - derby.database.classpath=''
+----------------------------------------------------------------
+Mon Sep 21 19:58:56 BRT 2015: Shutting down Derby engine
