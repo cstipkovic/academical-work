@@ -1,0 +1,20 @@
+Ativ 8: Threads em JAVA
+
+1- Execute o exemplo 1, explique a execução das threads e o resultado impresso no console.
+
+O exemplo 1 instancia duas threads (santos e sao paulo), setando a prioridade de execução de cada uma (que não influenciam no resultado de execução), e executa as threads concorrentemente mostrando um resultado diferente a cada execução, por conta do método nativo start(), que roda paralelamente.
+
+
+2- Altere o método de execução das threads start() para run(). O que ocorre enquanto a execução dasthreads? explique.
+
+Ao utilizar o método run(), a thread que teve o método run() chamado primeiro, executa primeiro até o seu termino, para assim executar a segunda instancia do objeto  ThreadSimples, mostrando que a execucao nesse caso e sequencial.
+
+
+3- Execute o exemplo 2, explique a execução das threads e o resultado impresso no console.
+
+A execução no exemplo 2 se da por conta do tempo de delay setado para cada thread, o que ira influenciar na ordem de execução, sendo a instancia que tiver o menor tempo de delay, executa primeiro.
+
+
+4- Altere o valor inteiro passado como parâmetro para as  threads para 1000. Explique o que ocorre na execução  do código em função do que é impresso no console.
+
+Setando o delay da 3 instancias com o mesmo tempo de delay, o console vai mostralas no mesmo instante, alterando a ordem randomicamente.
