@@ -1,5 +1,21 @@
 #include <stdio.h>
 
+int sum(int a, int b) {
+  return (a + b);
+}
+
+int subtracao(int a, int b) {
+  return (a - b);
+}
+
+int divide(int a, int b) {
+  return (a / b);
+}
+
+int multiplicacao(int a, int b) {
+  return (a * b);
+}
+
 int main() {
   char operator;
   int a, b;
@@ -8,49 +24,31 @@ int main() {
   scanf("%c", &operator);
 
   while (operator != 's') {
+    printf("\nInforme o primeiro numero: ");
+    scanf("%d", &a);
+
+    printf("\nInforme o segundo numero: ");
+    scanf("%d", &b);
+
     switch (operator) {
       case '+':
-        printf("\nInforme o primeiro numero: ");
-        scanf("%d", &a);
-
-        printf("\nInforme o segundo numero: ");
-        scanf("%d", &b);
-
-        printf("Resultado da soma: %d\n", (a + b));
+        printf("Resultado da soma: %d\n", sum(a, b));
         break;
 
       case '-':
-        printf("\nInforme o primeiro numero: ");
-        scanf("%d", &a);
-
-        printf("\nInforme o segundo numero: ");
-        scanf("%d", &b);
-
-        printf("Resultado da subtracao: %d\n", (a - b));
+        printf("Resultado da subtracao: %d\n", subtracao(a, b));
         break;
 
       case '/':
-        printf("\nInforme o primeiro numero: ");
-        scanf("%d", &a);
-
-        printf("\nInforme o segundo numero: ");
-        scanf("%d", &b);
-
         if (b == 0) {
           printf("Divisao por 0 nao permitida.\n");
         } else {
-          printf("Resultado da divisao: %d\n", (a / b));
+          printf("Resultado da divisao: %d\n", divide(a, b));
         }
         break;
 
       case '*':
-        printf("\nInforme o primeiro numero: ");
-        scanf("%d", &a);
-
-        printf("\nInforme o segundo numero: ");
-        scanf("%d", &b);
-
-        printf("Resultado da multiplicacao: %d\n", (a * b));
+        printf("Resultado da multiplicacao: %d\n", multiplicacao(a, b));
         break;
     }
 
