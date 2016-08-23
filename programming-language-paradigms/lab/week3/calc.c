@@ -1,3 +1,7 @@
+// Atividade #1 - Linguagem C - Calculadora - PLP
+// Nome: Ricardo Arthur, 31676987 - 05N11
+// Nome: Clauber Pereira Stipkovic Halic, 31243045 - 05N12
+
 #include <stdio.h>
 
 int sum(int a, int b) {
@@ -20,15 +24,9 @@ int main() {
   char operator;
   int a, b;
 
-  printf("Escolha uma operacao aritmetica (ou digite 's' para finalizar): ");
-  scanf("%c", &operator);
-
-  while (operator != 's') {
-    printf("\nInforme o primeiro numero: ");
-    scanf("%d", &a);
-
-    printf("\nInforme o segundo numero: ");
-    scanf("%d", &b);
+  do {
+    printf("\nInforme '0s0' para sair ou a expressao (ex: 1+1): ");
+    scanf("%d%c%d", &a, &operator, &b);
 
     switch (operator) {
       case '+':
@@ -51,10 +49,7 @@ int main() {
         printf("Resultado da multiplicacao: %d\n", multiplicacao(a, b));
         break;
     }
-
-    printf("\nEscolha uma operacao aritmetica (ou digite 's' para finalizar): ");
-    scanf("%c", &operator);
-  }
+  } while(operator != 's');
 
   return 0;
 }
