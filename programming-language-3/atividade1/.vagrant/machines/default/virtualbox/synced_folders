@@ -1,1 +1,1 @@
-{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/cstipkovic/Documents/Projects/github/cstipkovic/academic-works/programming-language-3","disabled":false}}}
+{"virtualbox":{"/lp3":{"guestpath":"/lp3","hostpath":"/Users/cstipkovic/Documents/Projects/github/cstipkovic/academic-works/programming-language-3/atividade1","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/cstipkovic/Documents/Projects/github/cstipkovic/academic-works/programming-language-3/atividade1","disabled":false,"__vagrantfile":true}}}
