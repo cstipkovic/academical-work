@@ -12,5 +12,10 @@ sudo apt-get autoremove -y
 
 # Apache Tomcat
 sudo apt-get -y install apache2
-sudo apt-get -y install tomcat7 tomcat-docs tomcat7-admin tomcat-examples
+sudo apt-get -y install tomcat7 tomcat7-admin
 sudo apt-get -y install maven
+
+# Configurando a variavel JAVA_HOME
+cd /etc/default
+sudo echo "JAVA_HOME=/usr/lib/jvm/java-7-oracle" >> tomcat7
+sudo service tomcat7 restart
