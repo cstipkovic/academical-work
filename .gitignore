@@ -1,6 +1,7 @@
 *.*~
 *.*.gch
 *.o
+.vagrant
 *.*.swp
 .DS_Store
 *.zip
