@@ -28,3 +28,17 @@ echo "Configurando o Tomcat7..."
 cd /etc/default
 sudo echo "JAVA_HOME=/usr/lib/jvm/java-8-oracle" >> tomcat7
 sudo service tomcat7 restart
+
+# Apache Derby
+echo "Instalando o Apache Derby..."
+sudo wget http://mirror.nbtelecom.com.br/apache//db/derby/db-derby-10.12.1.1/db-derby-10.12.1.1-bin.zip
+sudo unzip db-derby-10.12.1.1-bin.zip
+sudo mkdir /opt/Apache
+sudo cp -r db-derby-10.12.1.1-bin /opt/Apache
+cd /opt/Apache
+sudo echo "DERBY_INSTALL=/opt/Apache/db-derby-10.12.1.1-bin" >> ~/.bashrc
+sudo cd ./db-derby-10.12.1.1-bin/bin
+sudo ./startNetworkServer &
+sudo ./js
+connect 'jdbc:derby://localhost:1527/meuDB;create=true;user=me;password=pass';
+exit;
