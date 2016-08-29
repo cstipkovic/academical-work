@@ -16,9 +16,9 @@ void multiplica (int t, int mA[][t], int mB[][t]) {
 	for (c = 0; c < t; c++) {
 		for (d = 0; d < t; d++) {
 			for (k = 0; k < t; k++) {
-				sum = sum + mA[c][k]*mB[k][d];				
+				sum = sum + mA[c][k]*mB[k][d];
 			}
-		
+
 			mAxB[c][d] = sum;
 
 			sum = 0;
@@ -31,6 +31,16 @@ void multiplica (int t, int mA[][t], int mB[][t]) {
 
 	printf("Fim da multiplica: %s:%d\n", timeString, tp.millitm);
 
+	printf("\n");
+
+	int i = 0;
+	for (c = 0; c < t; c++) {
+		for (i = 0; i < t; ++i) {
+			printf("%d\t", mAxB[c][i]);
+		}
+
+		printf("\n");
+	}
 } // multiplica
 
 int main() {
@@ -62,7 +72,6 @@ int main() {
 			A[c][d] = min + (rand() % (int)(max - min + 1));
 			B[c][d] = min + (rand() % (int)(max - min + 1));
 		}
-
 	}
 
 	multiplica(t, A, B);
@@ -75,4 +84,3 @@ int main() {
 
 	return 0;
 }
-
