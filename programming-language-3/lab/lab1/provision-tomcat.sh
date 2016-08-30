@@ -14,9 +14,6 @@ java -version
 echo "Limpando o sistema..."
 sudo apt-get autoremove -y
 
-echo "Instalando Apache..."
-sudo apt-get -y install apache2
-
 echo "Instalando Tomcat..."
 sudo apt-get -y install tomcat7 tomcat7-admin
 
@@ -35,10 +32,10 @@ sudo wget http://mirror.nbtelecom.com.br/apache//db/derby/db-derby-10.12.1.1/db-
 sudo unzip db-derby-10.12.1.1-bin.zip
 sudo mkdir /opt/Apache
 sudo cp -r db-derby-10.12.1.1-bin /opt/Apache
-cd /opt/Apache
+cd /opt/Apache/db-derby-10.12.1.1-bin/bin
 sudo echo "DERBY_INSTALL=/opt/Apache/db-derby-10.12.1.1-bin" >> ~/.bashrc
-sudo cd ./db-derby-10.12.1.1-bin/bin
-sudo ./startNetworkServer &
-sudo ./js
-connect 'jdbc:derby://localhost:1527/meuDB;create=true;user=me;password=pass';
-exit;
+# sudo ./setNetworkServerCP &
+# sudo ./startNetworkServer &
+# sudo ./ij
+# connect 'jdbc:derby://localhost:1527/meuDB;create=true;user=me;password=pass';
+# exit;
