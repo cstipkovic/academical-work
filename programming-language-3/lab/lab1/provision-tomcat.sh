@@ -34,8 +34,9 @@ sudo mkdir /opt/Apache
 sudo cp -r db-derby-10.12.1.1-bin /opt/Apache
 cd /opt/Apache/db-derby-10.12.1.1-bin/bin
 sudo echo "DERBY_INSTALL=/opt/Apache/db-derby-10.12.1.1-bin" >> ~/.bashrc
-# sudo ./setNetworkServerCP &
-# sudo ./startNetworkServer &
-# sudo ./ij
-# connect 'jdbc:derby://localhost:1527/meuDB;create=true;user=me;password=pass';
-# exit;
+sudo echo "DERBY_HOME=/opt/Apache/db-derby-10.12.1.1-bin/bin" >> ~/.bashrc
+sudo ./setNetworkServerCP &
+sudo ./startNetworkServer &
+sudo ./ij
+connect 'jdbc:derby://localhost:1527/meuDB;create=true;user=me;password=pass';
+exit;
