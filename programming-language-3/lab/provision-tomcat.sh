@@ -1,3 +1,4 @@
+#!/bin/bash
 # Baseado no artigo: https://dzone.com/articles/vagrant
 # Instala o Oracle JDK via WebUpd8 PPa
 echo "Instalando Java 8..."
@@ -33,10 +34,11 @@ sudo unzip db-derby-10.12.1.1-bin.zip
 sudo mkdir /opt/Apache
 sudo cp -r db-derby-10.12.1.1-bin /opt/Apache
 cd /opt/Apache/db-derby-10.12.1.1-bin/bin
-sudo echo "DERBY_HOME=/opt/Apache/db-derby-10.12.1.1-bin/bin" >> ~/.bashrc
-sudo echo "DERBY_INSTALL=/opt/Apache/db-derby-10.12.1.1-bin" >> ~/.bashrc
-sudo ./setNetworkServerCP &
-sudo ./startNetworkServer &
-sudo ./ij
-connect 'jdbc:derby://localhost:1527/meuDB;create=true;user=me;password=pass';
-exit;
+echo "DERBY_INSTALL='/opt/Apache/db-derby-10.12.1.1-bin/bin'" >> ~/.bashrc
+source ~/.bashrc
+
+# // Necessita fazer na mao
+# sudo ./startNetworkServer -h 192.168.2.110 &
+# ./ij
+# connect 'jdbc:derby://localhost:1527/meuDB;create=true;user=me;password=pass';
+# exit;
