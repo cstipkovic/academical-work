@@ -34,6 +34,7 @@ sudo unzip db-derby-10.12.1.1-bin.zip
 sudo mkdir /opt/Apache
 sudo cp -r db-derby-10.12.1.1-bin /opt/Apache
 cd /opt/Apache/db-derby-10.12.1.1-bin/bin
+echo "JAVA_HOME='/usr/lib/jvm/java-8-oracle'" >> ~/.bashrc
 echo "DERBY_INSTALL='/opt/Apache/db-derby-10.12.1.1-bin/bin'" >> ~/.bashrc
 source ~/.bashrc
 
