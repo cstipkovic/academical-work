@@ -1,8 +1,9 @@
 package mack.controllers;
 
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 
-public abstract class AstractController implements Controller {
+public abstract class AbstractController implements Controller {
     private HttpServletRequest request;
     
     protected String returnPage;
@@ -15,11 +16,19 @@ public abstract class AstractController implements Controller {
         returnPage = page;
     }
     
+    public String getReturnPage() {
+        return returnPage;
+    }
+    
     public HttpServletRequest getRequest() {
         return request;
     }
     
     public void setRequest(HttpServletRequest request) {
+        this.request = request;
+    }
+    
+    public void setRquest(HttpServletRequest request) {
         this.request = request;
     }
 }
