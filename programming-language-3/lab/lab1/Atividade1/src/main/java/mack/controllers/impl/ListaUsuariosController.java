@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 import mack.controllers.AbstractController;
 import mack.entities.Usuario;
 
-public class IndexController extends AbstractController {
+public class ListaUsuariosController extends AbstractController {
     
     public void execute() {
         try {
@@ -17,7 +17,7 @@ public class IndexController extends AbstractController {
             this.setReturnPage("/index.jsp");
             this.getRequest().setAttribute("usuarios", usuarios);
         } catch (Exception ex) {
-            Logger.getLogger(IndexController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ListaUsuariosController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

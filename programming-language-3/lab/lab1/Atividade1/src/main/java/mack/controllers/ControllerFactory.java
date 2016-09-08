@@ -4,7 +4,8 @@ public class ControllerFactory {
     
     public static final Controller getControllerByClass(Class actionClass) {
         try {
-            Controller controller = (Controller) actionClass.newInstance();
+            Controller controller;
+            controller = (Controller) actionClass.newInstance();
             
             return (Controller) actionClass.newInstance();
         } catch (java.lang.InstantiationException e) {
