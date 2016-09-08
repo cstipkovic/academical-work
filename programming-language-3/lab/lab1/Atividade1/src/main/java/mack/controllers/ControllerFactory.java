@@ -4,10 +4,9 @@ public class ControllerFactory {
     
     public static final Controller getControllerByClass(Class actionClass) {
         try {
-            Controller controller;
-            controller = (Controller) actionClass.newInstance();
+            Controller controller = (Controller) actionClass.newInstance();
             
-            return (Controller) actionClass.newInstance();
+            return controller;
         } catch (java.lang.InstantiationException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {

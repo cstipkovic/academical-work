@@ -1,9 +1,9 @@
 package mack.controllers;
 
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 
 public abstract class AbstractController implements Controller {
+    
     private HttpServletRequest request;
     
     protected String returnPage;
@@ -25,10 +25,6 @@ public abstract class AbstractController implements Controller {
     }
     
     public void setRequest(HttpServletRequest request) {
-        this.request = request;
-    }
-    
-    public void setRquest(HttpServletRequest request) {
         this.request = request;
     }
 }

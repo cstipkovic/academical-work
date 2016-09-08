@@ -13,7 +13,7 @@ public class Usuario {
     }
 
     public int getId() {
-        return id;
+        return this.id;
     }
 
     public String getNome() {
@@ -33,7 +33,7 @@ public class Usuario {
     }
     
     public String toString() {
-        StringBuffer sbResult = new StringBuffer();
+        StringBuilder sbResult = new StringBuilder();
         sbResult.append("id = ");
         sbResult.append(id);
         sbResult.append(", nome = ");

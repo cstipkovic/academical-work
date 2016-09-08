@@ -1,8 +1,3 @@
-<%-- 
-    Document   : index
-    Author     : cstipkovic
---%>
-
 <%@page import="java.util.List"%>
 <%@page import="mack.entities.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
