@@ -20,7 +20,7 @@ public class ControllerFactory {
     
     public static final Controller getControllerByFullClassName(String className) {
         try {
-            String name = "mack.controllers.impl" + className + "Controller";
+            String name = "mack.controllers.impl." + className + "Controller";
             Class actionsClass = Class.forName(name);
             
             return getControllerByClass(actionsClass);
