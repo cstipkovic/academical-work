@@ -11,13 +11,18 @@ public class ListaUsuariosController extends AbstractController {
     
     public void execute() {
         try {
-            List usuarios = new ArrayList<Usuario>();
-            usuarios.add(new Usuario(1, "Mack", "Junior"));
-            usuarios.add(new Usuario(2, "Mack", "Neto"));
-            this.setReturnPage("/index.jsp");
-            this.getRequest().setAttribute("usuarios", usuarios);
-        } catch (Exception ex) {
-            Logger.getLogger(ListaUsuariosController.class.getName()).log(Level.SEVERE, null, ex);
+            this.setReturnPage("/listarUsuarios.jsp");
+            this.getRequest().setAttribute("usuarios", this.getUsuarios());
+        } catch (Exception e) {
+            Logger.getLogger(ListaUsuariosController.class.getName()).log(Level.SEVERE, null, e);
         }
+    }
+    
+    public List getUsuarios() {
+        List usuarios = new ArrayList<Usuario>();
+        usuarios.add(new Usuario(1, "Mack", "Junior"));
+        usuarios.add(new Usuario(2, "Mack", "Neto"));
+        
+        return usuarios;
     }
 }
