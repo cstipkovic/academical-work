@@ -1,3 +1,5 @@
+Aluno: Clauber Stipkovic - 31243045
+
 # Atividade 1
 
 ## Bloco 1
@@ -15,4 +17,13 @@
   - método execute(), no parâmetro do getLogger()
   - parâmetro control dentro do index.html
 
-2.
+2. Alterações feitas:
+ - Criacao da classe BuscaUsuarioController
+ - buscarUsuario.html (para informar o nome buscado)
+ - buscaUsuarios.jsp (lista o usuario encontrado)
+
+3. O FrontController que esta listado no web.xml recebe o parametro na url ("control") e direciona para o Controller informado no parametro para carregar a referencia do servlet.
+
+4. Passando os atributos para a pagina via setAttribute como um "get"
+
+5. Como no meu caso estou usando uma maquina vagrant, basta eu passar a imagem com a configuracao do server e o .war do projeto para ser rodado em outro lugar.
