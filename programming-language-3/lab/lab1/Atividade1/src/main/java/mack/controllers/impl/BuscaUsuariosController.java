@@ -11,19 +11,27 @@ public class BuscaUsuariosController extends AbstractController{
     
     public void execute() {
         try {
-            this.setReturnPage("/buscaUsuarios.jsp");
-            System.out.println(this.getRequest().getParameter("usuario"));
-            this.getRequest().setAttribute("usuarios", this.findUsuario());
+            String usuario = this.getRequest().getParameter("usuario");
+            
+            this.setReturnPage("/buscaUsuarios.jsp");            
+            this.getRequest().setAttribute("usuario", this.findUsuario(usuario));
         } catch (Exception e) {
             Logger.getLogger(BuscaUsuariosController.class.getName()).log(Level.SEVERE, null, e);
         }
     }
     
-    public List findUsuario() {
-        List usuarios = new ArrayList<Usuario>();
-        usuarios.add(new Usuario(1, "Mack", "Junior"));
-        usuarios.add(new Usuario(2, "Mack", "Neto"));
+    public String findUsuario(String usuario) {
+        List<Usuario> usuarios = new ArrayList<Usuario>();
+        usuarios.add(new Usuario(1, "Junior", "Mack"));
+        usuarios.add(new Usuario(2, "Neto", "Mack"));
         
-        return usuarios;
+        for (Usuario u : usuarios) {
+            System.out.println(u.getNome());
+            if (u.getNome().toString().equals(usuario)) {
+                return u.getNome().toString();
+            }
+        }
+        
+        return "Nao encontrado";
     }
 }
