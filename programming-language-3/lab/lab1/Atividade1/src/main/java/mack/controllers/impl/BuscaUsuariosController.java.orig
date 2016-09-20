@@ -11,10 +11,15 @@ public class BuscaUsuariosController extends AbstractController{
     
     public void execute() {
         try {
+<<<<<<< HEAD
+            this.setReturnPage("/buscaUsuarios.jsp");
+            this.getRequest().setAttribute("usuarios", this.findUsuario());
+=======
             String usuario = this.getRequest().getParameter("usuario");
             
             this.setReturnPage("/buscaUsuarios.jsp");            
             this.getRequest().setAttribute("usuario", this.findUsuario(usuario));
+>>>>>>> 66e12edd5dca4f20659271678ad219bba43a71cc
         } catch (Exception e) {
             Logger.getLogger(BuscaUsuariosController.class.getName()).log(Level.SEVERE, null, e);
         }

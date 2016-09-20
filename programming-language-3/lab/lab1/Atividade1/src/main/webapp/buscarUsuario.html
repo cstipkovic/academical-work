@@ -5,7 +5,9 @@
         <title>Busca Usuario</title>
     </head>
     <body>
-        <form action="FrontControllerServlet?control=BuscaUsuarios" method="get">
+        <form action="FrontControllerServlet" method="get">
+            <input type="hidden" value="BuscaUsuarios" name="control" />
+            
             <h1>Buscar o Usuário:</h1>
             <input type="text" name="usuario" />
             <input type="submit" value="Buscar" />
