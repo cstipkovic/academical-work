@@ -27,6 +27,7 @@ public class FrontControllerServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         try {
             String controller = request.getParameter("control");
+            System.out.println(request.getContextPath());
             Controller control = ControllerFactory.getControllerByFullClassName(controller);
             control.init(request);
             control.execute();
