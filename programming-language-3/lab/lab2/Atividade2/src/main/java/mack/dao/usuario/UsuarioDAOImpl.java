@@ -5,6 +5,7 @@ import java.sql.*;
 import java.util.*;
 import mack.dao.exception.DAORuntimeException;
 
+import org.apache.commons.logging.*;
 
 class UsuarioDAOImpl implements UsuarioDAO {
     
@@ -46,6 +47,8 @@ class UsuarioDAOImpl implements UsuarioDAO {
             UsuarioUtil.closeResultSet(rs);
             UsuarioUtil.closeJDBCConnection(conn);
         }
+        
+        return result;
     }
     
     @Override
@@ -64,7 +67,7 @@ class UsuarioDAOImpl implements UsuarioDAO {
             stmtSelect = conn.prepareStatement(sbSelect.toString());
             stmtSelect.setString(1, nome);
             rs = stmtSelect.executeQuery();
-            result = UsuarioUtil.makeUsuarioObjectFromResultSet(rs);
+            result = UsuarioUtil.makeUsuarioObjectsFromResultSet(rs);
         } catch (SQLException ex) {
             log.error(ex);
             throw new DAORuntimeException(ex);
@@ -133,7 +136,7 @@ class UsuarioDAOImpl implements UsuarioDAO {
                 throw new SQLException("executeUpdate return value: " + rows);
             }
             
-            result = new UsuarioImpl(usuario_id, nome, sobrenome);
+            result = new Usuario(usuario_id, nome, sobrenome);
         } catch (SQLException ex) {
             log.error(ex);
             throw new DAORuntimeException(ex);

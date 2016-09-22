@@ -5,8 +5,12 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Collection;
 import javax.activation.DataSource;
-import sun.rmi.runtime.Log;
+import mack.dao.exception.DAORuntimeException;
+import mack.entities.Usuario;
+
+import org.apache.commons.logging.*;
 
 public final class UsuarioUtil {
     
@@ -41,6 +45,8 @@ public final class UsuarioUtil {
             UsuarioUtil.closeStatement(stmtSelect);
             UsuarioUtil.closeResultSet(rs);
         }
+        
+        return id;
     }
 
     private UsuarioUtil() {
@@ -95,5 +101,19 @@ public final class UsuarioUtil {
                 log.error(rs, ex);
             }
         }
+    }
+    
+    static public Collection makeUsuarioObjectsFromResultSet(final ResultSet rs) throws java.sql.SQLException {
+        Collection result = new java.util.ArrayList();
+        
+        while (rs.next()) {            
+            int id = rs.getInt("usuario_id");
+            String nome = rs.getString("nome");
+            String sobrenome = rs.getString("sobrenome");
+            Usuario u = new Usuario(id, nome, sobrenome);
+            result.add(u);
+        }
+        
+        return result;
     }
 }

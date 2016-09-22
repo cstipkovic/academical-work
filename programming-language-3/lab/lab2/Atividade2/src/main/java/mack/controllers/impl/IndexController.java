@@ -6,6 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import mack.controllers.AbstractController;
 import mack.dao.usuario.UsuarioDAO;
+import mack.dao.usuario.UsuarioDAOFactory;
 import mack.entities.Usuario;
 
 public class IndexController extends AbstractController {
@@ -14,7 +15,7 @@ public class IndexController extends AbstractController {
         
         try {
             List usuarios = new ArrayList<Usuario>();
-            UsuarioDAO dao = UsuarioDaoFactory.getUsuarioDAO();
+            UsuarioDAO dao = UsuarioDAOFactory.getUsuarioDAO();
             usuarios = (List) dao.buscaTodosUsuarios();
             this.setReturnPage("/index.jsp");
             this.getRequest().setAttribute("usuarios", usuarios);

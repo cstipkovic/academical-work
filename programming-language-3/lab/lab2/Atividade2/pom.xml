@@ -36,7 +36,13 @@
         <artifactId>commons-lang</artifactId>
         <version>2.2</version>
     </dependency>
-
+    
+    <!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
+    <dependency>
+        <groupId>commons-logging</groupId>
+        <artifactId>commons-logging</artifactId>
+        <version>1.1.1</version>
+    </dependency>
   </dependencies>
   <build>
     <finalName>Atividade2</finalName>
