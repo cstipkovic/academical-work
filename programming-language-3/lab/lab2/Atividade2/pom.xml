@@ -5,7 +5,7 @@
   <artifactId>Atividade2</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>Atividade2 Maven Webapp</name>
+  <name>Atividade1-PII</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
