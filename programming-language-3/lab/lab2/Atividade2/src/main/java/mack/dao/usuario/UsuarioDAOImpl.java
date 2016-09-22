@@ -1,7 +1,6 @@
 package mack.dao.usuario;
 
 import mack.entities.Usuario;
-import mack.entities.UsuarioImpl;
 import java.sql.*;
 import java.util.*;
 import mack.dao.exception.DAORuntimeException;
@@ -113,21 +112,106 @@ class UsuarioDAOImpl implements UsuarioDAO {
         try {
             int usuario_id = UsuarioUtil.getUniqueUsuarioId(conn);
             StringBuilder sbInsert = new StringBuilder();
+            
             sbInsert.append("INSERT INTO ");
-//            TODO: continuar daqui
-        } catch (Exception e) {
+            sbInsert.append(UsuarioConstantes.USUARIO_TABLE_NAME);
+            sbInsert.append(" (usuario_id, nome, sobrenome) ");
+            sbInsert.append(" VALUES (");
+            sbInsert.append(" NEXT VALUE FOR ");
+            sbInsert.append(UsuarioConstantes.USUARIO_ID_SEQUENCE_NAME);
+            sbInsert.append(", ?, ?) ");
+            sbInsert.append(UsuarioConstantes.USUARIO_ID_SEQUENCE_NAME);
+            
+            stmtInsert = conn.prepareStatement(sbInsert.toString());
+            stmtInsert.setString(1, nome);
+            stmtInsert.setString(2, sobrenome);
+            
+            log.info("About to execute INSERT: value " + nome + "," + sobrenome);
+            
+            int rows = stmtInsert.executeUpdate();
+            if (rows != 1) {
+                throw new SQLException("executeUpdate return value: " + rows);
+            }
+            
+            result = new UsuarioImpl(usuario_id, nome, sobrenome);
+        } catch (SQLException ex) {
+            log.error(ex);
+            throw new DAORuntimeException(ex);
+        } finally {
+            UsuarioUtil.closeStatement(stmtInsert);
+            UsuarioUtil.closeJDBCConnection(conn);
+        }
+        
+        return result;
+    }
+    
+    @Override
+    public void updateUsuario(final int id, final String nome, final String sobrenome) {
+        Connection conn = UsuarioUtil.getConnection();
+        PreparedStatement stmtUpdate = null;
+        
+        try {
+            StringBuilder sbUpdate = new StringBuilder();
+            
+            sbUpdate.append("UPDATE ");
+            sbUpdate.append(UsuarioConstantes.USUARIO_TABLE_NAME);
+            sbUpdate.append(" SET ");
+            sbUpdate.append(" nome = ?, ");
+            sbUpdate.append(" sobrenome = ? ");
+            sbUpdate.append(" WHERE usuario_id = ?");
+            
+            stmtUpdate = conn.prepareStatement(sbUpdate.toString());
+            stmtUpdate.setString(1, nome);
+            stmtUpdate.setString(2, sobrenome);
+            
+            int rows = stmtUpdate.executeUpdate();
+            if (rows != 1) {
+                throw new SQLException("executeUpdate return value: " + rows);
+            }
+        } catch (SQLException ex) {
+            throw new DAORuntimeException(ex);
+        } finally {
+            UsuarioUtil.closeStatement(stmtUpdate);
+            UsuarioUtil.closeJDBCConnection(conn);
         }
     }
     
-    public void updateUsuario(int id, String nome, String sobrenome) {
-    }
-    
+    @Override
     public void close(){
+        log.info("close() called");
+        bIsClosed = true;
     }
     
+    @Override
     public boolean isClosed() {
+        return bIsClosed;
     }
     
+    @Override
     public Collection buscaTodosUsuarios() {
+        Connection conn = UsuarioUtil.getConnection();
+        Collection result = null;
+        ResultSet rs = null;
+        PreparedStatement stmtSelect = null;
+        
+        try {
+            StringBuilder sbSelect = new StringBuilder();
+            
+            sbSelect.append("SELECT usuario_id, nome, sobrenome FROM ");
+            sbSelect.append(UsuarioConstantes.USUARIO_TABLE_NAME);
+            
+            stmtSelect = conn.prepareStatement(sbSelect.toString());
+            rs = stmtSelect.executeQuery();
+            result = UsuarioUtil.makeUsuarioObjectsFromResultSet(rs);
+        } catch (SQLException ex) {
+            log.error(ex);
+            throw new DAORuntimeException(ex);
+        } finally {
+            UsuarioUtil.closeStatement(stmtSelect);
+            UsuarioUtil.closeResultSet(rs);
+            UsuarioUtil.closeJDBCConnection(conn);
+        }
+        
+        return result;
     }
 }

@@ -1,9 +1,18 @@
 package mack.dao.exception;
 
-public class DAORuntimeException {
-    public DAORuntimeException(Throwable) {}
+import org.apache.commons.lang.exception.NestableRuntimeException;
+
+public class DAORuntimeException extends NestableRuntimeException {
     
-    public DAORuntimeException(String, Throwable) {}
+    public DAORuntimeException(final Throwable cause) {
+        super(cause);
+    }
     
-    public DAORuntimeException(String) {}
+    public DAORuntimeException(final String msg, final Throwable cause) {
+        super(msg, cause);
+    }
+    
+    public DAORuntimeException(final String msg) {
+        super(msg);
+    }
 }

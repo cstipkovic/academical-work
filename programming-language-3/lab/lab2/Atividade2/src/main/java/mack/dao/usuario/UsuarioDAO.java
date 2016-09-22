@@ -5,7 +5,7 @@ import mack.entities.Usuario;
 
 public interface UsuarioDAO {
     
-    public Usuario buscaUsuarioPorId(int id)throws UsuarioNaoEncontradoException;
+    public Usuario buscaUsuarioPorId(int id) throws UsuarioNaoEncontradoException;
     
     public Collection buscaUsuarioPorNome(String nome);
     
