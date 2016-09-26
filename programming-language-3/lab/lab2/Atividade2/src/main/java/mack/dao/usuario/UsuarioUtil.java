@@ -53,7 +53,7 @@ public final class UsuarioUtil {
         // construtor intencionalmente privado
     }
     
-    static public Connection getConnection() {
+    public static Connection getConnection() {
         Connection conn = null;
         DataSource ds = null;
         
