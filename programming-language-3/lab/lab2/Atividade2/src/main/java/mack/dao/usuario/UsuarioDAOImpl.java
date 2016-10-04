@@ -64,6 +64,7 @@ class UsuarioDAOImpl implements UsuarioDAO {
             sbSelect.append("SELECT usuario_id, nome, sobrenome FROM ");
             sbSelect.append(UsuarioConstantes.USUARIO_TABLE_NAME);
             sbSelect.append(" WHERE nome = ?");
+            
             stmtSelect = conn.prepareStatement(sbSelect.toString());
             stmtSelect.setString(1, nome);
             rs = stmtSelect.executeQuery();

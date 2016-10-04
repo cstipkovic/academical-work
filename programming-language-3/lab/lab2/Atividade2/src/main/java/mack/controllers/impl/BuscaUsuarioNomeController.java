@@ -14,10 +14,9 @@ public class BuscaUsuarioNomeController extends AbstractController {
     public void execute() {
         try {
             List usuarios = new ArrayList<Usuario>();
-            this.getRequest().getParameter("usuario");
-            System.out.println("teste");
+            String param = this.getRequest().getParameter("usuario");
             UsuarioDAO dao = UsuarioDAOFactory.getUsuarioDAO();
-//            usuarios = (List) dao.buscaUsuarioPorNome()
+            usuarios = (List) dao.buscaUsuarioPorNome(param);
             this.setReturnPage("/Lista.jsp");
             this.getRequest().setAttribute("usuarios", usuarios);
         } catch (Exception e) {
