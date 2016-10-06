@@ -49,8 +49,6 @@
         <artifactId>derbyclient</artifactId>
         <version>10.12.1.1</version>
     </dependency>
-
-
   </dependencies>
   <build>
     <finalName>Atividade2</finalName>

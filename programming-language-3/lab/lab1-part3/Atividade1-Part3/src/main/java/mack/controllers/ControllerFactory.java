@@ -18,5 +18,16 @@ public class ControllerFactory {
         return null;
     }
     
-    // TODO: Parei aqui
+    public static final Controller getControllerByFullClassName(String className) {
+        try {
+            String name = "mack.controllers.impl." + className + "Controller";
+            Class actionClass = Class.forName(name);
+            
+            return getControllerByClass(actionClass);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        
+        return null;
+    }
 }
