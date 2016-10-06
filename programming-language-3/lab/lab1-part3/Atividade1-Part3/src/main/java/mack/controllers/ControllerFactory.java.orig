@@ -1,0 +1,41 @@
+package mack.controllers;
+
+public class ControllerFactory {
+
+    public static final Controller getControllerByClass(Class actionClass) {
+        try {
+            // TODO: no pdf do exemplo, o controller é instanciado em uma variavel e depois é passado
+            //       no return como uma instanciacao novamente,o que nao faz sentido;
+            return (Controller) actionClass.newInstance();
+        } catch (java.lang.InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (ClassCastException e) {
+            e.printStackTrace();
+        }
+        
+        return null;
+    }
+    
+<<<<<<< HEAD
+    public static final Controller getControllerByFullClassName(String className) {
+=======
+    public static final Controller getControllerByClassName(String className) {
+>>>>>>> 1950078326ad055a14f29356ba8c2e2e3b0ffc8f
+        try {
+            String name = "mack.controllers.impl." + className + "Controller";
+            Class actionClass = Class.forName(name);
+            
+            return getControllerByClass(actionClass);
+<<<<<<< HEAD
+        } catch (ClassNotFoundException e) {
+=======
+        } catch(ClassNotFoundException e) {
+>>>>>>> 1950078326ad055a14f29356ba8c2e2e3b0ffc8f
+            e.printStackTrace();
+        }
+        
+        return null;
+    }
+}
