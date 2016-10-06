@@ -36,7 +36,7 @@ public class FrontControllerServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         try {
             String controller = request.getParameter("control");
-            Controller control = ControllerFactory.getControllerByClassName(controller);
+            Controller control = ControllerFactory.getControllerByFullClassName(controller);
             control.init(request);
             control.execute();
             RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher(control.getReturnPage());

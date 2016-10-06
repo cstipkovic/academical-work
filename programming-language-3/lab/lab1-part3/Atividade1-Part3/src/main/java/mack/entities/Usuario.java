@@ -2,15 +2,9 @@ package mack.entities;
 
 public class Usuario {
     
-<<<<<<< HEAD
-    public int id;
-    public String nome;
-    public String sobrenome;
-=======
     private int id;
     private String nome;
     private String sobrenome;
->>>>>>> 1950078326ad055a14f29356ba8c2e2e3b0ffc8f
 
     public Usuario(int id, String nome, String sobrenome) {
         this.id = id;
@@ -20,11 +14,7 @@ public class Usuario {
 
     public int getId() {
         return id;
-<<<<<<< HEAD
     }
-=======
-    }   
->>>>>>> 1950078326ad055a14f29356ba8c2e2e3b0ffc8f
 
     public String getNome() {
         return nome;
@@ -41,12 +31,8 @@ public class Usuario {
     public void setSobrenome(String sobrenome) {
         this.sobrenome = sobrenome;
     }
-<<<<<<< HEAD
     
     @Override
-=======
-
->>>>>>> 1950078326ad055a14f29356ba8c2e2e3b0ffc8f
     public String toString() {
         StringBuffer sbResult = new StringBuffer();
         
@@ -59,9 +45,4 @@ public class Usuario {
         
         return sbResult.toString();
     }
-<<<<<<< HEAD
-=======
-    
-    
->>>>>>> 1950078326ad055a14f29356ba8c2e2e3b0ffc8f
 }

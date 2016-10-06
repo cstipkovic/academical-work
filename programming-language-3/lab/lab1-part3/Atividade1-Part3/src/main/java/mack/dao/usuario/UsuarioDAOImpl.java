@@ -8,16 +8,10 @@ import java.util.Collection;
 import java.util.Iterator;
 import mack.entities.Usuario;
 import org.apache.commons.logging.Log;
-<<<<<<< HEAD
 import org.apache.commons.logging.LogFactory;
 
 public class UsuarioDAOImpl implements UsuarioDAO {
     
-=======
-
-public class UsuarioDAOImpl implements UsuarioDAO {
-       
->>>>>>> 1950078326ad055a14f29356ba8c2e2e3b0ffc8f
     static final private Log log = LogFactory.getLog(UsuarioDAOImpl.class);
     private boolean bIsClosed = false;
 
@@ -28,10 +22,6 @@ public class UsuarioDAOImpl implements UsuarioDAO {
     @Override
     public Usuario buscaUsuarioPorId(final int id) 
         throws UsuarioNaoEncontradoException {
-<<<<<<< HEAD
-=======
-        
->>>>>>> 1950078326ad055a14f29356ba8c2e2e3b0ffc8f
         Connection conn = UsuarioUtil.getConnection();
         Usuario result = null;
         ResultSet rs = null;
@@ -40,13 +30,8 @@ public class UsuarioDAOImpl implements UsuarioDAO {
         try {
             StringBuilder sbSelect = new StringBuilder();
             
-<<<<<<< HEAD
             sbSelect.append("SELECT usuario_id, nome, sobrenome FROM ");
-            sbSelect.append(UsuarioConstante.USUARIO_TABLE_NOME);
-=======
-            sbSelect.append("SELECT usuario_id, nome, sobrenome, FROM ");
             sbSelect.append(UsuarioConstantes.USUARIO_TABLE_NAME);
->>>>>>> 1950078326ad055a14f29356ba8c2e2e3b0ffc8f
             sbSelect.append(" WHERE usuario_id = ?");
             
             stmtSelect = conn.prepareStatement(sbSelect.toString());
@@ -60,10 +45,6 @@ public class UsuarioDAOImpl implements UsuarioDAO {
             }
             
             Iterator iter = c.iterator();
-<<<<<<< HEAD
-            
-=======
->>>>>>> 1950078326ad055a14f29356ba8c2e2e3b0ffc8f
             result = (Usuario) iter.next();
         } catch (SQLException e) {
             log.error(e);
