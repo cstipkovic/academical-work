@@ -11,7 +11,7 @@ public interface UsuarioDAO {
     
     public Collection buscaTodosUsuarios();
     
-    public void removeUsuario(int id) throws UsuarioNaoEncontradoExpcetion;
+    public void removeUsuario(int id) throws UsuarioNaoEncontradoException;
     
     public Usuario criaUsuario(String nome, String sobrenome);
     

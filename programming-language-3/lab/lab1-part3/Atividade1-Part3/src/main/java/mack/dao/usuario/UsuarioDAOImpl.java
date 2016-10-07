@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Collection;
 import java.util.Iterator;
+import mack.dao.exception.DAORuntimeException;
 import mack.entities.Usuario;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -220,7 +221,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
             result = UsuarioUtil.makeUsuarioObjectsFromResultSet(rs);
         } catch (SQLException e) {
             log.error(e);
-            throw new DAORuntimeException(conn);
+            throw new DAORuntimeException(e);
         } finally {
             UsuarioUtil.closeStatement(stmtSelect);
             UsuarioUtil.closeResultSet(rs);

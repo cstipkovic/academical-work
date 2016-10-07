@@ -15,7 +15,7 @@ public abstract class AbstractController implements Controller {
         returnPage = page;
     }
     
-    public String getReturnPage(String page) {
+    public String getReturnPage() {
         return returnPage;
     }
     

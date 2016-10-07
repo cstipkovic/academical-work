@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import mack.controllers.AbstractController;
+import mack.dao.usuario.UsuarioDAO;
+import mack.dao.usuario.UsuarioDAOFactory;
 import mack.entities.Usuario;
 
 public class IndexController extends AbstractController {
