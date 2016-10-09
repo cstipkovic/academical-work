@@ -1,6 +1,6 @@
 *.*~
 *.*.gch
-*.o
+/**/*.o
 .vagrant
 *.*.swp
 .DS_Store
