@@ -1,10 +1,31 @@
 package mack.entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tb_usuario")
 public class Usuario {
     
+    @Id
+    @Column(name = "usuario_id")
+    @SequenceGenerator(name = "usuarioGenerator", sequenceName = "usuario_id_sequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "usuarioGenerator")
     private int id;
+    
+    @Column(name = "nome")
     private String nome;
+    
+    @Column(name = "sobrenome")
     private String sobrenome;
+
+    public Usuario() {
+    }
 
     public Usuario(int id, String nome, String sobrenome) {
         this.id = id;
