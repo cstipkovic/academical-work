@@ -110,8 +110,58 @@ public class UsuarioDAOImpl implements UsuarioDAO {
         
     }
 
-    // TODO: parei aqui
     public Usuario criaUsuario(final String nome, final String sobrenome) {
         Usuario result = null;
+        PreparedStatement stmtInsert = null;
+        Connection conn = UsuarioUtil.getConnection();
+
+        try {
+            int usuario_id = UsuarioUtil.getUniqueUsuario(conn);
+
+            StringBuilder sbInsert = new StringBuilder();
+            sbInsert.append("INSERT INTO ");
+            sbInsert.append(UsuarioConstantes.USUARIO_TABLE_NAME);
+            sbInsert.append(" (usuario_id, nome, sobrenome) ");
+            sbInsert.append(" VALUES (");
+            sbInsert.append("NEXT VALUE FOR ");
+            sbInsert.append(UsuarioConstantes.USUARIO_ID_SEQUENCE_NAME);
+            sbInsert.append(", ?, ?)");
+
+            stmtInsert = conn.prepareStatement(sbInsert.toString());
+            stmtInsert.setString(1, nome);
+            stmtInsert.setString(2, sobrenome);
+
+            log.info("About to execute INSERT: values " +
+                nome + ", " +
+                sobrenome);
+
+            int rows = stmtInsert.executeUpdate();
+            if (rows != 1) {
+                throw new SQLException("executeUpdate return value: " + rows);
+            }
+;        } catch (SQLException e) {
+            log.error(e);
+            throw new DAoRuntimeException(e);
+        } finally {
+            UsuarioUtil.closeStatemente(stmtInsert);
+            UsuarioUtil.closeJDBCConnection(conn);
+        }
+
+        return result;
+    }
+
+    public void updateUsuario(final int id, final String nome, final String sobrenome)
+        throws UsuarioNaoEncontradoException {
+        Connection conn = UsuarioUtil.getConnection();
+        PreparedStatement stmtUpdate = null;
+
+        try {
+            StringBuilder sbUpdate = new StringBuilder();
+
+            sbUpdate.append("UPDATE ");
+            sbUpdate.append(UsuarioConstantes.USUARIO_TABLE_NAME);
+            sbUpdate.append(" SET ");
+
+        }
     }
 }
