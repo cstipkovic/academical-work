@@ -21,7 +21,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
         bIsClosed = false;
     }
 
-    public Usuario buscaUsuarioPorId(final int id) throws UsuarioNaoEncontradoExpcetion {
+    public Usuario buscaUsuarioPorId(final int id) throws UsuarioNaoEncontradoException {
         Connection conn = UsuarioUtil.getConnection();
         Usuario result = null;
         ResultSet rs = null;
@@ -110,8 +110,112 @@ public class UsuarioDAOImpl implements UsuarioDAO {
         
     }
 
-    // TODO: parei aqui
     public Usuario criaUsuario(final String nome, final String sobrenome) {
         Usuario result = null;
+        PreparedStatement stmtInsert = null;
+        Connection conn = UsuarioUtil.getConnection();
+
+        try {
+            int usuario_id = UsuarioUtil.getConnection();
+            StringBuilder sbInsert = new StringBuilder();
+
+            sbInsert.append("INSERT INTO ");
+            sbInsert.append(UsuarioConstantes.USUARIOS_TABLE_NAME);
+            sbInsert.append(" (usuario_id, nome, sobrenome) ");
+            sbInsert.append(" VALUE (");
+            sbInsert.append(" NEXT VALUE FOR ");
+            sbInsert.append(UsuarioConstantes.USUARIO_ID_SEQUENCE_NAME);
+            sbInsert.append(", ?, ?) ");
+
+            stmtInsert = conn.prepareStatement(sbInsert.toString());
+            stmtInsert.setString(1, nome);
+            stmtInsert.setString(2, sobrenome);
+
+            log.info("About to execute INSERT: value " +
+                nome + ", " + sobrenome);
+
+            int rows = stmtInsert.executeUpdate();
+            if (rows != 1) {
+                throw new SQLException("executeUpdate return value: " + rows);
+            }
+
+            result = new Usuario(usuario_id, nome, sobrenome);
+        } catch (SQLException e) {
+            log.error(e);
+            throw new DAORuntimeException(e);
+        } finally {
+            UsuarioUtil.closeStatement(stmtInsert);
+            UsuarioUtil.closeJDBCConnection(conn);
+        }
+
+        return result;
+    }
+
+    public void updateUsuario(final int id, final String nome, final String sobrenome)
+            throws UsuarioNaoEncontradoException {
+        Connection conn = UsuarioUtil.getConnection();
+        PreparedStatement stmtUpdate = null;
+
+        try {
+            StringBuilder sbUpdate = new StringBuilder();
+
+            sbUpdate.append("UPDATE ");
+            sbUpdate.append(UsuarioConstantes.USUARIO_TABLE_NAME);
+            sbUpdate.append(" SET ");
+            sbUpdate.append(" nome = ?, ");
+            sbUpdate.append(" sobrenome = ? ");
+            sbUpdate.append(" WHERE usuario_id = ?");
+
+            stmtUpdate = conn.prepareStatement(sbUpdate.toString());
+            stmtUpdate.setString(1, nome);
+            stmtUpdate.setString(2, sobrenome);
+            stmtUpdate.setInt(3, id);
+
+            int rows = stmtUpdate.executeUpdate();
+            if (rows != 1) {
+                throw new SQLException("executeUpdate return value: "  + rows);
+            }
+        } catch (SQLException e) {
+            throw new DAORuntimeException(e);
+        } finally {
+            UsuarioUtil.closeStatement(stmtUpdate);
+            UsuarioUtil.closeJDBCConnection(conn);
+        }
+    }
+
+    public void close() {
+        log.info("close() called");
+        bIsClosed = true;
+    }
+
+    public boolean isClosed() {
+        return bIsClosed;
+    }
+
+    public Collection buscaTodosUsuarios() {
+        Connection conn = UsuarioUtil.getConnection();
+        Collection result = null;
+        ResultSet rs = null;
+        PreparedStatement stmtSelect = null;
+
+        try {
+            StringBuilder sbSelect = new StringBuilder();
+
+            sbSelect.append("SELECT usuario_id, nome, sobrenome FROM ");
+            sbSelect.append(UsuarioConstantes.USUARIO_TABLE_NAME);
+
+            stmtSelect = conn.prepareStatement(sbSelect.toString());
+            rs = stmtSelect.executeQuery();
+            result = UsuarioUtil.makeUsuarioObjectsFromResultSet(rs);
+        } catch (SQLException e) {
+            log.error(e);
+            throw new DAORuntimeException(e);
+        } finally {
+            UsuarioUtil.closeStatement(stmtSelect);
+            UsuarioUtil.closeResultSet(rs);
+            UsuarioUtil.closeJDBCConnection(conn);
+        }
+
+        return result;
     }
 }
