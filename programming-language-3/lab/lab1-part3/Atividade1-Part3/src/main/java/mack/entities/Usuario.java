@@ -25,6 +25,7 @@ public class Usuario {
     private String sobrenome;
 
     public Usuario() {
+        super();
     }
 
     public Usuario(int id, String nome, String sobrenome) {
