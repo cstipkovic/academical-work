@@ -21,7 +21,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
         bIsClosed = false;
     }
 
-    public Usuario buscaUsuarioPorId(final int id) throws UsuarioNaoEncontradoExpcetion {
+    public Usuario buscaUsuarioPorId(final int id) throws UsuarioNaoEncontradoException {
         Connection conn = UsuarioUtil.getConnection();
         Usuario result = null;
         ResultSet rs = null;
@@ -117,8 +117,8 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 
         try {
             int usuario_id = UsuarioUtil.getUniqueUsuario(conn);
-
             StringBuilder sbInsert = new StringBuilder();
+
             sbInsert.append("INSERT INTO ");
             sbInsert.append(UsuarioConstantes.USUARIO_TABLE_NAME);
             sbInsert.append(" (usuario_id, nome, sobrenome) ");
@@ -139,11 +139,13 @@ public class UsuarioDAOImpl implements UsuarioDAO {
             if (rows != 1) {
                 throw new SQLException("executeUpdate return value: " + rows);
             }
-;        } catch (SQLException e) {
+
+            result = new Usuario(usuario_id, nome, sobrenome);
+        } catch (SQLException e) {
             log.error(e);
-            throw new DAoRuntimeException(e);
+            throw new DAORuntimeException(e);
         } finally {
-            UsuarioUtil.closeStatemente(stmtInsert);
+            UsuarioUtil.closeStatement(stmtInsert);
             UsuarioUtil.closeJDBCConnection(conn);
         }
 
@@ -151,7 +153,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
     }
 
     public void updateUsuario(final int id, final String nome, final String sobrenome)
-        throws UsuarioNaoEncontradoException {
+            throws UsuarioNaoEncontradoException {
         Connection conn = UsuarioUtil.getConnection();
         PreparedStatement stmtUpdate = null;
 
@@ -161,7 +163,60 @@ public class UsuarioDAOImpl implements UsuarioDAO {
             sbUpdate.append("UPDATE ");
             sbUpdate.append(UsuarioConstantes.USUARIO_TABLE_NAME);
             sbUpdate.append(" SET ");
+            sbUpdate.append(" nome = ?, ");
+            sbUpdate.append(" sobrenome = ? ");
+            sbUpdate.append(" WHERE usuario_id = ?");
 
+            stmtUpdate = conn.prepareStatement(sbUpdate.toString());
+            stmtUpdate.setString(1, nome);
+            stmtUpdate.setString(2, sobrenome);
+            stmtUpdate.setInt(3, id);
+
+            int rows = stmtUpdate.executeUpdate();
+            if (rows != 1) {
+                throw new SQLException("executeUpdate return value: "  + rows);
+            }
+        } catch (SQLException e) {
+            throw new DAORuntimeException(e);
+        } finally {
+            UsuarioUtil.closeStatement(stmtUpdate);
+            UsuarioUtil.closeJDBCConnection(conn);
         }
+    }
+
+    public void close() {
+        log.info("close() called");
+        bIsClosed = true;
+    }
+
+    public boolean isClosed() {
+        return bIsClosed;
+    }
+
+    public Collection buscaTodosUsuarios() {
+        Connection conn = UsuarioUtil.getConnection();
+        Collection result = null;
+        ResultSet rs = null;
+        PreparedStatement stmtSelect = null;
+
+        try {
+            StringBuilder sbSelect = new StringBuilder();
+
+            sbSelect.append("SELECT usuario_id, nome, sobrenome FROM ");
+            sbSelect.append(UsuarioConstantes.USUARIO_TABLE_NAME);
+
+            stmtSelect = conn.prepareStatement(sbSelect.toString());
+            rs = stmtSelect.executeQuery();
+            result = UsuarioUtil.makeUsuarioObjectsFromResultSet(rs);
+        } catch (SQLException e) {
+            log.error(e);
+            throw new DAORuntimeException(e);
+        } finally {
+            UsuarioUtil.closeStatement(stmtSelect);
+            UsuarioUtil.closeResultSet(rs);
+            UsuarioUtil.closeJDBCConnection(conn);
+        }
+
+        return result;
     }
 }
