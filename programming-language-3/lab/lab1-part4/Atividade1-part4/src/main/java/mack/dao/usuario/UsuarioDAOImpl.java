@@ -83,8 +83,35 @@ public class UsuarioDAOImpl implements UsuarioDAO {
         return result;
     }
 
-    // TODO: Parei aqui
-    public void removeUsuario(final int id) {
+    public void removeUsuario(final int id) throws UsuarioNaoEncontradoException {
+        Connection conn = UsuarioUtil.getConnection();
+        PreparedStatement stmtDelete  = null;
+
+        try {
+            StringBuilder sbDelete = new StringBuilder();
+            sbDelete.append("DELETE FROM ");
+            sbDelete.append(UsuarioConstates.USUARIO_TABLE_NAME);
+            sbDelete.append(" WHERE usuario_id = ?");
+
+            stmtDelete = conn.prepareStatement(sbDelete.toString());
+            stmtDelete.setInt(1, id);
+
+            int rows = stmtDelete.executeUpdate();
+            if (rows != 1) {
+                throw new SQLException("executeUpdate return value: " + rows);
+            }
+        } catch (SQLException e) {
+            log.error(e);
+            throw new DAORuntimeException(e);
+        } finally {
+            UsuarioUtil.closeStatement(stmtDelete);
+            UsuarioUtil.closeJDBCConnection(conn);
+        }
         
+    }
+
+    // TODO: parei aqui
+    public Usuario criaUsuario(final String nome, final String sobrenome) {
+        Usuario result = null;
     }
 }
