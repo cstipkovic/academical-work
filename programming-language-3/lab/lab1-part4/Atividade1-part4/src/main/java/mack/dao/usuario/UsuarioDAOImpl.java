@@ -1,5 +1,6 @@
 package mack.dao.usuario;
 
+import mack.dao.exception.DAORuntimeException;
 import mack.entities.Usuario;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -46,7 +47,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
             result = (Usuario) iter.next();
         } catch (SQLException e) {
             log.error(e);
-            throw new DAORuntimeExpection(e);
+            throw new DAORuntimeException(e);
         } finally {
             UsuarioUtil.closeStatement(stmtSelect);
             UsuarioUtil.closeResultSet(rs);
@@ -90,7 +91,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
         try {
             StringBuilder sbDelete = new StringBuilder();
             sbDelete.append("DELETE FROM ");
-            sbDelete.append(UsuarioConstates.USUARIO_TABLE_NAME);
+            sbDelete.append(UsuarioConstantes.USUARIO_TABLE_NAME);
             sbDelete.append(" WHERE usuario_id = ?");
 
             stmtDelete = conn.prepareStatement(sbDelete.toString());
@@ -116,7 +117,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
         Connection conn = UsuarioUtil.getConnection();
 
         try {
-            int usuario_id = UsuarioUtil.getUniqueUsuario(conn);
+            int usuario_id = UsuarioUtil.getUniqueUsuarioId(conn);
             StringBuilder sbInsert = new StringBuilder();
 
             sbInsert.append("INSERT INTO ");

@@ -20,5 +20,5 @@ public interface UsuarioDAO {
 
     public void close();
 
-    public boolean isClose();
+    public boolean isClosed();
 }
