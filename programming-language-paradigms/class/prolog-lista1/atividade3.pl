@@ -8,7 +8,8 @@ pai(sebastiao, eurico).
 % Irmao
 irmao(I1, I2) :-
   pai(P, I1),
-  pai(P, I2).
+  pai(P, I2),
+  I1\=I2.
 
 % Avo
 avo(A, N) :-

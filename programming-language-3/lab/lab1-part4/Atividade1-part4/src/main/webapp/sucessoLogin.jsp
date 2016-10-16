@@ -6,6 +6,8 @@
          <title>Login bem sucedido</title>
     </head>
     <body>
-
+        <%
+            String user = (String) session.getAttribute("usuario");
+        %>
     </body>
 </html>
