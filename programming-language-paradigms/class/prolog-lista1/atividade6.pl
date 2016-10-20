@@ -6,4 +6,4 @@ cosaux(X, R, P) :-
   fatorial(P, Fat),
   Div is Pot/Fat, Novpar is P - 2,
   cosaux(X, R1, Novpar),
-  R is 1 -
+  R is 1 -.
