@@ -13,4 +13,4 @@ Método
 ## Questõess
 1. Descreva cada um dos mecanismos de implementação de sessões, discutindo suas vantagens e
 desvantagens sob o ponto de vista de segurança e de uso racional de recursos (memória).
-    - Resposta
+    - Resposta: 
