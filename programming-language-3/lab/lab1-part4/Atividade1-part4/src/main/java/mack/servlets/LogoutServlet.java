@@ -3,12 +3,10 @@ package mack.servlets;
 import com.sun.net.httpserver.HttpServer;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import java.io.IOException;
 
-public class LogoutServlet extends HttpServer {
+public class LogoutServlet extends HttpServlet {
 
     private static final long serialVersionID = 1L;
 
@@ -16,8 +14,25 @@ public class LogoutServlet extends HttpServer {
         throws ServletException, IOException {
 
         response.setContentType("text/html");
-        Cookie[] cookie = request.getCookies();
-//        TODO: parei aqui (pagina 11)
-//        http://moodle.mackenzie.br/moodle/pluginfile.php/1410439/mod_resource/content/1/LP3%20-%20Laborato%CC%81rio%2005%20-%20Pra%CC%81tica%20-%20Filter.pdf
+        Cookie[] cookies = request.getCookies();
+
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("JSESSIONSID")) {
+                    System.out.println("JSESSIONID=" + cookie.getValue());
+                    break;
+                }
+            }
+        }
+
+        // Invalidate the session if exits
+        HttpSession session = request.getSession(false);
+        System.out.println("Usuario=" + session.getAttribute("usuario"));
+
+        if (session != null) {
+            session.invalidate();
+        }
+
+        response.sendRedirect("login.html");
     }
 }

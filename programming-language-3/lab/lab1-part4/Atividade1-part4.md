@@ -1,16 +1,16 @@
-# Bloco 5 ? Aplicação (Parte IV) ? Sessão
+# Bloco 5 - Aplicacao (Parte IV) - Sessao
 
 ## Objetivo
-Trabalhar sobre aplicação WEB em desenvolvimento trabalhando com recursos de sessão.
-Método
+Trabalhar sobre aplicaï¿½ï¿½o WEB em desenvolvimento trabalhando com recursos de sessï¿½o.
+Mï¿½todo
 
-1. Implementar recursos de autenticação do usuário.
-2. Manter a sessão do usuário através do HTTPSession.
-3. Manter a sessão do usuário através de Cookies.
-4. Documente cada classe implementada, indicando propósito e forma com que atinge seus objetivos.
-5. Responda as questões.
+1. Implementar recursos de autenticaï¿½ï¿½o do usuï¿½rio.
+2. Manter a sessï¿½o do usuï¿½rio atravï¿½s do HTTPSession.
+3. Manter a sessï¿½o do usuï¿½rio atravï¿½s de Cookies.
+4. Documente cada classe implementada, indicando propï¿½sito e forma com que atinge seus objetivos.
+5. Responda as questï¿½es.
 
-## Questõess
-1. Descreva cada um dos mecanismos de implementação de sessões, discutindo suas vantagens e
-desvantagens sob o ponto de vista de segurança e de uso racional de recursos (memória).
-    - Resposta: 
+## Questï¿½ess
+1. Descreva cada um dos mecanismos de implementaï¿½ï¿½o de sessï¿½es, discutindo suas vantagens e
+desvantagens sob o ponto de vista de seguranï¿½a e de uso racional de recursos (memï¿½ria).
+    - Resposta:
