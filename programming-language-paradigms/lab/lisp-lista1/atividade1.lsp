@@ -5,6 +5,9 @@
 (print (list 1 (+ 2 3)))
 
 ; (c)
-(if (list 1)
-  (print (list (+ 1 2) (+ 3 4)))
+(if (listp 1)
+  (print ((+ 1 2) (+ 3 4)))
 )
+
+; (d) - (NIL 3)
+(list (and (listp 3) t) (+ 1 2))
