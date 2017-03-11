@@ -27,6 +27,9 @@ sudo systemctl daemon-reload
 sudo systemctl start tomcat
 sudo systemctl enable tomcat
 
+# Install Maven
+sudo yum install maven -y
+
 # Install Apache Derby
 echo "Instalando o Apache Derby..."
 sudo wget http://mirror.nbtelecom.com.br/apache//db/derby/db-derby-10.12.1.1/db-derby-10.12.1.1-bin.zip
