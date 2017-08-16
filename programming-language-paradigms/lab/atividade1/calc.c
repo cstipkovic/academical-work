@@ -1,52 +1,51 @@
-// Atividade #1 - Linguagem C - Calculadora - PLP
-// Nome: Ricardo Arthur, 31676987 - 05N11
-// Nome: Clauber Pereira Stipkovic Halic, 31243045 - 05N12
+// Linguagem C - Calculadora - PLP
+// Nome: Clauber Stipkovic, 31243045 - 05N
 
 #include <stdio.h>
 
-int sum(int a, int b) {
+float sum(float a, float b) {
   return (a + b);
 }
 
-int subtracao(int a, int b) {
+float subtraction(float a, float b) {
   return (a - b);
 }
 
-int divide(int a, int b) {
+float division(float a, float b) {
   return (a / b);
 }
 
-int multiplicacao(int a, int b) {
+float multiplication(float a, float b) {
   return (a * b);
 }
 
 int main() {
   char operator;
-  int a, b;
+  float a, b;
 
   do {
     printf("\nInforme '0s0' para sair ou a expressao (ex: 1+1): ");
-    scanf("%d%c%d", &a, &operator, &b);
+    scanf("%f%c%f", &a, &operator, &b);
 
     switch (operator) {
       case '+':
-        printf("Resultado da soma: %d\n", sum(a, b));
+        printf("Resultado da soma: %.2f\n", sum(a, b));
         break;
 
       case '-':
-        printf("Resultado da subtracao: %d\n", subtracao(a, b));
+        printf("Resultado da subtracao: %.2f\n", subtraction(a, b));
         break;
 
       case '/':
         if (b == 0) {
           printf("Divisao por 0 nao permitida.\n");
         } else {
-          printf("Resultado da divisao: %d\n", divide(a, b));
+          printf("Resultado da divisao: %.2f\n", division(a, b));
         }
         break;
 
       case '*':
-        printf("Resultado da multiplicacao: %d\n", multiplicacao(a, b));
+        printf("Resultado da multiplicacao: %.2f\n", multiplication(a, b));
         break;
     }
   } while(operator != 's');
