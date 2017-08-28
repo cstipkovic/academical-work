@@ -2,39 +2,40 @@
 
 // Product Struct
 typedef struct {
-  int id;
+  int code;
   char name[256];
+  int inventory;
   float price;
-} product;
+} MERCADORIA;
 
 const int LISTTAM = 2;
 
-// Imprimi a lista de produtos
-void printListProducts(product p[]) {
-  printf("Lista dos produtos informados: (codigo, nome, valor)\n");
+// Imprimi a lista de mercadorias
+void printListMercadoria(MERCADORIA lm[]) {
+  puts("Lista das mercadorias informadas: (codigo, nome, estoque, valor)\n");
   for (int i = 0; i < LISTTAM; i++) {
-    printf("%d, %s, %.2f\n", p[i].id, p[i].name, p[i].price);
+    printf("%d, %s, %d, %.2f\n", lm[i].code, lm[i].name, lm[i].inventory, lm[i].price);
   }
   printf("\n");
 }
 
-// Ordena a litade produtos (usando bubblesort :-P)
-void orderProductList(product p[]) {
-  product tmpList[LISTTAM];
+// Ordena a lista de mercadorias (usando bubblesort :-P)
+void orderProductList(MERCADORIA lm[]) {
+  MERCADORIA tmpList[LISTTAM];
 
   for (int i = 0; i < LISTTAM; i++) {
     for (int j = 0; j < LISTTAM; j++) {
-      if (p[j].id == (i + 1)) {
-        tmpList[i] = p[j];
+      if (lm[j].code == (i + 1)) {
+        tmpList[i] = lm[j];
       }
     }
   }
 
-  printListProducts(tmpList);
+  printListMercadoria(tmpList);
 }
 
 // Calcula e informa o valor total da lista
-void calcTotalListPrice(product p[]) {
+void calcTotalListPrice(MERCADORIA p[]) {
   float totalPrice = 0.00;
 
   for (int i = 0; i < LISTTAM; i++) {
@@ -45,48 +46,51 @@ void calcTotalListPrice(product p[]) {
 }
 
 // Cria uma lista de produtos informada pelo usuario
-void createProductList() {
-  product pList[LISTTAM];
+void createMercadoriaList() {
+  MERCADORIA mList[LISTTAM];
 
   printf("Informe os dados dos produtos: (Tamanho da lista: %d)\n", LISTTAM);
   for (int i = 0; i < LISTTAM; i++) {
     printf("Codigo: ");
-    scanf("%d", &pList[i].id);
+    scanf("%d", &mList[i].code);
 
     printf("Nome: ");
-    scanf("%s", pList[i].name);
+    scanf("%s", mList[i].name);
+
+    printf("Estoque: ");
+    scanf("%d", &mList[i].inventory);
 
     printf("Valor: ");
-    scanf("%f", &pList[i].price);
+    scanf("%f", &mList[i].price);
     printf("\n");
   }
 
   // Imprime a lista criada
-  printListProducts(pList);
+  printListMercadoria(mList);
 
   // Informa o valor total da lista
-  calcTotalListPrice(pList);
+  calcTotalListPrice(mList);
 }
 
 // Lista gerada hardcode para testar a struct
 // obs.: A chamada dela esta comentada no codigo.
 void listGeneratedHardcode() {
-  product pList[5];
+  MERCADORIA mList[5];
 
-  pList[0] = (product) {3, "Laranja", 1.10};
-  pList[1] = (product) {5, "Leite", 2.90};
-  pList[2] = (product) {2, "Ovo", 10.27};
-  pList[3] = (product) {1, "Suco Maca", 4.79};
-  pList[4] = (product) {4, "Queijo Minas", 4.49};
+  mList[0] = (MERCADORIA) {3, "Laranja", 5, 1.10};
+  mList[1] = (MERCADORIA) {5, "Leite", 4, 2.90};
+  mList[2] = (MERCADORIA) {2, "Ovo", 8, 10.27};
+  mList[3] = (MERCADORIA) {1, "Suco Maca", 5, 4.79};
+  mList[4] = (MERCADORIA) {4, "Queijo Minas", 9, 4.49};
 
-  printListProducts(pList);
+  printListMercadoria(mList);
 }
 
 int main() {
   // listGeneratedHardcode();
-  // printListProducts(pList);
-  // orderProductList(pList);
-  createProductList();
+  // printListMercadoria(mList);
+  // orderProductList(mList);
+  createMercadoriaList();
 
   return 0;
 }
