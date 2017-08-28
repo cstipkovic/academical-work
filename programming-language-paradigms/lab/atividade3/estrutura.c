@@ -72,6 +72,10 @@ void createMercadoriaList() {
   calcTotalListPrice(mList);
 }
 
+void bayMercadoria() {
+  
+}
+
 // Lista gerada hardcode para testar a struct
 // obs.: A chamada dela esta comentada no codigo.
 void listGeneratedHardcode() {
