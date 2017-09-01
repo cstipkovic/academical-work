@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-// Product Struct
+// Mercadoria Struct
 typedef struct {
   int code;
   char name[256];
@@ -8,14 +8,16 @@ typedef struct {
   float price;
 } MERCADORIA;
 
+// Sacola Struct
 typedef struct {
   int code;
   int qt;
   float price;
 } SACOLA;
 
-const int LISTTAM = 2;
-const int SACOLATAM = 1;
+// Constants
+const int LISTTAM = 5;
+const int SACOLATAM = 3;
 
 // Imprime a lista de mercadorias
 void printListMercadoria(MERCADORIA *lm, int tam) {
@@ -26,6 +28,7 @@ void printListMercadoria(MERCADORIA *lm, int tam) {
   printf("\n");
 }
 
+// Imprime a lista de mercadorias na sacola
 void printListSacola(SACOLA *ls, int tam) {
   puts("\nLista das mercadorias na sacola:\n");
   for (int i = 0; i < tam; i++) {
@@ -79,6 +82,7 @@ void createMercadoriaList(MERCADORIA *lm) {
   }
 }
 
+// Busca o item na lista de mercadorias
 int findMercadoria(MERCADORIA *lm, int code) {
   for (int i = 0; i < LISTTAM; i++) {
     if (lm[i].code == code) {
@@ -89,6 +93,7 @@ int findMercadoria(MERCADORIA *lm, int code) {
   return -1;
 }
 
+// Executa a compra de uma mercadoria e coloca na sacola
 void bayMercadoria(MERCADORIA *lm, SACOLA *sl) {
   puts("Informe os itens que voce deseja comprar:");
   for (int i = 0; i < SACOLATAM; i++) {
@@ -136,15 +141,17 @@ void testHardcode() {
 }
 
 int main() {
-  // Função para teste
+  // Função para TESTE
   // testHardcode();
 
-  // Função que roda pedindo a inclusão dos produtos
+  // Bloco de funções que roda pedindo a inclusão dos produtos
   MERCADORIA mList[LISTTAM];
   createMercadoriaList(mList);
   orderProductList(mList);
   printListMercadoria(mList, LISTTAM);
 
+  // Bloco de funções que roda pedindo os produtos que serão colocados na
+  // sacola e ou comprados
   SACOLA sacList[SACOLATAM];
   bayMercadoria(mList, sacList);
   printListSacola(sacList, SACOLATAM);
