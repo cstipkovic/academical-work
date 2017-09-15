@@ -23,7 +23,8 @@ const int SACOLATAM = 3;
 // Imprime a lista de mercadorias
 void printListMercadoria(MERCADORIA *lm, int tam) {
   puts("\nLista das mercadorias informadas: (codigo, nome, estoque, valor)\n");
-  for (int i = 0; i < tam; i++) {
+  int i;
+  for (i = 0; i < tam; i++) {
     printf("%d, %s, %d, %.2f\n", lm[i].code, lm[i].name, lm[i].inventory, lm[i].price);
   }
   printf("\n");
@@ -32,7 +33,8 @@ void printListMercadoria(MERCADORIA *lm, int tam) {
 // Imprime a lista de mercadorias na sacola
 void printListSacola(SACOLA *ls, int tam) {
   puts("\nLista das mercadorias na sacola:\n");
-  for (int i = 0; i < tam; i++) {
+  int i;
+  for (i = 0; i < tam; i++) {
     printf("Code: %d, Qt: %d, Total: %.2f\n", ls[i].code, ls[i].qt, (ls[i].qt * ls[i].price));
   }
   printf("\n");
@@ -42,8 +44,10 @@ void printListSacola(SACOLA *ls, int tam) {
 void orderProductList(MERCADORIA *lm) {
   MERCADORIA aux;
 
-  for (int i = 0; i < LISTTAM; i++) {
-    for (int j = 0; j < (LISTTAM - 1); j++) {
+  int i;
+  for (i = 0; i < LISTTAM; i++) {
+    int j;
+    for (i = 0; j < (LISTTAM - 1); j++) {
       if (lm[j].code > lm[j + 1].code) {
         aux = lm[j];
         lm[j] = lm[j + 1];
@@ -57,7 +61,8 @@ void orderProductList(MERCADORIA *lm) {
 void calcTotalListPrice(SACOLA *ls) {
   float totalPrice = 0.00;
 
-  for (int i = 0; i < SACOLATAM; i++) {
+  int i;
+  for (i = 0; i < SACOLATAM; i++) {
     totalPrice = totalPrice + (ls[i].price * ls[i].qt);
   }
 
@@ -67,7 +72,8 @@ void calcTotalListPrice(SACOLA *ls) {
 // Cria uma lista de produtos informada pelo usuario
 void createMercadoriaList(MERCADORIA *lm) {
   printf("Informe os dados dos produtos: (Tamanho da lista: %d)\n", LISTTAM);
-  for (int i = 0; i < LISTTAM; i++) {
+  int i;
+  for (i = 0; i < LISTTAM; i++) {
     printf("Codigo: ");
     scanf("%d", &lm[i].code);
 
@@ -85,7 +91,8 @@ void createMercadoriaList(MERCADORIA *lm) {
 
 // Busca o item na lista de mercadorias
 int findMercadoria(MERCADORIA *lm, int code) {
-  for (int i = 0; i < LISTTAM; i++) {
+  int i;
+  for (i = 0; i < LISTTAM; i++) {
     if (lm[i].code == code) {
       return i;
     }
@@ -97,7 +104,8 @@ int findMercadoria(MERCADORIA *lm, int code) {
 // Executa a compra de uma mercadoria e coloca na sacola
 void bayMercadoria(MERCADORIA *lm, SACOLA *sl) {
   puts("Informe os itens que voce deseja comprar:");
-  for (int i = 0; i < SACOLATAM; i++) {
+  int i;
+  for (i = 0; i < SACOLATAM; i++) {
     printf("\nCodigo: ");
     scanf("%d", &sl[i].code);
 
