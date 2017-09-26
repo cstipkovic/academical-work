@@ -1,0 +1,14 @@
+Fri May 05 21:48:47 BRT 2017 : Apache Derby Servidor de Rede - 10.10.2.0 - (1582446) iniciado e pronto para aceitar conexões na porta 1527 em {3}
+----------------------------------------------------------------
+Fri May 05 21:53:23 BRT 2017:
+ Inicializando o Derby versão The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instância a816c00e-015b-db3a-f9c0-0000542d0093
+no diretório de banco de dados C:\Temp\LP3\ServidorDados\db\meuDB 
+
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_101-b13
+user.dir=C:\Temp\LP3\ServidorDados\db
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=C:\Temp\LP3\ServidorDados\db
+Carregador de classe do banco de dados iniciado - derby.database.classpath=''

@@ -1,0 +1,98 @@
+2017-05-05 21:50:18,954 INFO  [org.jboss.modules] (main) JBoss Modules version 1.5.2.Final
+2017-05-05 21:50:19,257 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.6.Final
+2017-05-05 21:50:19,352 INFO  [org.jboss.as] (MSC service thread 1-7) WFLYSRV0049: WildFly Full 10.1.0.Final (WildFly Core 2.2.0.Final) starting
+2017-05-05 21:50:19,354 DEBUG [org.jboss.as.config] (MSC service thread 1-7) Configured system properties:
+	awt.toolkit = sun.awt.windows.WToolkit
+	file.encoding = Cp1252
+	file.encoding.pkg = sun.io
+	file.separator = \
+	java.awt.graphicsenv = sun.awt.Win32GraphicsEnvironment
+	java.awt.printerjob = sun.awt.windows.WPrinterJob
+	java.class.path = C:\Temp\LP3\wildfly-10.1.0.Final\jboss-modules.jar
+	java.class.version = 52.0
+	java.endorsed.dirs = C:\Program Files\Java\jdk1.8.0_101\jre\lib\endorsed
+	java.ext.dirs = C:\Program Files\Java\jdk1.8.0_101\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext
+	java.home = C:\Program Files\Java\jdk1.8.0_101\jre
+	java.io.tmpdir = C:\Users\31243045\AppData\Local\Temp\
+	java.library.path = C:\Program Files\Java\jdk1.8.0_101\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32;C:\WINDOWS;"C:\Program Files (x86)\Embarcadero\RAD Studio\9.0\bin";C:\app\perfil\product\11.2.0\client_1\BIN;"C:\Users\Public\Documents\RAD Studio\9.0\BPL";"C:\Program Files (x86)\Java\jre1.8.0_45\bin";C:\opencv243\build\x86\vc10\bin;C:\WINDOWS\System32;C:\WINDOWS;"C:\Program Files (x86)\Embarcadero\RAD Studio\9.0\bin";C:\app\perfil\product\11.2.0\client_1\BIN;"C:\Users\Public\Documents\RAD Studio\9.0\BPL";"C:\Program Files (x86)\Java\jre1.8.0_45\bin";C:\opencv243\build\x86\vc10\bin;C:\WINDOWS\System32;C:\WINDOWS;"C:\Program Files (x86)\Embarcadero\RAD Studio\9.0\bin";C:\app\perfil\product\11.2.0\client_1\BIN;"C:\Users\Public\Documents\RAD Studio\9.0\BPL";"C:\Program Files (x86)\Java\jre1.8.0_45\bin";C:\opencv243\build\x86\vc10\bin;C:\WINDOWS\System32;C:\WINDOWS;"C:\Program Files (x86)\Embarcadero\RAD Studio\9.0\bin";C:\app\perfil\product\11.2.0\client_1\BIN;"C:\Users\Public\Documents\RAD Studio\9.0\BPL";"C:\Program Files (x86)\Java\jre1.8.0_45\bin";C:\opencv243\build\x86\vc10\bin;C:\WINDOWS\System32;C:\WINDOWS;"C:\Program Files (x86)\Embarcadero\RAD Studio\9.0\bin";C:\app\perfil\product\11.2.0\client_1\BIN;"C:\Users\Public\Documents\RAD Studio\9.0\BPL";"C:\Program Files (x86)\Java\jre1.8.0_45\bin";C:\opencv243\build\x86\vc10\bin;C:\WINDOWS\System32;C:\WINDOWS;"C:\Program Files (x86)\Embarcadero\RAD Studio\9.0\bin";C:\app\perfil\product\11.2.0\client_1\BIN;"C:\Users\Public\Documents\RAD Studio\9.0\BPL";"C:\Program Files (x86)\Java\jre1.8.0_45\bin";C:\opencv243\build\x86\vc10\bin;C:\WINDOWS\System32;C:\WINDOWS;"C:\Program Files (x86)\Embarcadero\RAD Studio\9.0\bin";C:\app\perfil\product\11.2.0\client_1\BIN;"C:\Users\Public\Documents\RAD Studio\9.0\BPL";"C:\Program Files (x86)\Java\jre1.8.0_45\bin";C:\opencv243\build\x86\vc10\bin;C:\WINDOWS\System32;C:\WINDOWS;"C:\Program Files (x86)\Embarcadero\RAD Studio\9.0\bin";C:\app\perfil\product\11.2.0\client_1\BIN;"C:\Users\Public\Documents\RAD Studio\9.0\BPL";"C:\Program Files (x86)\Java\jre1.8.0_45\bin";C:\opencv243\build\x86\vc10\bin;C:\WINDOWS\System32;C:\WINDOWS;"C:\Program Files (x86)\Embarcadero\RAD Studio\9.0\bin";C:\app\perfil\product\11.2.0\client_1\BIN;"C:\Users\Public\Documents\RAD Studio\9.0\BPL";"C:\Program Files (x86)\Java\jre1.8.0_45\bin";C:\opencv243\build\x86\vc10\bin;C:\WINDOWS\System32;C:\WINDOWS;"C:\Program Files (x86)\Embarcadero\RAD Studio\9.0\bin";C:\app\perfil\product\11.2.0\client_1\BIN;"C:\Users\Public\Documents\RAD Studio\9.0\BPL";"C:\Program Files (x86)\Java\jre1.8.0_45\bin";C:\opencv243\build\x86\vc10\bin;C:\WINDOWS\System32;C:\WINDOWS;"C:\Program Files (x86)\Embarcadero\RAD Studio\9.0\bin";C:\app\perfil\product\11.2.0\client_1\BIN;"C:\Users\Public\Documents\RAD Studio\9.0\BPL";"C:\Program Files (x86)\Java\jre1.8.0_45\bin";C:\opencv243\build\x86\vc10\bin;C:\WINDOWS\System32;C:\WINDOWS;C:\Users\31243045\AppData\Local\Microsoft\WindowsApps;;.
+	java.net.preferIPv4Stack = true
+	java.runtime.name = Java(TM) SE Runtime Environment
+	java.runtime.version = 1.8.0_101-b13
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.8
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = http://java.oracle.com/
+	java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+	java.version = 1.8.0_101
+	java.vm.info = mixed mode
+	java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.8
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 25.101-b13
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	javax.xml.datatype.DatatypeFactory = __redirected.__DatatypeFactory
+	javax.xml.parsers.DocumentBuilderFactory = __redirected.__DocumentBuilderFactory
+	javax.xml.parsers.SAXParserFactory = __redirected.__SAXParserFactory
+	javax.xml.stream.XMLEventFactory = __redirected.__XMLEventFactory
+	javax.xml.stream.XMLInputFactory = __redirected.__XMLInputFactory
+	javax.xml.stream.XMLOutputFactory = __redirected.__XMLOutputFactory
+	javax.xml.transform.TransformerFactory = __redirected.__TransformerFactory
+	javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema = __redirected.__SchemaFactory
+	javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom = __redirected.__XPathFactory
+	jboss.bind.address = 0.0.0.0
+	jboss.home.dir = C:\Temp\LP3\wildfly-10.1.0.Final
+	jboss.host.name = 089765-p33s08
+	jboss.modules.dir = C:\Temp\LP3\wildfly-10.1.0.Final\modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = 089765-p33s08
+	jboss.qualified.host.name = 089765-p33s08
+	jboss.server.base.dir = C:\Temp\LP3\wildfly-10.1.0.Final\standalone
+	jboss.server.config.dir = C:\Temp\LP3\wildfly-10.1.0.Final\standalone\configuration
+	jboss.server.data.dir = C:\Temp\LP3\wildfly-10.1.0.Final\standalone\data
+	jboss.server.deploy.dir = C:\Temp\LP3\wildfly-10.1.0.Final\standalone\data\content
+	jboss.server.log.dir = C:\Temp\LP3\wildfly-10.1.0.Final\standalone\log
+	jboss.server.name = 089765-p33s08
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = C:\Temp\LP3\wildfly-10.1.0.Final\standalone\tmp
+	line.separator = 
+
+	logging.configuration = file:C:\Temp\LP3\wildfly-10.1.0.Final\standalone\configuration/logging.properties
+	module.path = C:\Temp\LP3\wildfly-10.1.0.Final\modules
+	org.jboss.boot.log.file = C:\Temp\LP3\wildfly-10.1.0.Final\standalone\log\server.log
+	org.jboss.resolver.warning = true
+	org.xml.sax.driver = __redirected.__XMLReaderFactory
+	os.arch = amd64
+	os.name = Windows 10
+	os.version = 10.0
+	path.separator = ;
+	program.name = standalone.bat
+	sun.arch.data.model = 64
+	sun.boot.class.path = C:\Program Files\Java\jdk1.8.0_101\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_101\jre\classes
+	sun.boot.library.path = C:\Program Files\Java\jdk1.8.0_101\jre\bin
+	sun.cpu.endian = little
+	sun.cpu.isalist = amd64
+	sun.desktop = windows
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = C:\Temp\LP3\wildfly-10.1.0.Final\jboss-modules.jar -mp C:\Temp\LP3\wildfly-10.1.0.Final\modules org.jboss.as.standalone -Djboss.home.dir=C:\Temp\LP3\wildfly-10.1.0.Final -b 0.0.0.0 -c standalone-full.xml
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = Cp1252
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = 
+	sun.stderr.encoding = cp850
+	sun.stdout.encoding = cp850
+	user.country = BR
+	user.dir = C:\Temp\LP3\wildfly-10.1.0.Final\bin
+	user.home = C:\Users\31243045
+	user.language = pt
+	user.name = 31243045
+	user.script = 
+	user.timezone = America/Sao_Paulo
+	user.variant = 
+2017-05-05 21:50:19,373 DEBUG [org.jboss.as.config] (MSC service thread 1-7) VM Arguments: -Dprogram.name=standalone.bat -Xms64M -Xmx512M -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Dorg.jboss.boot.log.file=C:\Temp\LP3\wildfly-10.1.0.Final\standalone\log\server.log -Dlogging.configuration=file:C:\Temp\LP3\wildfly-10.1.0.Final\standalone\configuration/logging.properties 
+2017-05-05 21:50:20,901 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+2017-05-05 21:50:20,929 INFO  [org.xnio] (MSC service thread 1-1) XNIO version 3.4.0.Final
+2017-05-05 21:50:20,938 INFO  [org.xnio.nio] (MSC service thread 1-1) XNIO NIO Implementation Version 3.4.0.Final

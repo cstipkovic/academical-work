@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="030d18cd-c322-4bfb-824e-013b1ba5835b" activeEnvironment="Default" name="TesteSOAP" resourceRoot="" soapui-version="5.2.1" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="fa53182d-648c-406e-86f3-452d8ed8098a" wsaVersion="NONE" name="UsuarioServiceServiceSoapBinding" type="wsdl" bindingName="{http://services.ejb/}UsuarioServiceServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/ModuloEJB/UsuarioService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/ModuloEJB/UsuarioService?wsdl"><con:part><con:url>http://localhost:8080/ModuloEJB/UsuarioService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="UsuarioServiceService" targetNamespace="http://services.ejb/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://services.ejb/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://services.ejb/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="findById" type="tns:findById"/>
+      <xs:element name="findByIdResponse" type="tns:findByIdResponse"/>
+      <xs:element name="insertUser" type="tns:insertUser"/>
+      <xs:element name="insertUserResponse" type="tns:insertUserResponse"/>
+      <xs:element name="usuario" type="tns:usuario"/>
+      <xs:complexType name="findById">
+        <xs:sequence>
+          <xs:element name="id" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findByIdResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:usuario"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="usuario">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="nome" type="xs:string"/>
+          <xs:element minOccurs="0" name="sobrenome" type="xs:string"/>
+          <xs:element minOccurs="0" name="login" type="xs:string"/>
+          <xs:element minOccurs="0" name="hash" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" use="required"/>
+      </xs:complexType>
+      <xs:complexType name="insertUser">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="user" type="tns:usuario"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="insertUserResponse">
+        <xs:sequence/>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="insertUserResponse">
+    <wsdl:part element="tns:insertUserResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findById">
+    <wsdl:part element="tns:findById" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findByIdResponse">
+    <wsdl:part element="tns:findByIdResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="insertUser">
+    <wsdl:part element="tns:insertUser" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="UsuarioService">
+    <wsdl:operation name="findById">
+      <wsdl:input message="tns:findById" name="findById"></wsdl:input>
+      <wsdl:output message="tns:findByIdResponse" name="findByIdResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertUser">
+      <wsdl:input message="tns:insertUser" name="insertUser"></wsdl:input>
+      <wsdl:output message="tns:insertUserResponse" name="insertUserResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UsuarioServiceServiceSoapBinding" type="tns:UsuarioService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="findById">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="findById">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findByIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertUser">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="insertUser">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="insertUserResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UsuarioServiceService">
+    <wsdl:port binding="tns:UsuarioServiceServiceSoapBinding" name="UsuarioServicePort">
+      <soap:address location="http://089765-P33S08:8080/ModuloEJB/UsuarioService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://089765-P33S08:8080/ModuloEJB/UsuarioService</con:endpoint></con:endpoints><con:operation id="1bd35126-ffd6-441f-88c7-31c3bee38c92" isOneWay="false" action="" name="findById" bindingOperationName="findById" type="Request-Response" outputName="findByIdResponse" inputName="findById" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9abcb875-4879-47a7-9abf-793bcdda0955" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ModuloEJB/UsuarioService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://services.ejb/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:findById>\r
+         <id>2</id>\r
+      </ser:findById>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://services.ejb/UsuarioService/findById"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="22ac453f-bcaf-4322-8981-25ff43d005bc" isOneWay="false" action="" name="insertUser" bindingOperationName="insertUser" type="Request-Response" outputName="insertUserResponse" inputName="insertUser" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2785b03d-0d2e-41fb-8440-33e02b484ff2" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ModuloEJB/UsuarioService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://services.ejb/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:insertUser>\r
+         <!--Optional:-->\r
+         <user id="">\r
+            <!--Optional:-->\r
+            <nome>FCI Junior</nome>\r
+            <!--Optional:-->\r
+            <sobrenome>Mack</sobrenome>\r
+            <!--Optional:-->\r
+            <login>jr</login>\r
+            <!--Optional:-->\r
+            <hash>1000:5b42403738353265393232:ab89b0c65354d57bdcf9659a53d410fa0a8b7d0f9dee270f1e9f51d87d1a9d06bfb5d1e114566b34c6e658f6d4d7d816b90a2841a5e93e7604ee5d52963a9135</hash>\r
+         </user>\r
+      </ser:insertUser>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://services.ejb/UsuarioService/insertUser"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

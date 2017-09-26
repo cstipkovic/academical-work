@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Pagina Principal</title>
+    </head>
+    <body>
+        <h1>Exemplo de uso de FrontController</h1>
+        <a href="FrontControllerServlet?control=Lista">Lista</a>
+        
+        <form action="FrontControllerServlet?control=Busca" method="post">
+            Nome de usuario: <input type="text" name="nome">
+            <br>
+            <input type="submit" value="Busca">
+        </form>
+        <form action="FrontControllerServlet?control=BuscaId" method="post">
+            Id do Usuario: <input type="text" name="id">
+            <br>
+            <input type="submit" value="Busca por Id">
+        </form>
+        <form action="FrontControllerServlet?control=Remove" method="post">
+            Id do Usuario: <input type="text" name="id">
+            <br>
+            <input type="submit" value="Remove">
+        </form>
+         <form action="FrontControllerServlet?control=Atualiza" method="post">
+            Id do Usuario: <input type="text" name="id">
+            <br>
+            Nome de usuario: <input type="text" name="nome">
+            <br>
+            Sobrenome de usuario: <input type="text" name="sobrenome">
+            <br>
+            <input type="submit" value="Atualiza">
+        </form>    
+        <form action="FrontControllerServlet?control=Novo" method="post">
+
+            Nome de usuario: <input type="text" name="nome">
+            <br>
+            Sobrenome de usuario: <input type="text" name="sobrenome">
+            <br>
+            <input type="submit" value="Cria">
+        </form> 
+    </body>
+</html>
