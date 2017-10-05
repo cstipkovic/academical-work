@@ -1,4 +1,5 @@
 % Modelando sua familia (Tarefa)
+% pai(pai, filho)
 pai(ze, joao).
 pai(ze, joaquim).
 pai(manoel, ze).
