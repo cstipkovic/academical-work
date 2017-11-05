@@ -1,9 +1,10 @@
-cos(X, R) :-
-  cosaux(X, R, 50).
+% Meu Cosseno
+meucosseno(X, R) :-
+  meucossenoaux(X, R, 50).
 
-cosaux(X, R, P) :-
+meucossenoaux(X, R, P) :-
   potencia(X, P, Pot),
   fatorial(P, Fat),
   Div is Pot/Fat, Novpar is P - 2,
-  cosaux(X, R1, Novpar),
-  R is 1 -.
+  meucossenoaux(X, R1, Novpar),
+  R is 1.
