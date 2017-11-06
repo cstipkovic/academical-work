@@ -1,7 +1,8 @@
-  ; (a) - retorna 14.
+; (a) - As expressões internas são executadas, soma e subitração,
+;       os resultados somados, retornando 14.
 (print (+ (- 5 1) (+ 3 7)))
 
-; (b) - returna a lista (1 5).
+; (b) - Realiza a operação "+" com os argumentos e returna a lista (1 5).
 (print (list 1 (+ 2 3)))
 
 ; (c) - se o objeto verificado com o listp for uma lista retorna T,
@@ -10,32 +11,58 @@
   (print ((+ 1 2) (+ 3 4)))
 )
 
-; (d) - (NIL 3) - verifica se 3 é uma lista, se for retorn T, se não retorn 3,
-;       e depois retorna NIL (por 3 não ser uma lista e o elemento 3.
-(list (and (listp 3) t) (+ 1 2))
+; (d) - Verifica se 3 é uma lista, retorna NIL, no "and" retorna NIL (pois  T e NIL é NIL)
+;       e retorna a lista (NIL 3), pois também calculou a operação "+"
+(print (list (and (listp 3) t) (+ 1 2)))
 
 ; (2)
-(cons 'a (cons 'b (cons 'c nil)))
-(cons 'a '(b c))
-(cons 'a (cons 'b '(c)))
+(print (cons 'a (cons 'b (cons 'c nil))))
+(print (cons 'a '(b c)))
+(print (cons 'a (cons 'b '(c))))
 
 ; (3)
-; (quartoElemento (list 1 2 3 4 5))
+; Teste = (quartoElemento (list 1 2 3 4 5))
 (defun quartoElemento(x)
   (car (cdr (cdr (cdr x))))
 )
 
+(print (quartoElemento (list 1 2 3 4 5)))
+
 ; (4)
+; Teste = (retornaMaior 5 6)
 (defun retornaMaior(a b)
   (if (> a b)
-    a b
+    a
+    b
   )
 )
 
+(print (retornaMaior 6 5))
+
 ; (5)
-; (a)
+; (a) TODO: entender isso, pq não faço idéia do que o enigma faz hauhau
+(defun enigma (x)
+  (and (not (null x))
+    (or
+      (null (car x))
+      (enigma (cdr x))
+    )
+  )
+)
 
 ; (b)
+; TODO: entender isso, pq não faço idéia do que o enigma faz hauhau
+(defun mystery (x  y)
+  (if  (null  y)
+    nil
+    (if  (eql  (car  y)  x)
+      0
+      (let  ((z  (mystery  x  (cdr  y))))
+        (and  z  (+  z  1))
+      )
+    )
+  )
+)
 
 ; (6)
 (defun elementoLista (x)
@@ -48,58 +75,58 @@
   )
 )
 
-; (7)
-; (a)
-(defun imprimePontos (n) 
-  (if (or (not (numberp n))
-      (<= n 0)
-    ) 
-    (format t "O argumento deve ser um inteiro positivo.~%") 
-    (do ((i 1 (+ i 1))) 
-      ((> i n)) 
-      (format t ".")
-    )
-  )
-)
-; Recursiva
-(defun imprimePontosRecursiva (n) 
-  (if (or (not (numberp n))
-      (< n 0)
-    ) 
-    (format t "O argumento deve ser um inteiro positivo.~%") 
-    (cond ((not (= n 0)) 
-        (format t ".") 
-        (imprimePontosRecurviva (- n 1))
-      )
-    )
-  )
-)
-
-; (b)
-(defconstant simbolo 'a)
-
-(defun contaSimbolos (x) 
-  (let ((conta 0)) 
-    (if (not (listp x)) 
-      (format t "O argumento deve ser uma lista.")
-      (dolist (objeto x) 
-        (if (eql simbolo objeto)
-          (setq conta (+ conta 1))
-        )
-      )
-    ) 
-    conta
-  )
-)
-; Recursiva
-(defun contaSimbolosRecursiva (x) 
-  (if (not (listp x))
-    (format t "O argumento deve ser uma lista.") 
-    (if (null x) 	0 
-      (if (eql simbolo (car x))
-        (+ 1 (contaSimbolosRecursiva (cdr x))) 
-        (contaSimbolosRecursiva (cdr x))
-      )
-    )
-  )
-)
+; ; (7)
+; ; (a)
+; (defun imprimePontos (n) 
+;   (if (or (not (numberp n))
+;       (<= n 0)
+;     ) 
+;     (format t "O argumento deve ser um inteiro positivo.~%") 
+;     (do ((i 1 (+ i 1))) 
+;       ((> i n)) 
+;       (format t ".")
+;     )
+;   )
+; )
+; ; Recursiva
+; (defun imprimePontosRecursiva (n) 
+;   (if (or (not (numberp n))
+;       (< n 0)
+;     ) 
+;     (format t "O argumento deve ser um inteiro positivo.~%") 
+;     (cond ((not (= n 0)) 
+;         (format t ".") 
+;         (imprimePontosRecurviva (- n 1))
+;       )
+;     )
+;   )
+; )
+;
+; ; (b)
+; (defconstant simbolo 'a)
+;
+; (defun contaSimbolos (x) 
+;   (let ((conta 0)) 
+;     (if (not (listp x)) 
+;       (format t "O argumento deve ser uma lista.")
+;       (dolist (objeto x) 
+;         (if (eql simbolo objeto)
+;           (setq conta (+ conta 1))
+;         )
+;       )
+;     ) 
+;     conta
+;   )
+; )
+; ; Recursiva
+; (defun contaSimbolosRecursiva (x) 
+;   (if (not (listp x))
+;     (format t "O argumento deve ser uma lista.") 
+;     (if (null x) 	0 
+;       (if (eql simbolo (car x))
+;         (+ 1 (contaSimbolosRecursiva (cdr x))) 
+;         (contaSimbolosRecursiva (cdr x))
+;       )
+;     )
+;   )
+; )
