@@ -19,6 +19,7 @@ void print(int i,int j) {
 void lcs() {
   m = strlen(x);
   n = strlen(y);
+  
   for (i = 0; i <= m; i++)
     c[i][0] = 0;
   for (i = 0; i <= n; i++)
@@ -48,6 +49,6 @@ int main() {
   printf("\nThe Longest Common Subsequence is ");
   lcs();
   print(m,n);
-  
+
   return 0;
 }
