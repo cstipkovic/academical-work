@@ -40,7 +40,7 @@
 (print (retornaMaior 6 5))
 
 ; (5)
-; (a) TODO: entender isso, pq não faço idéia do que o enigma faz hauhau
+; (a) 
 (defun enigma (x)
   (and (not (null x))
     (or
@@ -77,56 +77,32 @@
 
 ; ; (7)
 ; ; (a)
-; (defun imprimePontos (n) 
-;   (if (or (not (numberp n))
-;       (<= n 0)
-;     ) 
-;     (format t "O argumento deve ser um inteiro positivo.~%") 
-;     (do ((i 1 (+ i 1))) 
-;       ((> i n)) 
-;       (format t ".")
-;     )
-;   )
-; )
-; ; Recursiva
-; (defun imprimePontosRecursiva (n) 
-;   (if (or (not (numberp n))
-;       (< n 0)
-;     ) 
-;     (format t "O argumento deve ser um inteiro positivo.~%") 
-;     (cond ((not (= n 0)) 
-;         (format t ".") 
-;         (imprimePontosRecurviva (- n 1))
-;       )
-;     )
-;   )
-; )
-;
-; ; (b)
-; (defconstant simbolo 'a)
-;
-; (defun contaSimbolos (x) 
-;   (let ((conta 0)) 
-;     (if (not (listp x)) 
-;       (format t "O argumento deve ser uma lista.")
-;       (dolist (objeto x) 
-;         (if (eql simbolo objeto)
-;           (setq conta (+ conta 1))
-;         )
-;       )
-;     ) 
-;     conta
-;   )
-; )
-; ; Recursiva
-; (defun contaSimbolosRecursiva (x) 
-;   (if (not (listp x))
-;     (format t "O argumento deve ser uma lista.") 
-;     (if (null x) 	0 
-;       (if (eql simbolo (car x))
-;         (+ 1 (contaSimbolosRecursiva (cdr x))) 
-;         (contaSimbolosRecursiva (cdr x))
-;       )
-;     )
-;   )
-; )
+(defun imprimePontos (n)
+  (if (or (not (numberp n))
+    (<= n 0)
+  )
+  (format t "O argumento deve ser um inteiro positivo.~%")
+    (do ((i 1 (+ i 1)))
+      ((> i n))
+      (format t ".")
+    )
+  )
+)
+
+;; (b)
+(defun countElement (a L)
+  (cond
+   ((null L) 0)
+   ((equal a (car L)) (+ 1 (countElement a (cdr L))))
+   (t (countElement a (cdr L)))
+  )
+)
+
+;; (8)
+(defun new-union (lst1 lst2)
+  (cond ((null lst1) lst2)
+        ((null lst2) lst1)
+        (t (let ((elt (car lst1)))
+             (if (member elt lst2)
+                 (cons elt (new-union (cdr lst1) (remove elt lst2)))
+                 (cons elt (new-union (cdr lst1) lst2)))))))
