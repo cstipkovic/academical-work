@@ -3,4 +3,6 @@ aluno(joao).
 aluno(lucas).
 estuda(joao).
 estuda(lucas).
-aprovado(X) :- aluno(X), estuda(X).
+aprovado(X) :- 
+    aluno(X), 
+    estuda(X).

@@ -10,7 +10,7 @@ pai(sebastiao, eurico).
 irmao(I1, I2) :-
   pai(P, I1),
   pai(P, I2),
-  I1\=I2.
+  I1 \= I2.
 
 % Avo
 avo(A, N) :-
@@ -27,3 +27,8 @@ primo(P1, P2) :-
   irmao(T, MP),
   pai(T, P1),
   pai(MP, P2).
+
+% Neto
+neto(N, A) :-
+  pai(F, N),
+  pai(A, F).
