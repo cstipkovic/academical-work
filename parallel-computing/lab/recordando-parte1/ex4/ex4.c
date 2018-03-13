@@ -15,4 +15,6 @@ int main() {
             printf("%c", nomes[i][j]);
         }   
     }
+
+    return 0;
 }

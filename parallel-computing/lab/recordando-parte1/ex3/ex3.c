@@ -1,20 +1,20 @@
 #include <stdio.h>
 
 int main() {
-    int a[9];
-    int i;
+    int b, i, j, n;
 
-    for (i = 0; i < 9; i++)
+    n = 5;
+
+    b = (n - 1) / 2;
+
+    for (i = 0; i <= b; i++)
     {
-        a[i] = i + 1;
+        for (j = i + 1; j <= n - i; j++)
+        {
+            printf(" %d", j);
+        }
+        printf("\n ");
     }
-
-    for (i = 0; i < 9; i++)
-    {
-        printf("%d", a[i]);
-    }
-
-    printf("\n");
 
     return 0;
 }
