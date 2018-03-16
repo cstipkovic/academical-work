@@ -5,6 +5,8 @@ import java.rmi.RMISecurityManager;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class RmiClientThread {
     public static void main(String[] args) {
@@ -17,15 +19,6 @@ public class RmiClientThread {
             Registry registry = LocateRegistry.getRegistry("localhost");
             IBanco banco = (IBanco) registry.lookup("bancormi");
             
-            imprimeTransacoes(banco, 1, 2, 150);
-            System.out.println("");
-            
-            imprimeTransacoes(banco, 2, 7, 1000);
-            System.out.println("");
-            
-            imprimeTransacoes(banco, 8, 1, 50);
-            System.out.println("");
-            
             saqueThread(banco, 1, 100);
         } catch (Exception e) {
             if (e instanceof RuntimeException) {
@@ -37,18 +30,33 @@ public class RmiClientThread {
     }
     
     public static void saqueThread(IBanco b, int conta, int valor) throws RemoteException {
-        System.out.println(b.saldo(conta));
-        Thread t = new Thread(b.saque(conta, valor));
-        t.start();
-        System.out.println(b.saldo(conta));
-    }
-    
-    public static void imprimeTransacoes(IBanco b, int c1, int c2, float v) throws RemoteException {
-        System.out.println("Saldo cta(" + c1 + ") = " + b.saldo(c1) + ", cta(" + c2 + ") = " + b.saldo(c2) + ".");
+        System.out.println("Inicio " + b.saldo(conta));
         
-        System.out.println("Transferencia cta(" + c1 + ") para cta(" + c2 + ") no valor = " + v);
-        b.transferencia(c1, c2, (int) v);
+        Thread t0 = new Thread() {
+            @Override
+            public void run() {
+                try {
+                    b.saque(conta, valor);
+                } catch (RemoteException ex) {
+                    Logger.getLogger(RmiClientThread.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        };
         
-        System.out.println("Saldo cta(" + c1 + ") = " + b.saldo(c1) + ", cta(" + c2 + ") = " + b.saldo(c2) + ".");
+        Thread t1 = new Thread() {
+            @Override
+            public void run() {
+                try {
+                    b.saque(conta, valor);
+                } catch (RemoteException ex) {
+                    Logger.getLogger(RmiClientThread.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        };
+        
+        t0.start();
+        t1.start();
+        
+        System.out.println("Fim " + b.saldo(conta));
     }
 }
