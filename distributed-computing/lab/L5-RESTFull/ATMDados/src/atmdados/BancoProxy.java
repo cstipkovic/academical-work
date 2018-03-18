@@ -9,18 +9,6 @@ import javax.ws.rs.ClientErrorException;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.WebTarget;
 
-/**
- * Jersey REST client generated for REST resource:Operacoes [operacoes]<br>
- * USAGE:
- * <pre>
- *        BancoProxy client = new BancoProxy();
- *        Object response = client.XXX(...);
- *        // do whatever with response
- *        client.close();
- * </pre>
- *
- * @author 1077147
- */
 public class BancoProxy {
     private WebTarget webTarget;
     private Client client;
@@ -28,12 +16,13 @@ public class BancoProxy {
 
     public BancoProxy() {
         client = javax.ws.rs.client.ClientBuilder.newClient();
-        webTarget = client.target(BASE_URI).path("operacoes");
+        webTarget = client.target(BASE_URI).path("operacaoes");
     }
 
     public String setSaldo(String valor) throws ClientErrorException {
         WebTarget resource = webTarget;
         resource = resource.path(java.text.MessageFormat.format("setsaldo/{0}", new Object[]{valor}));
+        
         return resource.request(javax.ws.rs.core.MediaType.TEXT_PLAIN).get(String.class);
     }
 
