@@ -6,8 +6,7 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.Vector;
 
 public class Banco extends UnicastRemoteObject implements InterfaceBanco {
-    private Vector contaUsuario;
-    private Vector saldoUsuario;
+    private 
     
     public Banco() throws RemoteException {
         for (int i = 0; i < 10; i++) {
