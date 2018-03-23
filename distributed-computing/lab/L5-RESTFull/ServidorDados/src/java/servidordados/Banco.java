@@ -1,5 +1,6 @@
-package atmdados;
+package servidordados;
 
+import atmdados.InterfaceBanco;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.Vector;
@@ -8,12 +9,18 @@ public class Banco extends UnicastRemoteObject implements InterfaceBanco {
     private Vector contaUsuario;
     private Vector saldoUsuario;
     
-    public Banco() throws RemoteException {}
+    public Banco() throws RemoteException {
+        for (int i = 0; i < 10; i++) {
+            this.contaUsuario.add(i);
+            this.saldoUsuario.add(1000);
+        }
+    }
     
     @Override
     public void deposito(int conta, int valor) throws RemoteException {
         
     }
+
     
     @Override
     public void saque(int conta, int valor) throws RemoteException {
@@ -27,10 +34,10 @@ public class Banco extends UnicastRemoteObject implements InterfaceBanco {
     
     @Override
     public int saldo(int conta) throws RemoteException {
-        
+        return 0;
     }
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws RemoteException {
         
     }
     

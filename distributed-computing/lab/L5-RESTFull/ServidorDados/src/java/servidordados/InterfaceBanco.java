@@ -1,4 +1,4 @@
-package atmdados;
+package servidordados;
 
 import java.rmi.RemoteException;
 
