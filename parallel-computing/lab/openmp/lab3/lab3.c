@@ -13,7 +13,7 @@ int main()
     int N = pow(base, exp);
     int element = 777;
     int sizeBlock = N / omp_get_max_threads();
-    int a[N];
+    int a[N]; // TODO: fazer o vetor com malloc
 
     srand(time(0));
     for (int i = 0; i < N; i++)
