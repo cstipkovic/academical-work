@@ -1,0 +1,6 @@
+São dois projetos:
+- ATMDados: consiste na implementação do cliente, que realizar as chamadas RESTful 
+no projeto ServidorDados
+- ServidorDados: implementa a interface RESTful, junto com a instância das contas.
+
+A instância das contas é feito por uma classe chamada Banco, que é responsável pelas operações de um banco.

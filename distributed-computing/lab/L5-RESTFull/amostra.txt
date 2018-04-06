@@ -1,0 +1,5 @@
+Os testes que foram usados para o projeto simulam todas as operações dentro da class ATMDados, testando os seguintes métodos:
+- saque 
+- saldo
+- depósito
+- transferência.
