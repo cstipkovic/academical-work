@@ -27,7 +27,7 @@ public class BancoImpl
 
     @Override
     public void saque(int conta, int valor) throws RemoteException {
-        synchronized(this) {
+//        synchronized(this) {
             try {
                 if (this.contas[conta] - valor >= 0) {
                     float valorFinal = this.contas[conta] - valor;
@@ -42,7 +42,7 @@ public class BancoImpl
             } catch (InterruptedException ie) {
                 Thread.currentThread().interrupt();
             }
-        }
+//        }
     }
 
     @Override

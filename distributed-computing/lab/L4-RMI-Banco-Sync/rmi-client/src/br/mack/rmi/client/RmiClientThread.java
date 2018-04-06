@@ -19,7 +19,7 @@ public class RmiClientThread {
             Registry registry = LocateRegistry.getRegistry("localhost");
             IBanco banco = (IBanco) registry.lookup("bancormi");
             
-            saqueThread(banco, 1, 100);
+            saqueThread(banco, 1, 1000);
         } catch (Exception e) {
             if (e instanceof RuntimeException) {
                 throw (RuntimeException) e;
