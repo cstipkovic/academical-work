@@ -1,7 +1,8 @@
 #include <stdio.h>
 
-int main() {
-    int n = 0, m = 0;
+int main()
+{
+    int n, m;
     int i, j;
     int line, number;
 
@@ -11,7 +12,8 @@ int main() {
     printf("Informe as coluna: ");
     scanf("%d", &m);
 
-    if (n != m) {
+    if (n != m)
+    {
         printf("\nMatriz deve ser quadrada (n x m)... saindo!\n");
 
         return 0;
@@ -19,9 +21,10 @@ int main() {
 
     int matrix[n][m];
 
-    for (i = 0; i < n; i++) 
+    printf("Informe os elementos da matriz.\n");
+    for (i = 0; i < n; i++)
     {
-        for (j = 0; j < m; j++) 
+        for (j = 0; j < m; j++)
         {
             scanf("%d", &matrix[i][j]);
         }

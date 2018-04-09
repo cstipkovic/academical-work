@@ -1,9 +1,10 @@
 #include <stdio.h>
 
-int main() {
+int main()
+{
     int b, i, j, n;
 
-    n = 5;
+    scanf("Informe qual o numero (inteiro) maximo da base da piramide: %d", &n);
 
     b = (n - 1) / 2;
 
