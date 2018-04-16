@@ -4,7 +4,7 @@
 #include <math.h>
 #include <omp.h>
 
-int main() 
+int main()
 {
     int i;
     double base = 2;
@@ -13,11 +13,13 @@ int main()
     int N = pow(base, exp);
     int element = 777;
     int sizeBlock = N / omp_get_max_threads();
-    int a[N]; // TODO: fazer o vetor com malloc
+    int *a = malloc(N * sizeof (int));
 
     srand(time(0));
-    for (int i = 0; i < N; i++)
-        a[i] = rand() % (N + 1 - 0) + 0;
+    for (i = 0; i < N; i++)
+    {
+      a[i] = rand() % (N + 1 - 0) + 0;
+    }
 
     #pragma omp parallel
     {
@@ -25,7 +27,7 @@ int main()
         for (i = t; i <= (t + sizeBlock); i++) {
             if (a[i] == element) {
                 printf("Elemento '%d' encontrado na posicao: [%d]\n", element, i);
-            }   
+            }
         }
     }
 
