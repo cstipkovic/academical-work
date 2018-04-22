@@ -16,13 +16,18 @@ int main(int argc, char *argv[]) {
 
   // Vectors
   size_t *vector = (size_t *) malloc(vectorSize * sizeof(size_t));
+  size_t *vectorAux = (size_t *) malloc(nThread * sizeof(size_t));
 
   // Fill Vector
   for (i = 0; i < vectorSize; i++) {
     vector[i] = 1;
   }
 
-  // Block size per Thread
+  // Fill Aux Vector
+  for (i = 0; i < nThread; i++) {
+    vectorAux[i] = 0;
+  }
+
   size_t vectorSizePerThread = vectorSize / nThread;
 
   #pragma omp parallel num_threads(nThread)
@@ -30,15 +35,16 @@ int main(int argc, char *argv[]) {
     size_t threadNumber = omp_get_thread_num();
     size_t loopStart = threadNumber * vectorSizePerThread;
 
-    #pragma omp parallel for
+    #pragma omp parallel for reduction (+:vectorAux[threadNumber])
     for (i = loopStart; i < (loopStart + vectorSizePerThread); i++) {
       // printf("i: %zu, start: %zu, thread: %zu\n", i, loopStart, threadNumber);
-      #pragma omp critical
-      {
-        sum += vector[i];
-        // printf("i: %zu, threadNumber: %zu, vectorAux: %zu\n", i, threadNumber, vectorAux[threadNumber]);
-      }
+      vectorAux[threadNumber] += vector[i];
+      // printf("i: %zu, threadNumber: %zu, vectorAux: %zu\n", i, threadNumber, vectorAux[threadNumber]);
     }
+  }
+
+  for (i = 0; i < nThread; i++) {
+    sum += vectorAux[i];
   }
 
   printf("\nCom %d threads, sum = %zu\n", nThread, sum);
