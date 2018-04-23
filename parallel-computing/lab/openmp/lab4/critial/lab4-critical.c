@@ -3,7 +3,8 @@
 #include <math.h>
 #include <omp.h>
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+{
   size_t i;
   size_t sum = 0;
 
@@ -18,7 +19,8 @@ int main(int argc, char *argv[]) {
   size_t *vector = (size_t *) malloc(vectorSize * sizeof(size_t));
 
   // Fill Vector
-  for (i = 0; i < vectorSize; i++) {
+  for (i = 0; i < vectorSize; i++)
+  {
     vector[i] = 1;
   }
 
@@ -31,13 +33,14 @@ int main(int argc, char *argv[]) {
     size_t loopStart = threadNumber * vectorSizePerThread;
 
     #pragma omp parallel for
-    for (i = loopStart; i < (loopStart + vectorSizePerThread); i++) {
+    for (i = loopStart; i < (loopStart + vectorSizePerThread); i++)
+    {
       // printf("i: %zu, start: %zu, thread: %zu\n", i, loopStart, threadNumber);
       #pragma omp critical
       {
         sum += vector[i];
-        // printf("i: %zu, threadNumber: %zu, vectorAux: %zu\n", i, threadNumber, vectorAux[threadNumber]);
       }
+      // printf("i: %zu, threadNumber: %zu, vectorAux: %zu\n", i, threadNumber, vectorAux[threadNumber]);
     }
   }
 
