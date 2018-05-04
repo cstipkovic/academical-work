@@ -131,3 +131,6 @@ main
 /distributed-computing/lab/threads/Thread01/nbproject/private/
 /distributed-computing/lab/L3-RMI-Banco-Sync/rmi-base/dist/
 /distributed-computing/lab/L3-RMI-Banco-Sync/rmi-server/dist/
+/distributed-computing/lab/clock-sync/ClockSync/nbproject/private/
+/distributed-computing/lab/clock-sync/ClockSync/build/
+/distributed-computing/lab/clock-sync/ClockSync/dist/
