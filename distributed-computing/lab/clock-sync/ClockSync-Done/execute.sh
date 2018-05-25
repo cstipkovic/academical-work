@@ -1,6 +1,4 @@
 #!/bin/bash
-
-cd Google\ Drive/Mack/6\ sem/Computacao\ distribuida\ lab/Bimester\ 2/Projeto2
 echo "Compilando as classes"
 ant
 chmod +x slave.sh

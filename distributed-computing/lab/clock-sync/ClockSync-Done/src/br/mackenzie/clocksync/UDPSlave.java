@@ -1,13 +1,11 @@
-package projeto2;
+package br.mackenzie.clocksync;
 
-import java.net.*;
-import java.text.SimpleDateFormat;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
 import java.util.Date;
-import java.util.GregorianCalendar;
-import javax.rmi.CORBA.Util;
 
-class UDPClient {
-
+public class UDPSlave {
     public static void start(String ip,int port,String time ,String logFile) throws Exception {
         Utils.cleanLog(logFile);
         Date localTime = Utils.getLocalTime(time);
@@ -15,7 +13,6 @@ class UDPClient {
         DatagramSocket clientSocket = new DatagramSocket(port);
         
         InetAddress IPAddress = InetAddress.getByName(ip);
-        
         
         Utils.Log("Cliente está rodando..", logFile);
         Utils.Log("Tempo local no cliente: " + Utils.getTimeFromDate(localTime), logFile);
@@ -45,7 +42,5 @@ class UDPClient {
             }
 
         }
-//        clientSocket.close();
-
     }
 }

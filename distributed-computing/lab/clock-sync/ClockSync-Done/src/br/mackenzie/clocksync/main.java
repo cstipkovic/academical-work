@@ -1,22 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package projeto2;
+package br.mackenzie.clocksync;
 
-/**
- *
- * @author rabahzeineddine
- */
-public class Projeto2 {
-
+public class main {
     /**
      * @param args the command line arguments
+     * @throws java.lang.Exception
      */
     public static void main(String[] args) throws Exception {
-        // TODO code application logic here
-
         if (args.length >= 4) {
             String type = args[0];
             if (type.equals("-m") || type.equals("-s")) {
@@ -32,20 +21,19 @@ public class Projeto2 {
                 }
                 String logFile = args[args.length - 1];
                 
-                if(type.equals("-m")){
-                    UDPServer.start(ip, port, time ,d , slavesFile, logFile );
-                }else{
-                    UDPClient.start(ip, port, time , logFile);
+                if (type.equals("-m")) {
+                    UDPMaster.start(ip, port, time, d, slavesFile, logFile);
+                } else {
+                    UDPSlave.start(ip, port, time , logFile);
                 }
                 
 
             } else {
                 System.out.println("Esperava o tipo: -m ou -s");
             }
-        }else{
+        } else {
             System.out.println("Informe os argumentos necessarios.");
         }
 
     }
-
 }

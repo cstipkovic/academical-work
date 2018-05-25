@@ -1,13 +1,16 @@
-package projeto2;
+package br.mackenzie.clocksync;
 
 import Models.Client;
-import java.net.*;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
+import java.net.SocketTimeoutException;
 import java.util.ArrayList;
 import java.util.Date;
 
-class UDPServer {
+public class UDPMaster {
 
-    private static ArrayList<Client> clients;
+private static ArrayList<Client> clients;
 
     public static void start(String ip, int port, String time, int d, String slavesFile, String logFile) throws Exception {
         Utils.cleanLog(logFile);
@@ -87,5 +90,5 @@ class UDPServer {
                 avg_denominador  = 1;
             }
         }
-    }
+    }    
 }

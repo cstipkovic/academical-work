@@ -1,4 +1,4 @@
-package projeto2;
+package br.mackenzie.clocksync;
 
 import Models.Client;
 import java.io.BufferedReader;
@@ -17,18 +17,9 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author rabahzeineddine
- */
 public class Utils {
 
-    private static SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
+private static SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
 
     public static ArrayList<Client> ReadClients(String fileName) {
 
@@ -51,22 +42,21 @@ public class Utils {
             }
 
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(Utils.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(br.mackenzie.clocksync.Utils.class.getName()).log(Level.SEVERE, null, ex);
 
         } catch (IOException ex) {
-            Logger.getLogger(Utils.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(br.mackenzie.clocksync.Utils.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return clients;
     }
 
     public static Date getLocalTime(String time) {
-
         Date date = null;
         try {
             date = format.parse(time);
         } catch (ParseException ex) {
-            Logger.getLogger(Utils.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(br.mackenzie.clocksync.Utils.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return date;
@@ -141,7 +131,7 @@ public class Utils {
 
             bw.write("[ " + new Date().toString() + " ] : " + msg + "\n");
         } catch (IOException ex) {
-            Logger.getLogger(Utils.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(br.mackenzie.clocksync.Utils.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             try {
                 if (bw != null) {
@@ -152,7 +142,7 @@ public class Utils {
                 }
 
             } catch (IOException ex) {
-                Logger.getLogger(Utils.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(br.mackenzie.clocksync.Utils.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
 
@@ -163,7 +153,5 @@ public class Utils {
         if (file.exists()) {
             file.delete();
         }
-
     }
-
 }
